@@ -1,0 +1,106 @@
+<style>
+    .divider {
+        height: 1px;
+        margin: 9px 0;
+        overflow: hidden;
+        background-color: #e5e5e5;
+    }    
+    .current-menu {          
+        padding-top: 30px;
+        /* padding-left: 15px; */
+    }
+    
+</style>
+<div class="wrapper">
+        <!-- Dashboard Area Start Here -->
+        <seller-dashboard-header>
+        </seller-dashboard-header>
+        <seller-search-profile>
+        </seller-search-profile>
+        <div class="dashboard-area">
+            <div class="container">
+                <div class="row">
+                    <!-- Dashboard SideBar Start Here -->
+                    <div class="col-md-4">
+                        <seller-dashboard-sidebar>                        
+                        </seller-dashboard-sidebar>
+                    </div>
+                    <!-- Dashboard SideBar End Here -->
+                    <div class="col-md-8">
+                        <!-- Dashboard Right SideBar Start Here -->
+                        <div class="dashboard-right-bar">
+                            <div class="top-nav-right">                             
+                                <div class="list-service-section">
+                                    <h3 style = "margin-top: -40px;">
+                                        Manage Menu
+                                    </h3>
+                                    <div class = "divider"></div>                                                                      
+                                    <a ui-sref = "firstNearMember.seller-dashboard-add-new-food-service" class="line-fill-btn add-promotion-btn">
+                                        add new item
+                                    </a>
+                                    <h4 class = "current-menu"> <b>Current Menu </b></h4>
+                                    <p style = "padding: 30px 0px 50px 0px;font-size: 18px;"> This is where you can manage your menu item and list them on </p>
+                                    <div class = "row">
+                                        <div class="col-md-4">
+                                            <div class = "form-group">
+                                              <p style = "padding-top: 5px; font-size: 17px;">  <b>Filter By Category</b> </p>
+                                            </div>                                                    
+                                        </div> 
+                                        <div class="col-md-5" style = "margin-left: -50px;"> 
+                                            <div class="form-group delivery-option-select">                                                                    
+                                                <select id="guest" name="guest" class="form-control form-search-cos slct-slide" ng-change = "getFoodList()" ng-model = "food_category">
+                                                    <option value="{{data._id}}" ng-repeat = "data in foodCategoryData">{{data.category_name}}</option>
+                                                                                                                
+                                                </select>                                               
+                                            </div>
+                                        </div> 
+                                    <div >
+                                        <div class="list-service-box" ng-repeat = "data in foodData">                                   
+                                            <div class="row">                                                    
+                                                <div class="col-md-4">                                                   
+                                                    <h5>
+                                                        {{ data.item_name }}
+                                                    </h5>                                                  
+                                                    <p style = "padding: 15px 0px 0px 0px;"> {{ data.item_description }}  </p>
+                                                </div>
+                                                <div class = "col-md-3">
+                                                    <div class="service-image-div"> 
+                                                        <img src="http://localhost:3000/api/v1/merchant/dashboard/service/food/image?name={{data.photo}}" class="img-responsive service-img-tag"> 
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3" >                                                    
+                                                    <h6 style = "padding-top: 30px;">SAR {{ data.price }}</h6>
+                                                </div>
+                                                <div class="col-md-2">
+                                                    <ul class="service-list-links">
+                                                        <li>
+                                                            <a href="javascript:;" class="line-fill-btn edit-service-btn" ng-click = "doEditService(data)">
+                                                                Edit
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="javascript:;" class="line-fill-btn delete-service-btn" ng-click = "doDeleteService(data)">
+                                                                Delete
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>                               
+                                    </div>
+                                    <div class="clr-service"></div>                                        
+                                </div>                             
+                            </div>
+                        </div>
+                        <!-- Dashboard Right SideBar End Here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Dashboard Area End Here -->
+        <div class="clearfix"> </div>
+        <!-- Footer Area Start Here -->
+        <footer>
+        </footer>
+        <!-- Footer Area End Here -->
+    </div>

@@ -1,0 +1,101 @@
+<div class="wrapper">
+    <!-- Dashboard Area Start Here -->
+    <seller-dashboard-header>
+    </seller-dashboard-header>
+    <seller-search-profile>
+    </seller-search-profile>	
+    <div class="dashboard-area">                
+        <div class="container">
+			<div class="row">					
+                <!-- Dashboard SideBar Start Here -->					
+                <div class="col-md-4">
+                    <seller-dashboard-sidebar>
+                    </seller-dashboard-sidebar>
+                </div>
+                <!-- Dashboard SideBar End Here -->						
+				<div class="col-md-8">						
+					<!-- Dashboard Right SideBar Start Here -->
+					<div class="dashboard-right-bar">							
+						<div class="inbox-right-block">
+							<h3>
+                                <i class="fa fa-inbox"></i> 
+                                Inbox
+                            </h3>						
+							<div class="over-f-x">							
+							    <div class="col-lg-6 col-sm-6 col-xs-12">
+							        <div class="inbox-noti-box">
+							            <i class="fa fa-trash"></i>
+							            <p>
+                                            <strong>{{totalNum}}</strong> 
+                                            Conversation 
+                                            <span>6 New</span>
+                                        </p>
+							        </div>
+							    </div>							
+							    <div class="col-lg-6 col-sm-6 col-xs-12">
+							        <div class="pagination-message-box">							
+							            <ul>
+							                <li>
+                                                <a href="javascript:;" ng-click = "prev()">
+                                                    <i class="fa fa-angle-left"></i>
+                                                </a>
+                                            </li>
+							                <li>
+                                                <a href="javascript:;" ng-click = "next()">
+                                                    <i class="fa fa-angle-right"></i>
+                                                </a>
+                                            </li>
+							            </ul>
+							            <p>{{inboxDatas[0].num}}-{{inboxDatas[inboxDatas.length-1].num}}</p>
+							        </div>
+                                </div>
+                                <table class="table table-message">											
+									<tbody class="table-hover">
+                                        <tr ng-repeat = "inboxData in inboxDatas">
+                                                <td>
+                                                    <div class="form-group chck-checkout checkbox-custom check-table m-b-0">					 
+                                                        <div class="checkbox">
+                                                            <input name="t{{inboxData.num}}" id="d{{inboxData.num}}" class="css-checkbox" type="checkbox">
+                                                            <label for="d{{inboxData.num}}" class="css-label"> </label>
+                                                        </div>
+                                                    </div> 
+                                                </td>													
+                                                <td class="clickable-row" data-href="chat.html"> 
+                                                    <a ui-sref = "firstNearMember.seller-dashboard-private-chat">
+                                                        <h4>
+                                                            {{ inboxData.name }} 
+                                                            <i class="fa fa-circle" ng-if = "inboxData.readFlag"></i>
+                                                        </h4>
+                                                        <p>
+                                                            {{ inboxData.message }}
+                                                        </p>
+                                                    </a>
+                                                </td> 													
+                                                <td class="clickable-row" data-href="chat.html">
+                                                    <p class="date-pera"> {{ inboxData.time}}</p>
+                                                </td>
+                                                <td>
+                                                    <a href="javascript:;" class="delt-icon" data-toggle="modal" data-target="#delete-pop"> 
+                                                        <i class="fa fa-trash" aria-hidden="true"></i>  
+                                                    </a> 
+                                                </td>
+                                            </tr> 					
+									</tbody>
+								</table>
+							</div>										
+					    </div>							
+					</div>
+					<!-- Dashboard Right SideBar End Here -->
+				</div>
+            </div>
+        </div>			
+    </div>
+    <!-- Dashboard Area End Here -->	
+    <div class="clearfix"> </div>
+    <!-- Footer Area Start Here -->
+    <footer>
+    </footer>
+    <!-- Footer Area End Here -->
+</div>
+
+

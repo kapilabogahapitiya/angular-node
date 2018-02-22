@@ -1,0 +1,82 @@
+<div class="wrapper">
+    <!-- Dashboard Area Start Here -->
+    <seller-dashboard-header>
+    </seller-dashboard-header>
+    <seller-search-profile>        
+    </seller-search-profile>
+    <div class="dashboard-area">
+        <div class="container">
+            <div class="row">
+                <!-- Dashboard SideBar Start Here -->
+                <div class="col-md-4">
+                    
+                        <seller-dashboard-sidebar>
+                        </seller-dashboard-sidebar>
+                    </div>
+                    <!-- Dashboard SideBar End Here -->
+                    <div class="col-md-8">
+                        <!-- Dashboard Right SideBar Start Here -->
+                        <div class="dashboard-right-bar">
+                            <div class="promotion-list-right-block">
+                                <h3>
+                                    <i class="fa fa-bullhorn"></i> 
+                                    Promotion
+                                </h3>
+                                <p class="promotion-pera-heading">
+                                    Create Promotion and special to gain more customer and then share it through your social
+                                    media accounts.
+                                </p>
+                                <a ui-sref = "firstNearMember.seller-dashboard-add-promotion-list" class="line-fill-btn add-promotion-btn"> 
+                                    add promotion
+                                </a>
+                                <div class="row-border">                                    
+                                </div>
+                                <div ng-repeat = "data in promotionList">
+                                    <div class="row promotion-list-box">
+                                        <div class="col-lg-3">
+                                            <h3>
+                                                {{data.price_percentage}} % off
+                                            </h3>
+                                        </div>
+                                        <div class="col-lg-5">
+                                            <h5>
+                                                {{data.promotion_name}}
+                                            </h5>
+                                            <p>
+                                                Valid for {{ data.start_date}}   to   {{data.end_date}}
+                                            </p>
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <ul class="promotion-list-links">
+                                                <li>
+                                                    <a href="javascript:;" ng-click = "doEditPromotion(data)">
+                                                        Edit
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    |
+                                                </li>
+                                                <li>
+                                                    <a href="javascript:;" ng-click = "doDeletePromotion(data._id)">
+                                                        Delete
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="row-border"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Dashboard Right SideBar End Here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Dashboard Area End Here -->
+    </div>
+    <div class="clearfix"> </div>
+    <!-- Footer Area Start Here -->
+    <footer>            
+    </footer>
+</div>

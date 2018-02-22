@@ -1,0 +1,205 @@
+<div class="wrapper">
+    <seller-dashboard-header>
+    </seller-dashboard-header>
+    <!-- Start Pagination Service Start-->
+    <div id="dashboard-search">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 col-sm-12">
+                    <div class="pagination-area">                        
+                        <ul>
+                            <li class="active">
+                                <a ui-sref = "firstNear.index">
+                                    Home 
+                                </a>
+                            </li>
+                            <li>
+                                <i class="fa  fa-angle-double-right"></i>
+                            </li>
+                            <li>
+                                <a href="javascript:;" ui-sref = "firstNearMember.seller-dashboard-recent-booking">
+                                    Booking
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Start Pagination Service End-->
+    <!-- Search Job Section Start Here -->
+    <div id="recent-job-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="family-list">
+                        <!--====================filterbar-start-=========-->
+                        <div class="well well-sm topbar-main browse-page">
+                            <div id="filter-panel">
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <h4 class="recently-job-heading">
+                                            Recently Posted Jobs
+                                        </h4>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-7 col-sm-12 five-three col-xs-12">
+                                        <ul class="filter-browse border-right-1 row">
+                                            <li class="sortby-options col-lg-4 col-sm-4 col-xs-6">
+                                                <p class="filter-heading">Services</p>
+                                                <select id="guest" name="guest" ng-model = "service" class="form-control form-search-cos slct-slide">
+                                                    <option value="1">Photography</option>
+                                                    <option value="2">Food</option>
+                                                    <option value="3">Makeup Artist</option>
+                                                </select>
+                                            </li>
+                                            <li class="sortby-options col-lg-4 col-sm-4 col-xs-6">
+                                                <p class="filter-heading">Sort By</p>
+                                                <select id="guest" name="guest" ng-model = "sort_by" class="form-control form-search-cos slct-slide">
+                                                    <option value="1">Distance</option>
+                                                    <option value="2">Ratings</option>
+                                                    <option value="3">Categories</option>
+                                                </select>
+                                            </li>
+                                            <li class="sortby-options col-lg-4 col-sm-4 col-xs-6">
+                                                <p class="filter-heading">Categories</p>
+                                                <select id="guest" name="guest" ng-model = "category" class="form-control form-search-cos slct-slide">
+                                                    <option value="1">Veg</option>
+                                                    <option value="2">Non Veg</option>                                                    
+                                                </select>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-lg-5 col-sm-12 five-two">
+                                        <ul class="filter-browse border-right-1 row">
+                                            <li class="sortby-options col-sm-8 col-xs-6">
+                                                <p class="filter-heading">Location</p>
+                                                <div class="input-group ">
+                                                    <input class="placepicker form-control" placeholder="Location" ng-model = "location" autocomplete="off" type="text" id="dropdownMenu1" data-toggle="dropdown">
+                                                    <div class="input-group-addon slide-addon"> 
+                                                        <a href="javascript:;"> 
+                                                            <i class="fa fa-map-marker"></i> 
+                                                        </a>
+                                                    </div>
+                                                    <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1" style="width: 100%;margin-top:45px;">
+                                                            
+                                                            <li  role="presentation" ng-repeat='data in locations | filter:location' class = "li-quick"> 
+                                                                <a ng-click = "setLocation(data)" > {{ data }} </a>
+                                                            </li>
+                                                        </ul>
+                                                </div>
+                                               
+                                            </li>
+                                            <li class="sortby-options col-sm-4 col-xs-6">
+                                                <button  class="ghost-semi-color-btn text-center col-oran hand-btn" ng-click = "search()" >
+                                                    Search
+                                                </button>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Search Job Section End Here -->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h5 class="recent-jobs-heading">
+                    57 Result (s)
+                </h5>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row" ng-repeat = "single in data">
+            <a href="javascript:;" class="recent-job-link">
+                <div class="recent-jobs-box">
+                    <div class="col-md-7">
+                        <div class="thumbnail-img recent-job-img">
+                            <img src="img/restaurant-img-1.jpg" alt="" class="img-responsive">
+                            <p>{{single.name}}</p>
+                        </div>
+                        <div class="recent-job-text">
+                            <h4>{{single.title}}</h4>
+                            <p>{{single.content}}
+                                <span>Read More</span></p>
+                        </div>
+                    </div>
+                    <div class="col-md-5">
+                        <div class="row">
+                            <div class="clear-recent">                                
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="recent-job-info">
+                                    <p class="{{(single.availableState == 'Available') ? 'available-job' : 'unavailable-job'}}">
+                                        <i class="{{(single.availableState == 'Available') ? 'fa fa-smile-o' : 'fa fa-frown-o'}}"></i>
+                                        {{single.availableState}}
+                                    </p>
+                                    <p>
+                                        <i class="fa fa-map-marker"></i>
+                                        {{single.location}} {{single.distance}}KM
+                                    </p>
+                                    <p>
+                                        <i class="fa fa-calendar"></i>
+                                        {{single.date}}
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="recent-btn-section">
+                                    <ul class="recent-jobs-btn">
+                                        <li>
+                                            <p class="line-fill-btn send-order-btn">
+                                               {{ single.state}}
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;" ng-show = "single.availableState == 'Available'" ui-sref = "firstNearMember.seller-dashboard-request-quote" class="bl-btn">
+                                                send quote
+                                            </a>
+                                        </li>
+                                    </ul>
+                                    <p>
+                                        Bids Received : 
+                                        <strong>10</strong>
+                                    </p>
+                                    <div class="service-rating" ng-show = "single.state == 'Completed'">
+                                        <div id="stars" class="starrr">
+                                            <i class="fa fa-star-o"></i>
+                                            <i class="fa fa-star-o"></i>
+                                            <i class="fa fa-star-o"></i>
+                                            <i class="fa fa-star-o"></i>
+                                            <i class="fa fa-star-o"></i>
+                                        </div>
+                                        <div class="reviews-count">
+                                            ({{single.rate}} Reviews)
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </a>
+        </div>
+       
+        <div class="row">
+            <div class="col-md-12">
+                <div class="recent-jobs-more">
+                    <a href="javascript:;" ng-click = "loadMore()">More Jobs...</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="clearfix"> </div>
+    <footer>        
+    </footer>
+</div>

@@ -1,0 +1,126 @@
+<div class="wrapper">
+    <seller-dashboard-header>
+    </seller-dashboard-header>
+    <seller-search-profile>
+    </seller-search-profile>
+    <div class="dashboard-area">                
+        <div class="container">
+			<div class="row">					
+                <!-- Dashboard SideBar Start Here -->					
+                <div class="col-md-4">
+                    <seller-dashboard-sidebar>
+                    </seller-dashboar-dsidebar>
+                </div>
+                <!-- Dashboard SideBar End Here -->						
+				<div class="col-md-8">						
+					<!-- Dashboard Right SideBar Start Here -->
+					<div class="dashboard-right-bar">							
+						<div class="referral-program-block">
+							<h3>
+                                <i class="fa fa-exchange"></i> 
+                                Referral Program
+                            </h3>			
+							<div class="referral-box">
+							    <h5>You have earn</h5>							
+                                <div class="row">
+                                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                        <div class="referral-notification">
+                                            <div class="circle-bg-color refer-bg">
+                                                <h4>{{affiliateReferralData.num_customers}}</h4>
+                                            </div>
+                                            <h5>Referred Customers</h5>
+                                        </div>
+                                    </div>
+							        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+							            <div class="referral-notification">
+							                <div class="circle-bg-color refer-mer-bg">
+                                                <h4>{{ affiliateReferralData.num_merchants}}</h4>
+                                            </div>
+							                <h5>Referred Merchant</h5>
+							            </div>
+							        </div>
+                                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                        <div class="referral-notification">
+                                            <div class="circle-bg-color balance-bg">
+                                                <h4>{{affiliateReferralData.balance_price}}</h4> 
+                                                <span>{{affiliateReferralData.balance_currency}}</span>
+                                            </div>                                    
+                                            <h5>Your Balance</h5>
+                                        </div>
+                                    </div>								
+                                </div>                                    
+                            </div>							
+							<div class="referral-text">
+							    <h5>
+                                    <i class="fa fa-group"></i> 
+                                    FirstNear Referral Programe
+                                </h5>
+							    <p>
+                                    Join our referral program and collect point by referring new customer to Firstnear netwoek.
+                                </p>
+							</div>							
+							<div class="referral-text">
+                                <h5>
+                                    <i class="fa fa-question-circle"></i>
+                                     How can you refer customer or merchant?
+                                </h5>
+							    <p>
+                                    Simply by using your unique URL below. Bring new customer or talanted people who can work with us, to sign up to Firstnear.com and once they make their first purchase/sell, you willl earn SAR 10.
+                                </p>
+							</div>				
+							<div class="link-copy-text">
+							    <h5>Your Unique URL</h5>							
+							    <div class="link-copy-url">							
+							        <div class="input-group col-lg-10 col-md-9 col-sm-8 col-xs-12">
+							            <input class="form-control" id = "uniqueUrl" value="www.firstnear.com/signup?id=767898765" type="text">
+                                    </div>
+							        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-6">
+                                        <button  class="bl-btn copy-btn" ngclipboard data-clipboard-target="#uniqueUrl">
+                                            Copy
+                                        </button>
+                                    </div>							 
+							    </div>							   
+							    <div class="row">
+                                    <p class="social-heading col-md-5 col-sm-12">
+                                        Share the links with Social Media
+                                    </p>							  
+                                    <ul class="footer-social col-md-5 col-sm-12">
+                                        <li>
+                                            <a href="javascript:;">
+                                                <i class="fa fa-whatsapp"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">
+                                                <i class="fa fa-instagram"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">
+                                                <i class="fa fa-twitter"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">
+                                                <i class="fa fa-facebook"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+							    </div>
+							</div>	
+						</div>							
+					</div>
+					<!-- Dashboard Right SideBar End Here -->
+				</div>
+            </div>
+        </div>			
+	</div><!-- Dashboard Area End Here -->	
+    <div class="clearfix"> </div>
+    <!-- Footer Area Start Here -->
+    <footer>
+    </footer>
+    <!-- Footer Area End Here -->
+</div>    
+
+
+

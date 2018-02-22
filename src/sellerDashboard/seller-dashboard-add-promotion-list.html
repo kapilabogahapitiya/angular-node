@@ -1,0 +1,171 @@
+<div class="wrapper">
+    <!-- Dashboard Area Start Here -->
+    <seller-dashboard-header>
+    </seller-dashboard-header>
+    <seller-search-profile>
+    </seller-search-profile>
+    <div class="dashboard-area">
+        <div class="container">
+            <div class="row">
+                <!-- Dashboard SideBar Start Here -->
+                <div class="col-md-4">
+                    <seller-dashboard-sidebar>                        
+                    </seller-dashboard-sidebar>
+                </div>
+                <!-- Dashboard SideBar End Here -->
+                <div class="col-md-8">
+                    <!-- Dashboard Right SideBar Start Here -->
+                    <div class="dashboard-right-bar">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <a ui-sref="firstNearMember.seller-dashboard-promotion-list" class="line-fill-btn back-inbox-btn"> 
+                                    <i class="fa fa-arrow-left" aria-hidden="true"></i> 
+                                    back to promtion
+                                </a>
+                            </div>
+                            <div class="add-promotion-block">
+                                <div class="col-md-12">
+                                    <h3>What is Your Promotion?</h3>
+                                </div>
+                                <form class="omb_loginForm form-cs-check" name = "addPromotionForm" action="">
+                                    <div class="col-md-12">
+                                        <div class="input-group">
+                                            <label>Promotion Name</label>
+                                            <input class="form-control" name="promotion_name" ng-model = "promotionData.promotion_name" placeholder="Walter Sobchak" type="text" required>
+                                            <span class = "help-block region-error" ng-show = "addPromotionForm.promotion_name.$touched && addPromotionForm.promotion_name.$error.required">Promotion Name is required</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group delivery-option-select">
+                                            <label>Promotion On</label>
+                                            <select id="guest" name="guest" class="form-control form-search-cos slct-slide" ng-model = "promotionData.promotion_on" >
+                                                <option value="Professional Photo">Professional Photo</option>
+                                                <option value="Wedding Photoshoot">Wedding Photoshoot</option>                                                
+                                            </select>
+                                            <div class="help-block with-errors"></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group delivery-option-select">
+                                            <label>Promotion Limited to</label>
+                                            <select id="guest" name="guest" ng-model = "promotionData.promotion_limitation" class="form-control form-search-cos slct-slide">
+                                                <option value="One Per Person">One Per Person</option>
+                                                <option value="Two Per Person">Two Per Person</option>                                                
+                                            </select>
+                                            <div class="help-block with-errors"></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label for="comment">Promotion Details</label>
+                                            <textarea class="form-control" rows="4" id="comment" placeholder="Book for the summer and get 30%" name = "promotion_detail" ng-model = "promotionData.promotion_detail" required></textarea>
+                                            <span class = "help-block region-error" ng-show = "addPromotionForm.promotion_detail.$touched && addPromotionForm.promotion_detail.$error.required">Promotion Details is required</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <h4>Set Discount Price</h4>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="input-group discount-price">
+                                            <label>Percentage</label>
+                                            <input type="text" class="form-control" name="price_percentage" ng-model = "promotionData.price_percentage" placeholder="10%" required>
+                                            <span class = "help-block region-error" ng-show = "addPromotionForm.price_percentage.$touched && addPromotionForm.price_percentage.$error.required"> Percentage is required</span>
+                                        </div>
+                                        <p class="or-text-pro">OR</p>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="input-group">
+                                            <label>SAR</label>
+                                            <input type="text" class="form-control" name="price" ng-model = "promotionData.price" placeholder="100" required>
+                                            <span class = "help-block region-error" ng-show = "addPromotionForm.price.$touched && addPromotionForm.price.$error.required">Price is required</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <h4>Promotion Times</h4>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="filter-order-date">
+                                            <div class="promotion-date-picker">
+                                                <label>Start Date</label>
+                                                <div class="input-group input-nav-cos ">
+                                                    <input class="placepicker form-control date-picker input-nav-cos brd-ra-0" name = "start_date" ng-model = "promotionData.start_date" placeholder="Oct 10, 2017" autocomplete="off" type="text" required>
+                                                    <div class="input-group-addon slide-addon">
+                                                        <a href="javascript:;"> 
+                                                            <i class="fa fa-calendar"></i> 
+                                                        </a>
+                                                    </div>
+                                                    <span class = "help-block region-error" ng-show = "addPromotionForm.start_date.$touched && addPromotionForm.start_date.$error.required"> Start Date is required</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="promotion-date-picker">
+                                            <label>Expiration Date</label>
+                                            <div class="input-group input-nav-cos ">
+                                                <input class="placepicker form-control date-picker input-nav-cos brd-ra-0" name = "end_date" ng-model = "promotionData.end_date" placeholder="Oct 15, 2017" autocomplete="off" type="text" required>
+                                                <div class="input-group-addon slide-addon">
+                                                    <a href="javascript:;"> 
+                                                        <i class="fa fa-calendar"></i> 
+                                                    </a>
+                                                </div>
+                                                <span class = "help-block region-error" ng-show = "addPromotionForm.end_date.$touched && addPromotionForm.end_date.$error.required"> Expiration Date is required</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-12">
+                                        <ul class="edit-profile-save">
+                                            <li>                                               
+                                                <a ui-sref = "firstNearMember.seller-dashboard-promotion-list" class="line-fill-btn edit-cancel-button">
+                                                    Cancel
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:;" ng-click = "doSaveAndPublish()"class="bl-btn edit-cancel-button">
+                                                    save and publish
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Dashboard Right SideBar End Here -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Dashboard Area End Here -->
+    <div class="clearfix"> </div>
+    <footer>
+    </footer>
+    <!-- Modal -->
+    <div id="offermyModal" class="modal fade" role="dialog">
+        <div class="modal-dialog modal-xs" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body offer-request">
+                    <h2>I would like to</h2>
+                    <img src="img/offer-message-icon.png">
+                    <ul class="accept-offer-ul">
+                        <li>
+                            <a href="javascript:;" class="bl-btn accept-offer-modal" data-dismiss="modal" aria-label="Close">
+                                accept offer
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:;" class="line-fill-btn accept-offer-modal" data-dismiss="modal" aria-label="Close">
+                                reject offer
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Modal -->
+</div>

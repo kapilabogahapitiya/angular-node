@@ -1,0 +1,134 @@
+<style>
+    .header-sign {
+        background: #fff;
+        position: relative;
+        z-index: 1; 
+    }
+</style>
+<div class="select-business" style="background-image:url(img/verify-phone-number.jpg);">
+    <div class="select-bus-dark">
+
+    </div>
+    <div class="wrapper">
+    <!-- Header Area Start Here -->
+        <div class="header-sign">
+            <div class="header2-area">
+                <div class="header-top-area"> 
+
+                </div>
+                <div class="header-bottom-area">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                <div class="logo-area">
+                                    <a ui-sref="firstNear.index">
+                                        <img class="img-responsive" src="img/gray-logo.png" alt="logo" width="225">
+                                    </a> 
+                                </div>
+                            </div>
+                            <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
+                                <div class="main-menu-area width-100">
+                                    <nav>
+                                        <ul class="pull-right  width-100">
+                                            <li>
+                                                <a ui-sref="firstNear.index" class="signup-link">
+                                                    Help
+                                                </a> 
+                                            </li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Mobile Menu Area Start -->
+            <div class="mobile-menu-area">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="mobile-menu">
+                                <nav id="dropdown">
+                                    <ul class="pull-right  width-100">
+                                        <li>
+                                            <a ui-sref="firstNear.index" class="signup-link">
+                                                Help
+                                            </a> 
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Mobile Menu Area End -->
+        </div>
+        <!-- Header Area End Here -->		  
+        <!-- About Us section Start Here -->
+        <div class="select-business-section">                
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-md-offset-3">					
+                        <div class="step-block">
+                            <h4>
+                                Step 3 of 3
+                            </h4>
+                        </div>					
+                        <h2>
+                            Verify Your Phone Number
+                        </h2>
+                        <div class="select-service-box">						
+                            <div class="verify-text-heading">
+                                <p>Welcome to FirstNear! Please verify your Phone Number and complete the registration process.
+                                </p>
+                            </div>						
+                            <div class="omb_login">      
+                                <div class="row ">
+                                    <div class="col-xs-12 col-sm-12">    
+                                        <form class="omb_loginForm form-cs-check" name = "vm.verifyPhoneNumberFrm" action="">
+                                            <div class="input-group">                        
+                                                <input type="text" class="form-control" name="authCode" ng-model = "vm.authCode" placeholder="xxxx" required>
+                                                <p class="help-block region-error" ng-show="vm.verifyPhoneNumberFrm.authCode.$touched && vm.verifyPhoneNumberFrm.authCode.$error.required">Please Enter your AuthCode </p>
+                                            </div>                  
+                                            <div class="row">		  
+                                                <div class="col-xs-12 col-sm-12">
+                                                    <div class="service-signup">
+                                                        <a ng-click = "vm.doVerifyPhoneNumber()" class="bl-btn verify-button">
+                                                            Verify
+                                                        </a>
+                                                    </div>
+                                                </div>			
+                                                <div class="col-xs-12 col-sm-12">
+                                                    <div class="step-away">
+                                                        <p>You are step away before from receiving order from 
+                                                            people are you. Hurry up 
+                                                        </p>
+                                                    </div>								
+                                                    <div class="login-option1">                               
+                                                        <a ng-click = "vm.doSendAuthCode()" >
+                                                            Send the phone number code again
+                                                        </a>                              
+                                                    </div>							
+                                                </div>		
+                                                <div class="col-xs-12 col-sm-12">
+                                                    <div class="back-verify">
+                                                        <a ui-sref="firstNearMember.createYourAccount" class="line-fill-btn back-btn-verify">
+                                                            back
+                                                        </a>
+                                                    </div>
+                                                </div>    
+                                            </div>            
+                                        </form>
+                                    </div>
+                                </div>           
+                            </div>
+                        </div>
+                    </div>                    
+                </div>              
+            </div>
+        </div>
+    </div>
+</div>
+           

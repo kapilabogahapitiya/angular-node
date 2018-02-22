@@ -1,0 +1,88 @@
+<div class="wrapper">
+    <seller-dashboard-header>
+    </seller-dashboard-header>
+    <seller-search-profile>        
+    </seller-search-profile>
+    <!-- Dashboard Area Start Here -->
+    <div class="dashboard-area">
+        <div class="container">
+            <div class="row">
+                <!-- Dashboard SideBar Start Here -->
+                <div class="col-md-4">
+                    <seller-dashboard-sidebar>
+                    </seller-dashboard-sidebar>
+                </div>
+                <!-- Dashboard SideBar End Here -->
+                <div class="col-md-8">
+                    <!-- Dashboard Right SideBar Start Here -->
+                    <div class="dashboard-right-bar">
+                        <div class="promotion-list-right-block">
+                            <h3>
+                                <i class="fa fa-users"></i> 
+                                Manage Customer
+                            </h3>
+                            <p class="promotion-pera-heading">
+                                Customer who books your services is added to your customer list. Click on a contact to chat with
+                                your customer through private messaging.
+                            </p>
+                            <div class="row">
+                                <div class="col-lg-8 col-md-12 col-xs-12">
+                                    <div class="search-manage-customer">
+                                        <p>Search by Name</p>
+                                        <div class="search-manage-customer-search">
+                                            <div class="input-group input-nav-cos ">
+                                                <input class="placepicker form-control input-nav-cos brd-ra-0" placeholder="Search" autocomplete="off" type="text">
+                                                <div class="input-group-addon slide-addon"> <a href="#"> <i class="fa fa-search"></i> </a></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12 col-sm-12 col-xs-12">
+                                    <div class="mange-customer-list">
+                                        <div class="table-responsive">
+                                            <table class="table">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Name</th>
+                                                        <th>Phone</th>
+                                                        <th>Email</th>
+                                                        <th>Appointment</th>
+                                                        <th>Action</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr ng-repeat = "data in customerData">
+                                                        <td>{{data.name}}</td>
+                                                        <td>{{data.phone}}</td>
+                                                        <td>{{data.email}}</td>
+                                                        <td>{{data.appointment}}</td>
+                                                        <td> 
+                                                            <a href="javascript:;" class="contact-manage">
+                                                                contact 
+                                                            </a>
+                                                        </td>
+                                                    </tr>
+                                                    
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- Dashboard Right SideBar End Here -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Dashboard Area End Here -->
+
+    <div class="clearfix"> </div>
+    <footer>
+    </footer>
+    <!-- Footer Area Start Here -->
+</div>

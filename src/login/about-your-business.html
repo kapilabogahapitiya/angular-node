@@ -1,0 +1,221 @@
+<style>
+    .header-sign {
+        background: #fff;
+        position: relative;
+        z-index: 1; 
+    }
+    .region-error{
+        color: red;
+    }
+</style>
+<div class="select-business" style="background-image:url(img/about-service.jpg);">
+    <div class="select-bus-dark">
+    </div>
+    <div class="wrapper">
+        <!-- Header Area Start Here -->
+        
+        <div class="header-sign">
+            <div class="header2-area">
+                <div class="header-top-area">
+                </div>
+                <div class="header-bottom-area">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                <div class="logo-area"> 
+                                    <a ui-sref="firstNear.index">
+                                        <img class="img-responsive" src="img/gray-logo.png" alt="logo" width="225">
+                                    </a> 
+                                </div>
+                            </div>
+                            <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
+                                <div class="main-menu-area width-100">
+                                    <nav>
+                                        <ul class="pull-right  width-100">
+                                            <li>
+                                                <a ui-sref="firstNear.index" class="signup-link">
+                                                    Help
+                                                </a> 
+                                            </li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                    </div>      
+                </div>
+            </div>
+            <!-- Mobile Menu Area Start -->
+            <div class="mobile-menu-area">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="mobile-menu">
+                                <nav id="dropdown">
+                                    <ul class="pull-right  width-100">
+                                        <li>
+                                            <a ui-sref="firstNear.index" class="signup-link">
+                                                Help
+                                            </a> 
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Mobile Menu Area End -->
+        </div>
+        <!-- Header Area End Here -->	  
+        <!-- About Us section Start Here -->
+        <div class="select-business-section">                
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-md-offset-3">					
+					    <div class="step-block">
+                            <h4>
+                                Step 4 of 6
+                            </h4>
+                        </div>					
+					    <h2>
+                            Tell us About Your Business
+                        </h2>
+                        <div class="select-service-box">
+                            <form name = "vm.aboutYourBusinessFrm" action = "">					
+                                <div class="omb_login about-your-business">      
+                                    <div class="row">		
+                                        <div class="col-xs-12 col-sm-12">
+                                            <div class="input-group">
+                                                <label>
+                                                    Business Name
+                                                </label>
+                                                <input class="form-control" name="businessName" ng-model = "vm.businessData.businessName" placeholder="ie. crateive studio for photography" type="text" required>
+                                                <p class="help-block region-error" ng-show="vm.aboutYourBusinessFrm.businessName.$touched && vm.aboutYourBusinessFrm.businessName.$error.required">Business Name is required </p>
+                                            </div>
+                                        </div>			
+                                        <div class="col-xs-12 col-sm-12">
+                                            <div class="select-shop-option">
+                                                <label class="select-shop">
+                                                    Do you have legal license?
+                                                </label>
+                                                <div class="btn-group" data-toggle="buttons">			
+                                                    <label class="btn active" ng-click = "vm.licenseYes()" id="btn_license_yes">
+                                                        <input name="options" id="option2" autocomplete="off"  type="radio">
+                                                        <span class="fa fa-circle">
+
+                                                        </span>
+                                                        <p>
+                                                            Yes
+                                                        </p>
+                                                    </label>
+                                                    <label class="btn" ng-click = "vm.licenseNo()" id="btn_license_no">
+                                                        <input name="options" id="option1" autocomplete="off" type="radio">
+                                                        <span class="fa fa-circle">
+
+                                                        </span>
+                                                        <p>
+                                                            No
+                                                        </p>
+                                                    </label>
+                                                </div>
+                                            </div>			
+                                        </div>		
+                                        <div class="col-xs-12 col-sm-12" ng-show = "vm.businessData.isLicense">
+                                            <div class="input-group">
+                                                <label>
+                                                    What is your legal License Number?
+                                                </label>
+                                                <input class="form-control" name="legalLicenseNumber" ng-model = "vm.businessData.legalLicenseNumber" placeholder="ie. 29389339" type="text" required>
+                                                <p class="help-block region-error" ng-show="vm.aboutYourBusinessFrm.legalLicenseNumber.$touched && vm.aboutYourBusinessFrm.legalLicenseNumber.$error.required">Enter Your Legal License Number </p>
+                                            </div>
+                                        </div>		
+                                        <div class="col-xs-12 col-sm-12" ng-show = "vm.businessData.isLicense">
+                                            <div class="input-group upload-license">
+                                                <label>
+                                                    Upload a copy of your License.
+                                                </label>
+                                                <input type="file" name="licenseFile" id="licenseFile" class="hide" onchange="angular.element(this).scope().licenseFileSelected(this)"/> 
+                                                <label for="licenseFile" class="btn upload-file" id = "labelForLicenseFile">
+                                                    Select file
+                                                </label>
+                                                <div class="input-group-addon slide-addon">
+                                                    <a href=""> 
+                                                        <i class="fa fa-plus">
+                                                        </i> 
+                                                    </a>
+                                                </div>
+                                                <span class="text-upload" id = "spanLicenseFileInfo">
+                                                    (i.e Upload file- pdf, png max 12kb)
+                                                </span>
+                                            </div>
+                                        </div>		
+                                        <div class="col-xs-12 col-sm-12">
+                                            <div class="input-group">
+                                                <div class="offer-delivery">
+                                                    <label>
+                                                        Do you offer any of the following?
+                                                    </label>
+                                                    <div class="form-group checkbox-custom">
+                                                        <div class="checkbox">
+                                                            <input type="checkbox" name="check105" id="check105" class="css-checkbox" ng-model = "vm.businessData.offerDelivery">
+                                                            <label for="check105" class="css-label css-label-checkout"> 
+                                                                Delivery
+                                                            </label>
+                                                        </div>                                        
+                                                        <div class="checkbox">
+                                                            <input type="checkbox" name="check106" id="check106" class="css-checkbox" ng-model = "vm.businessData.offerPickup">
+                                                            <label for="check106" class="css-label css-label-checkout"> 
+                                                                Pickup
+                                                            </label>
+                                                        </div>                                        
+                                                        <div class="checkbox">
+                                                            <input type="checkbox" name="check107" id="check107" class="css-checkbox" ng-model = "vm.businessData.offerPostage">
+                                                            <label for="check107" class="css-label css-label-checkout"> 
+                                                                Postage
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>        
+                                        
+                                    </div>                
+                                    <div class="row button-select">                             
+                                        <div class="col-xs-6 col-sm-6">
+                                            <div class="service-signup">
+                                                <a ui-sref="firstNearMember.verifyPhoneNumber" class="line-fill-btn login-button">
+                                                    Back
+                                                </a>
+                                            </div>
+                                        </div>                                
+                                        <div class="col-xs-6 col-sm-6">
+                                            <div class="service-signup">
+                                                <a ng-click = "vm.doAboutYourBusiness()" class="bl-btn login-button">
+                                                    next
+                                                </a>
+                                            </div>
+                                        </div>                               
+                                    </div>
+                                </div>
+                            </form>
+                        </div>  
+                    </div>                 
+                </div>
+            </div>
+        </div>
+        <!-- About Us section End Here -->                           
+    </div>
+    <!-- Footer Area end Here -->
+</div>
+
+                            
+                                
+                            
+                            
+                            
+                            
+                        
+                        
+                    
+                       

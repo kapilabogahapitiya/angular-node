@@ -1,0 +1,551 @@
+<div class="wrapper">	
+    <!-- Inner Page Banner Area Start Here -->
+    <div class="intro-food-profile">
+        <div class="intro-overlay"> 
+
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-md-8 col-sm-7">
+                    <div class="food-profile-info">					
+                        <div class="col-lg-3 col-md-3">					
+                            <div class="thumbnail-img food-profile-img">
+                                <img src="img/user-profile.jpg" alt="" class="img-responsive">
+                            </div>
+                        </div>					
+                        <div class="col-lg-9 col-md-9">
+                            <h2>{{ restaurantData.name }}</h2>
+                            <p><i class="fa fa-map-marker"></i> {{ restaurantData.address }}</p>
+                            <p><i class="fa fa-building-o"></i>{{ restaurantData.distance }} km away</p>					
+                            <div class="service-rating">
+                                <div id="stars" class="starrr">
+                                    <i class="fa fa-star-o"></i>
+                                    <i class="fa fa-star-o"></i>
+                                    <i class="fa fa-star-o"></i>
+                                    <i class="fa fa-star-o"></i>
+                                    <i class="fa fa-star-o"></i>
+                                    <i class="fa fa-star-o"></i>
+                                    <i class="fa fa-star-o"></i>
+                                    <i class="fa fa-star-o"></i>
+                                    <i class="fa fa-star-o"></i>
+                                    <i class="fa fa-star-o"></i>
+                                </div>
+                                <div class="reviews-count">
+                                    {{ restaurantData.rate }}
+                                </div>
+                            </div>
+                        </div>					
+                        </div>
+                </div>				
+                <div class="col-lg-4 col-md-4 col-sm-5">
+                    <div class="food-info-left-box">
+                        <a href="javascript:;" class="check-fav-food">
+                            <i class="fa fa-heart"></i>
+                        </a>
+                        <span class="available-text">Hours: Open today ·{{ restaurantData.hour }}</span>
+                        <span class="non-available-text">Hours: Closed</span>
+                        <p>Minimum Order: ريال0.00</p>				
+                        <ul class="icon-social"> 
+                            <li>
+                                <a href="javascript:;">
+                                    <i class="fa fa-whatsapp"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">
+                                    <i class="fa fa-instagram"></i>
+                                </a>
+                            </li>
+                        </ul>		
+                        <a href="javascript:;" class="bl-btn food-contact-btn">
+                            Contact us
+                        </a>				
+                    </div>
+                </div>				
+            </div>
+        </div>
+    </div>
+    <!-- Inner Page Banner Area End Here -->		
+    <!-- Inner Page Process Start Here -->
+    <div id="page-process-section">
+        <div class="container">
+            <div class="row">
+                    <div class="col-sm-12">
+                    <div class="process-area">
+                        <ul>
+                            <li>
+                                <a href="javascript:;">Create Your Order</a>
+                            </li>
+                            <li>
+                                <i class="fa  fa-angle-double-right"></i>
+                            </li>
+                            <li>
+                                Payment information
+                            </li>
+                            <li>
+                                <i class="fa  fa-angle-double-right"></i>
+                            </li>
+                            <li>
+                                Confirm Order
+                            </li>
+                            <li>
+                                <i class="fa  fa-angle-double-right"></i>
+                            </li>
+                            <li>
+                                Receipt
+                            </li>
+                        </ul>					
+                    </div>
+                </div>
+                </div>
+        </div>
+    </div>
+    <!-- Inner Page Process End Here -->
+    <!-- Inner Page Pagination Start Here -->
+    <div class="container">
+        <div class="row">
+                <div class="col-sm-12">
+                <div class="pagination-area">                       
+                    <ul>
+                        <li class="active">
+                            <a ui-sref="firstNear.index">Home </a>
+                        </li>
+                        <li>
+                            <i class="fa  fa-angle-double-right"></i>
+                        </li>
+                        <li>
+                            <a ui-sref="firstNear.searchResult">Browse Restaurants</a>
+                        </li>
+                        <li>
+                            <i class="fa  fa-angle-double-right"></i>
+                        </li>
+                        <li>
+                            <a href="javascript:;"> Red Lobster</a>
+                        </li>						
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Inner Page Pagination End Here -->	
+    <div class="profile-food">
+        <div class="container"> 
+            <!------tab-headings------>
+            <div class="row">
+                <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">		
+                        <div class="profile-food-right">
+                        <div class="m1 menu">
+                            <div id="menu-center">	
+                                <ul>
+                                    <li class = "{{(tab == 1) ? 'active' : ''}}">
+                                        <a href="javascript:;" ng-click = "tab = 1">Menu</a>
+                                    </li>
+                                    <li class = "{{(tab == 2) ? 'active' : ''}}">
+                                        <a href="javascript:;"  ng-click = "tab = 2">Review</a>
+                                    </li>
+                                    <li class = "{{(tab == 3) ? 'active' : ''}}">
+                                        <a href="javascript:;"  ng-click = "tab = 3">Offers</a>
+                                    </li>
+                                    <li class = "{{(tab == 4) ? 'active' : ''}}">
+                                        <a href="javascript:;"  ng-click = "tab = 4">Opening Hours</a>
+                                    </li>
+                                    <li class = "{{(tab == 5) ? 'active' : ''}}">
+                                        <a href="javascript:;"  ng-click = "tab = 5" >About</a>
+                                    </li>
+                                </ul>
+                            </div>									
+                        </div>		
+                        <!-----tab-contents---->
+                        <div class="tab-content service-content">
+                            <div class="tab-pane active" id="1a" ng-show = "tab === 1">
+                                <div class="food-tabs">
+                                    <div class="row">
+                                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 bhoechie-tab-menu pad-left-15">
+                                            <div class="list-group food-tab-list">												 
+                                                <a href="javascript:;" class="list-group-item text-center" id = "{{'list_' + food.num}}" ng-repeat = "food in restaurantData.foodList" ng-click = "activeList(food.num)">
+                                                        {{ food.country }}
+                                                        <span class="badge badge-price"> {{ food.foodList.length}} </span> 
+                                                </a>											
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 bhoechie-tab">
+                                            <!-- tab 1 -->
+                                            <div class="bhoechie-tab-content active">
+                                                <h4 class="tab-heading tab-heading-food">{{foodMenu.country}}</h4>
+                                                <div class="row">
+                                                    <div class="col-md-12">														
+                                                        <div class="row">
+                                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12" ng-repeat = "smallFood in foodMenu.foodList">
+                                                                <div class="family-box food-category-style">
+                                                                    <div class="row">
+                                                                        <div class="col-sm-12">
+                                                                            <div class="service-image-div"> 
+                                                                                <img src="img/service-box2-1.jpg" class="img-responsive service-img-tag"> 
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-sm-12">
+                                                                            <div class="service-content">
+                                                                                <div class="serve-head"> 
+                                                                                    <span class="family-name">{{smallFood.name}}</span> 
+                                                                                </div>
+                                                                                <div class="service-name">
+                                                                                    <p class="ser-city">{{ smallFood.description_caption }} </p>
+                                                                                </div>
+                                                                                <div class="order-now">
+                                                                                    <span class="rate-box"> {{ smallFood.price }} {{smallFood.currency}} </span>												
+                                                                                    <button type="button" class="rd-btn add-order-btn" data-toggle="modal" data-target="#exampleModalLong" ng-click = "vm.doCartModal(smallFood.num)">
+                                                                                        Add
+                                                                                    </button>
+                                                                                </div> 
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>																													
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>																					  
+                                            <div class="row">
+                                                <div class="col-md-12">  
+                                                    <a href="javascript:;" class="pro-report-iss">Report Issue</a>  
+                                                </div>
+                                            </div>  
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!------tab 1 -------->            
+                            <div class="tab-pane active" id="2a" ng-show = "tab === 2">
+                                <h4 class="tab-heading">Reviews</h4>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <p>
+                                            {{ restaurantData.review}}
+                                        </p>
+                                    </div>
+                                    </div>
+                                </div>
+                            <div class="tab-pane active" id="3a" ng-show = "tab === 3">
+                                <h4 class="tab-heading">Offers</h4>
+                                <div class="row">
+                                    <div class="col-md-12">				
+                                        <p>
+                                            {{ restaurantData.offer }}
+                                        </p>										
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane active" id="4a" ng-show ="tab === 4">
+                                <h4 class="tab-heading">Opening Hours</h4>
+                                <div class="row">
+                                    <div class="col-md-12"> 
+                                        <p>
+                                            {{ restaurantData.openingHour }}
+                                        </p>										
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane active" id="5a" ng-show = "tab === 5">
+                                <h4 class="tab-heading">About</h4>
+                                <div class="row">
+                                    <div class="col-md-12"> 
+                                        <p>
+                                            {{ restaurantData.about }}
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                    <div class="food-profile-sidebar">
+                        <div class="food-info-box">
+                            <p class="panel-heading">Delivery Information</p>
+                            <div class="service-name order-information">
+                                <p class="del-city">
+                                    <span class="bold">Delivery To :</span> 
+                                    <span class="light">{{ restaurantData.deliveryInfo.to}}</span>
+                                </p>
+                                <p class="del-city">
+                                    <span class="bold">Delivery Fee :</span> 
+                                    <span class="light">{{ restaurantData.deliveryInfo.fee }}</span>
+                                </p>
+                                <span class="place-order-text">Please Contact Me Before Placing Order</span>
+                            </div>
+                        </div>
+                        <!---your order-->
+                        <div class="food-info-box">
+                            <h3 class="panel-heading">Your Order</h3>
+                            <div class="service-name delivery-options">
+                                <div class="panel panel-info checkout-style">						
+                                    <div class="row">
+                                        <div class="col-xs-12"> 
+                                            <a href="javascript:;" class="bl-btn clear-button" ng-click = "clearOrder()"> Clear Order </a> 
+                                        </div>						
+                                    </div>					
+                                    <div class="panel-body">
+                                        <div class="row product-row" ng-repeat = "order in orderData">
+                                            <div class="col-xs-2 p-0">
+                                                <img src="img/photo3.jpg" class="img-responsive checkout-img">
+                                            </div>
+                                            <div class="col-xs-5 p-0">
+                                                <p class="ser-city product-name">{{order.name}}</p>
+                                            </div>
+                                            <div class="col-xs-3 text-right p-0">
+                                                <p class="ser-city icon-row"> 
+                                                    <a href="javascript:;" ng-click = "editOrder(order.res_num,order.food_num,order.num)" data-toggle="modal" data-target="#exampleModalLong1">
+                                                        <i class="fa fa-pencil"></i>
+                                                    </a>
+                                                    <a href="javascript:;" ng-click = "deleteOrder(order.num)">
+                                                        <i class="fa fa-trash"></i>
+                                                    </a> 
+                                                </p>
+                                            </div>
+                                            <div class="col-xs-2 p-0">
+                                                <h6 class="chechout-price">
+                                                    <strong>{{order.price}} </strong>
+                                                </h6>
+                                            </div>
+                                        </div>										
+                                    <div class="panel-footer checkout-total">
+                                        <div class="row text-center sub-total subtotal-row">
+                                            <div class="col-xs-9">
+                                                <p class="text-right">
+                                                    <strong>Sub Total </strong> 
+                                                </p>
+                                                </div>
+                                            <div class="col-xs-2"> 
+                                                <strong>{{totalPrice}}</strong> 
+                                            </div>
+                                            </div>
+                                        <div class="row text-center">
+                                            <div class="col-xs-9">
+                                                <p class="text-right strong">Total </p>
+                                                </div>
+                                            <div class="col-xs-2"> 
+                                                <strong>{{totalPrice}}</strong> 
+                                            </div>
+                                        </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        <div class="food-info-box">
+                            <h3 class="panel-heading">Delivery Options</h3>
+                            <div class="service-name order-summery">
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <div class="form-group delivery-option-select">                        			  
+                                                <select id="guest" name="guest" class="form-control form-search-cos slct-slide" ng-model = "deliveryOption">
+                                                
+                                                <option value="pickup">Pick up</option>
+                                                <option value="delivery">Delivery</option>
+                                            </select>					  
+                                            <div class="help-block with-errors">
+
+                                            </div>
+                                            </div>
+                                        </div>
+                                    <div class="col-sm-12">
+                                        <div class="form-group">
+                                            <p class="dlvry-option-datepicker"> 
+                                                <input type="text" class="form-control" id="datepicker" placeholder="Date" ng-model = "deliveryDate">
+                                            </p>                         
+                                            </div>
+                                        </div>
+                                    <div class="col-sm-12">
+                                        <div class="form-group">
+                                            <input type="email" placeholder="Email" class="form-control" name="subject" id="form-subject" ng-model = "deliveryEmail">
+                                            </div>
+                                        <div class="form-group checkbox-custom">
+                                            <div class="checkbox">
+                                                <input type="checkbox" name="check15" id="check15" class="css-checkbox" value = "adapFlag" ng-model = "deliveryAsapFlag">
+                                                <label for="check15" class="css-label css-label-checkout"> 
+                                                    Delivery ASAP? 
+                                                </label>
+                                            </div>
+                                            </div>
+                                        </div>
+                                    <div class="col-sm-12 text-center"> 
+                                        <a href="javascript:;" class="bl-btn plc-order-btn" ng-click = "vm.doPlaceOrder()"> Place Order </a> 
+                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="food-info-box"> 
+                                <ul class="license-block"> 
+                                <p>License</p>
+                                <li>
+                                    <i class="fa fa-user"></i> 
+                                    83763836383
+                                </li>
+                            </ul>
+                            </div>		   
+                        </div>		  
+                        <div class="food-profile-sidebar spl-request">
+                        <div class="service-name declairation">
+                            <p class="ser-city"> 
+                                If you want to create your custom order. you can create special request 
+                            </p>
+                            <a class="hand-btn special-request"> 
+                                Submit Special Request 
+                            </a> 
+                        </div>
+                        </div>             
+                    </div>
+                </div>
+        </div>
+        </div>
+</div>
+<!-- Footer Area Start Here -->
+<div class="clearfix"> </div>
+<!-- Modal -->
+<div class="modal fade add-food-modal" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+    <div class="modal-content">      
+            <div class="modal-body">
+                <h2>{{ oneCartData.name}}</h2>
+                <p>
+                {{ oneCartData.description_full}}
+            </p>	   
+                <div class="food-image">
+                    <img src="img/service-box2-1.jpg" width="150">
+                </div>	   
+                <div class="food-price-block">
+                    <h2>Price</h2>   
+                <div class="col-sm-4">
+                    <label class="radio-inline">
+                        <input type="radio" name="optradio" ng-model = "cartPrice" value="{{oneCartData.small}}">
+                        Small {{ oneCartData.small }}ريال  
+                    </label>
+                </div>		
+                <div class="col-sm-4">
+                    <label class="radio-inline">
+                        <input type="radio" name="optradio" ng-model = "cartPrice" value="{{oneCartData.medium}}">
+                        Medium {{ oneCartData.medium }}ريال
+                    </label>
+                </div>		
+                <div class="col-sm-4">
+                    <label class="radio-inline">
+                        <input type="radio" name="optradio" ng-model = "cartPrice" value="{{oneCartData.large}}">
+                        Large {{ oneCartData.large }}ريال
+                    </label>
+                </div>	
+                </div>	   
+                <div class="food-price-block">
+                    <h2>Quantity</h2>	   
+                    <div class="input-group">
+                    <span class="input-group-btn">
+                        <button type="button" class="quantity-left-minus btn btn-danger btn-number" ng-click = "(quantity > 0)? quantity = quantity - 1: ''">
+                            <span class="glyphicon glyphicon-minus"></span>
+                        </button>
+                    </span>
+                    <input type="text"  ng-model = "quantity"class="form-control input-number">
+                    <span class="input-group-btn">
+                        <button type="button" class="quantity-right-plus btn btn-success btn-number"  ng-click = "quantity = quantity + 1" >
+                            <span class="glyphicon glyphicon-plus"></span>
+                        </button>
+                    </span>
+                </div>								
+                <a href="javascript:;" class="rd-btn spl-intru-btn" ng-click = "specialShowFlag = 1">
+                    Special Instructions 
+                </a>
+                <div class="form-group">
+                        <label for="comment">Add Special Instructions:</label>
+                        <textarea class="form-control" rows="3" id="comment" ng-show = " specialShowFlag === 1" ng-model = "cart_description"></textarea>
+                </div>
+                </div>	   
+                <div class="add-cart-button">	   
+                <ul>
+                    <li>
+                        <a href="javascript:;" class="bl-btn add-btn-cart" ng-click = "vm.addCart()">add to cart</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="line-fill-btn close-food-btn" class="close" data-dismiss="modal" aria-label="Close" ng-click = "specialShowFlag = 2">
+                            close
+                        </a>
+                    </li>					
+                </ul>				
+                </div>   
+        </div>    
+    </div>
+    </div>
+</div>
+<!-- End Modal -->
+<div class="modal fade add-food-modal" id="exampleModalLong1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">      
+                <div class="modal-body">
+                    <h2>{{ oneCartData.name}}</h2>
+                        <p>
+                        {{ oneCartData.description_full}}
+                    </p>	   
+                        <div class="food-image">
+                            <img src="img/service-box2-1.jpg" width="150">
+                        </div>	   
+                        <div class="food-price-block">
+                            <h2>Price</h2>   
+                        <div class="col-sm-4">
+                            <label class="radio-inline">
+                                <input type="radio" name="optradio" ng-model = "cartPrice" value="{{oneCartData.small}}">
+                                Small {{ oneCartData.small }}ريال  
+                            </label>
+                        </div>		
+                        <div class="col-sm-4">
+                            <label class="radio-inline">
+                                <input type="radio" name="optradio" ng-model = "cartPrice" value="{{oneCartData.medium}}">
+                                Medium {{ oneCartData.medium }}ريال
+                            </label>
+                        </div>		
+                        <div class="col-sm-4">
+                            <label class="radio-inline">
+                                <input type="radio" name="optradio" ng-model = "cartPrice" value="{{oneCartData.large}}">
+                                Large {{ oneCartData.large }}ريال
+                            </label>
+                        </div>	
+                        </div>	   
+                        <div class="food-price-block">
+                            <h2>Quantity</h2>	   
+                        <div class="input-group">
+                            <span class="input-group-btn">
+                                <button type="button" class="quantity-left-minus btn btn-danger btn-number" ng-click = "(quantity > 0)? quantity = quantity - 1: ''">
+                                    <span class="glyphicon glyphicon-minus"></span>
+                                </button>
+                            </span>
+                            <input type="text"  ng-model = "quantity"class="form-control input-number">
+                            <span class="input-group-btn">
+                                <button type="button" class="quantity-right-plus btn btn-success btn-number"  ng-click = "quantity = quantity + 1" >
+                                    <span class="glyphicon glyphicon-plus"></span>
+                                </button>
+                            </span>
+                        </div>								
+                        <a href="javascript:;" class="rd-btn spl-intru-btn" ng-click = "specialShowFlag = 1">
+                            Special Instructions 
+                        </a>
+                        <div class="form-group">
+                            <label for="comment">Add Special Instructions:</label>
+                            <textarea class="form-control" rows="3" id="comment" ng-show = " specialShowFlag === 1" ng-model = "cart_description"></textarea>
+                        </div>
+                        </div>	   
+                        <div class="add-cart-button">	   
+                            <ul>
+                                <li>
+                                    <a href="javascript:;" class="bl-btn add-btn-cart" ng-click = "vm.editCart()">add to cart</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;" class="line-fill-btn close-food-btn" class="close" data-dismiss="modal" aria-label="Close" ng-click = "specialShowFlag = 2">
+                                        close
+                                    </a>
+                                </li>					
+                            </ul>				
+                        </div>   
+                </div>    
+            </div>
+        </div>
+    </div>
+</div>
+    
+    
+    

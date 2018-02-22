@@ -1,0 +1,115 @@
+<div>
+    <div id="dashboard-search">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 col-sm-12">
+                    <div class="pagination-area">
+                        <ul>
+                            <li class="active">
+                                <a ui-sref = "firstNear.index">Home </a>
+                            </li>
+                            <li>
+                                <i class="fa  fa-angle-double-right"></i>
+                            </li>
+                            <li>
+                                <a ui-sref = "firstNearMember.seller-dashboard-recent-booking">Booking</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-7 col-sm-12">
+                    <div class="dashboard-search">
+                        <div class="dashboard-search-block col-lg-9 col-sm-9 col-xs-12">
+                            <select id="guest" name="guest" class="col-sm-4 col-xs-6 form-search-cos slct-slide" ng-model = "vm.searchData.service_kind">
+                                <option value="1">Photography</option>
+                                <option value="2">Food</option>
+                                <option value="3">Makeup Artist</option>
+                            </select>
+                            <div class="input-group col-sm-8 col-xs-6">
+                                <input class="form-control" placeholder="Search" autocomplete="off" type="text" ng-model = "vm.searchData.service_location">
+                                <div class="slide-addon"> 
+                                    <i class="fa fa-search"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <a href = "javascript:;" class="bl-btn search-btn"  ui-sref = "firstNear.searchResult">
+                            Search
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+   
+    <div id="collespe-block">
+        <div class="container">
+            <div class="row">
+                <button type="button" class="btn btn-info btn-sm collespe-btn" id="collespe-button" title="Click me">
+                    <span id="glyph" class="fa fa-arrow-up"></span>
+                </button>
+            </div>
+        </div>
+        <div id="collespe-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-5 col-sm-12">
+                        <div class="user-info-dash">
+                            <div class="col-lg-4 col-sm-2 col-xs-12">
+                                <div class="thumbnail-img food-profile-img">
+                                    <img  alt="" class="img-responsive" id= "img_profile_avatar">
+                                </div>
+                            </div>
+                            <div class="col-lg-8 col-sm-10 col-xs-12">
+                                <a ui-sref = "firstNearMember.seller-dashboard-edit-profile" class="edit-pro-top" >
+                                    <i class="fa fa-edit"></i>
+                                </a>
+                                <h2>{{userData.full_name}}</h2>
+                                <p>
+                                    <i class="fa fa-phone"></i> 
+                                   {{ userData.business_phone_number}}
+                                </p>
+                                <p>
+                                    <i class="fa fa-envelope"></i>
+                                    {{userData.email_address}}
+                                </p>
+                                <p> 
+                                    <span>
+                                        (Last login {{userData.last_login}})
+                                    </span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-7 col-sm-12">
+                        <div class="notification-area">
+                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+                                <a href="javascript:;" class="circle-notification or-color" ui-sref = "firstNearMember.customer-dashboard-order-view">
+                                    <p>Order</p>
+                                    <h5>{{ recentActivity.order_num}}</h5>
+                                </a>
+                            </div>
+                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+                                <a href="javascript:;" class="circle-notification bo-color">
+                                    <p>Booking</p>
+                                    <h5>{{ recentActivity.booking_num }}</h5>
+                                </a>
+                            </div>
+                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+                                <a href="javascript:;" ui-sref = "firstNearMember.customer-dashboard-request-page" class="circle-notification re-color">
+                                    <p>request</p>
+                                    <h5>{{ recentActivity.request_num }}</h5>
+                                </a>
+                            </div>
+                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+                                <a href="javascript:;" class="circle-notification rev-color" >
+                                    <p>review</p>
+                                    <h5> {{ recentActivity.review_num }}</h5>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>    
+</div>

@@ -1,0 +1,546 @@
+<style>
+    .modal {
+        text-align: center;
+    }
+    @media screen and (min-width: 768px) { 
+        .modal:before {
+        display: inline-block;
+        vertical-align: middle;
+        content: " ";
+        height: 100%;
+        }
+    }
+    .modal-dialog {
+        display: inline-block;
+        text-align: left;
+        vertical-align: middle;
+    }
+    .with-errors{
+        color: red;
+        text-align: left;
+    }
+</style>
+<div class="wrapper">
+    <seller-dashboard-header>
+    </seller-dashboard-header>
+    <seller-search-profile>        
+    </seller-search-profile>
+    <!-- Dashboard Area Start Here -->
+    <div class="dashboard-area">
+        <div class="container">
+            <div class="row">
+                <!-- Dashboard SideBar Start Here -->
+                <div class="col-md-4">
+                    <seller-dashboard-sidebar>
+                    </seller-dashboard-sidebar>
+                </div>
+                <!-- Dashboard SideBar End Here -->
+                <div class="col-md-8">
+                    <!-- Dashboard Right SideBar Start Here -->
+                    <div class="dashboard-right-bar">
+                        <div class="top-nav-right" id = "businessTab">
+                            <ul class="tab-nav-top">
+                                <li class="active tab-active">
+                                    <a data-target="#busiess-info" data-toggle="tab" id="firstTab">
+                                        Busiess Info
+                                    </a>
+                                </li>
+                                <li>
+                                    <a data-target="#general-settings" data-toggle="tab" id = "secondTab">
+                                        General Settings
+                                    </a>
+                                </li>
+                            </ul>
+                            <div class="tab-content">
+                                <div class="tab-pane active" id="busiess-info">
+                                    <div class="busiess-info-section">
+                                        <p>Add your business info as you want it to appear to your customers.</p>
+                                        <h3>Business Details</h3>
+                                        <form name = "businessDetailForm">
+                                            <div class="omb_login select-business-location-box">
+                                                <h4>Select Location</h4>
+                                                <div class="row ">
+                                                    <div class="col-xs-12 col-sm-12">
+                                                        <div class="omb_loginForm form-cs-check" action="">
+                                                            <div class="btn-group bs-location" data-toggle="buttons">
+                                                                <label class="btn active col-md-3 col-sm-3 col-xs-6" id = "opt_business" ng-click = "setLocationType('business')">
+                                                                    <input type="radio" name="options" id="option2" autocomplete="off" chacked>
+                                                                    <span class="glyphicon glyphicon-ok"></span>
+                                                                    <p>My Business <br> Location</p>
+                                                                </label>
+                                                                <label class="btn col-md-3 col-sm-3 col-xs-6" id = "opt_customer" ng-click = "setLocationType('customer')">
+                                                                    <input type="radio" name="options" id="option1" autocomplete="off">
+                                                                    <span class="glyphicon glyphicon-ok"></span>
+                                                                    <p>Customer <br>Location</p>
+                                                                </label>
+                                                                <label class="btn col-md-3 col-sm-3 col-xs-6" id = "opt_both" ng-click = "setLocationType('both')">
+                                                                    <input type="radio" name="options" id="option1" autocomplete="off">
+                                                                    <span class="glyphicon glyphicon-ok"></span>
+                                                                    <p>Both <br>Location</p>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <div class="input-group">
+                                                            <label>Business Name</label>
+                                                            <input class="form-control" name="business_name" placeholder="Modern Photo Studio" ng-model = "businessDetailData.business_name" type="text" required>
+                                                            <div class="help-block with-errors" ng-show = "businessDetailForm.business_name.$touched && businessDetailForm.business_name.$error.required">
+                                                                Business Name is required       
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="input-group">
+                                                            <label>Phone Number</label>
+                                                            <input class="form-control" name="phone_number" ng-model = "businessDetailData.phone_number" placeholder="54541287874555" type="text" required>
+                                                            <div class="help-block with-errors" ng-show = "businessDetailForm.phone_number.$touched && businessDetailForm.phone_number.$error.required">
+                                                                Phone Number is required       
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-12">
+                                                        <div class="form-group">
+                                                            <label for="comment">
+                                                                Tell your customer what is your business about
+                                                            </label>
+                                                            <textarea class="form-control" rows="4" id="comment" placeholder="Business Detail" ng-model = "businessDetailData.about_business" name = "business_about" required></textarea>
+                                                            <div class="help-block with-errors" ng-show = "businessDetailForm.business_about.$touched && businessDetailForm.business_about.$error.required">
+                                                                Business Detail is required       
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="input-group">
+                                                            <label>What is your Legal License Number?</label>
+                                                            <input class="form-control" name="legal_license_number" ng-model = "businessDetailData.legal_license_no" placeholder="ie. 29389339" type="text">
+                                                            
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6" ng-show = "uploader.queue.length == 0">
+                                                        <div class="input-group upload-license"  nv-file-drop="" uploader="uploader">
+                                                            <label class="upload-label">Upload a copy of your License.</label>
+                                                            <input name="imageUpload" id="imageUpload" nv-file-select="" uploader="uploader" class="hide" type="file">
+                                                            <label for="imageUpload" class="btn upload-file">Select file</label>
+                                                            <div class="input-group-addon slide-addon"> 
+                                                                <a href=""> 
+                                                                    <i class="fa fa-plus"></i> 
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                        <span class="file-info">Accepted files: Png, Pdf max size 20KB</span>
+                                                    </div>
+                                                    <div class="col-md-6" ng-show = "uploader.queue.length != 0" >
+                                                        <div class="input-group upload-license" ng-click="uploader.queue[0].remove()">
+                                                            <label class="upload-label">&nbsp&nbsp</label>                                                                                                                 
+                                                            <label for="imageUpload" class="btn upload-file">Replace file</label>
+                                                            <div class="input-group-addon slide-addon"> 
+                                                                <a href=""> 
+                                                                    <i class="fa fa-minus"></i> 
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                        <span class="file-info">File Name: {{uploader.queue[0].file.name}} Size: {{ uploader.queue[0].file.size/1024/1024|number:2 }} MB</span>
+                                                    </div>
+                                                    <div class="col-md-12">
+                                                        <h6>Do you offer any of the following?</h6>
+                                                        <div class="input-group offer-bussiness">
+                                                            <div class="form-group checkbox-custom">
+                                                                <div class="checkbox">
+                                                                    <input name="check105" id="check105" class="css-checkbox"  type="checkbox" ng-model = "businessDetailData.delivery_flag">
+                                                                    <label for="check105" class="css-label css-label-checkout"> Delivery</label>
+                                                                </div>
+                                                                <div class="checkbox">
+                                                                    <input name="check106" id="check106" class="css-checkbox" type="checkbox" ng-model = "businessDetailData.pickup_flag">
+                                                                    <label for="check106" class="css-label css-label-checkout"> Pickup</label>
+                                                                </div>
+                                                                <div class="checkbox">
+                                                                    <input name="check106" id="check1087" class="css-checkbox" type="checkbox"  ng-model = "businessDetailData.postage_flag">
+                                                                    <label for="check1087" class="css-label css-label-checkout"> Postage</label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-8 col-sm-8 col-xs-12">
+                                                        <h6>What is your Social Media Account?</h6>
+                                                        <div class="search-manage-customer">
+                                                            <p>Instagram @ </p>
+                                                            <div class="search-manage-customer-search">
+                                                                <div class="input-group input-nav-cos ">
+                                                                    <input class="placepicker form-control input-nav-cos brd-ra-0" placeholder="username" name = "instagram" ng-model = "businessDetailData.instagram_account" autocomplete="off" type="text">
+                                                                   
+                                                                </div>
+                                                                
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xs-12 col-sm-12">
+                                                        <ul class="edit-profile-save">
+                                                            <li> 
+                                                                <a href="javascript:;" class="bl-btn edit-cancel-button" ng-click = "doSave()">
+                                                                    save
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                                <div class="tab-pane" id="general-settings">
+                                    <div class="general-settings-section">
+                                        <p class="general-subheading">
+                                            Explore these extra features to give your customers a great booking experience.
+                                        </p>
+                                        <div class="row">
+                                            <div class="col-lg-6 col-md-12">
+                                                <div class="general-option-box">
+                                                    <h3>Set Your Trading Hours</h3>
+                                                    <p>Add your appointment hours and time</p>
+                                                    <div class="general-option-img">
+                                                        <img class="img-responsive" src="img/trading-hours-icon.png">
+                                                    </div>
+                                                    <a href="javascript:;" class="bl-btn chat-quote-btn" data-toggle="modal" data-target="#trading-hours-modal">
+                                                        set availability
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6 col-md-12">
+                                                <div class="general-option-box">
+                                                    <h3>Add Your Booking Policy</h3>
+                                                    <p>Add your cancellation policy and rules for booking.</p>
+                                                    <div class="general-option-img">
+                                                        <img class="img-responsive" src="img/booking-policy-icon.png">
+                                                    </div>
+                                                    <a href="javascript:;" class="bl-btn chat-quote-btn" data-toggle="modal" data-target="#cancellation-policy-modal">
+                                                        set booking policy
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6 col-md-12">
+                                                <div class="general-option-box">
+                                                    <h3>Set Your Bank Account</h3>
+                                                    <p>Add your bank account number to show to your customer.</p>
+                                                    <div class="general-option-img">
+                                                        <img class="img-responsive" src="img/add-bank-account.png">
+                                                    </div>
+                                                    <a href="javascript:;" class="bl-btn chat-quote-btn" data-toggle="modal" data-target="#bank-information-modal">
+                                                        add account
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Dashboard Right SideBar End Here -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Dashboard Area End Here -->
+    <div class="clearfix"> </div>
+    <footer>        
+    </footer>
+</div>
+    <!-- Footer Area Start Here -->
+    <!-- Trading Hours Modal -->
+    <div id="trading-hours-modal" class="modal fade" role="dialog">
+        <div class="modal-dialog modal-md" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">×</button>
+                    <h2>Trading Hours</h2>
+                    <p>Leave unchecked if you are not working on that day</p>
+                </div>
+                <div class="modal-body offer-request">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="trading-hours-heading">
+                                <h5>Choose Day and Time</h5>
+                                <p>Leave unchecked if you are not working on that day.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="input-group offer-bussiness">
+                                <div class="form-group checkbox-custom">
+                                    <div class="checkbox">
+                                        <input name="check105" id="check1051" class="css-checkbox" type="checkbox" ng-model = "mon" ng-checked = "tradingHoursData.mon_from != '' && tradingHoursData.mon_to != ''">
+                                        <label for="check1051" class="css-label css-label-checkout"> Monday</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-9">
+                            <div class="trading-input">
+                                <div class="input-group">
+                                    <input class="form-control" name="mon_from" ng-model = "tradingHoursData.mon_from" placeholder="10:00 am" type="text">
+                                </div>
+                                <p>to</p>
+                                <div class="input-group">
+                                    <input class="form-control" name="mon_to" ng-model = "tradingHoursData.mon_to" placeholder="06:00 am" type="text">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="input-group offer-bussiness">
+                                <div class="form-group checkbox-custom">
+                                    <div class="checkbox">
+                                        <input name="check105" id="check1052" class="css-checkbox" type="checkbox" ng-model = "tue" ng-checked = "tradingHoursData.tue_from != '' && tradingHoursData.tue_to != ''">
+                                        <label for="check1052" class="css-label css-label-checkout"> Tuesday</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-9">
+                            <div class="trading-input">
+                                <div class="input-group">
+                                    <input class="form-control" name="tue_from" ng-model = "tradingHoursData.tue_from" placeholder="10:00 am" type="text">
+                                </div>
+                                <p>to</p>
+                                <div class="input-group">
+                                    <input class="form-control" name="tue_to" ng-model = "tradingHoursData.tue_to" placeholder="06:00 am" type="text">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="input-group offer-bussiness">
+                                <div class="form-group checkbox-custom">
+                                    <div class="checkbox">
+                                        <input name="check105" id="check1053" class="css-checkbox" type="checkbox" ng-model = "wed" ng-checked = "tradingHoursData.wed_from != '' && tradingHoursData.wed_to != ''">
+                                        <label for="check1053" class="css-label css-label-checkout"> Wednesday</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-9" >
+                            <div class="trading-input">
+                                <div class="input-group">
+                                    <input class="form-control" name="wed_from" ng-model = "tradingHoursData.wed_from" placeholder="10:00 am" type="text">
+                                </div>
+                                <p>to</p>
+                                <div class="input-group">
+                                    <input class="form-control" name="wed_to" ng-model = "tradingHoursData.wed_to" placeholder="06:00 am" type="text">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="input-group offer-bussiness">
+                                <div class="form-group checkbox-custom">
+                                    <div class="checkbox">
+                                        <input name="check105" id="check10544" class="css-checkbox" type="checkbox" ng-model = "thu" ng-checked = "tradingHoursData.thu_from != '' && tradingHoursData.thu_to != ''">
+                                        <label for="check10544" class="css-label css-label-checkout"> Thursday</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-9">
+                            <div class="trading-input">
+                                <div class="input-group">
+                                    <input class="form-control" name="thu_from" ng-model = "tradingHoursData.thu_from" placeholder="10:00 am" type="text">
+                                </div>
+                                <p>to</p>
+                                <div class="input-group">
+                                    <input class="form-control" name="thu_to" ng-model = "tradingHoursData.thu_to" placeholder="06:00 am" type="text">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="input-group offer-bussiness">
+                                <div class="form-group checkbox-custom">
+                                    <div class="checkbox">
+                                        <input name="check105" id="check1055" class="css-checkbox" type="checkbox" ng-model = "fri" ng-checked = "tradingHoursData.fri_from != '' && tradingHoursData.fri_to != ''">
+                                        <label for="check1055" class="css-label css-label-checkout"> Friday</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-9">
+                            <div class="trading-input">
+                                <div class="input-group">
+                                    <input class="form-control" name="fri_from" ng-model = "tradingHoursData.fri_from" placeholder="10:00 am" type="text">
+                                </div>
+                                <p>to</p>
+                                <div class="input-group">
+                                    <input class="form-control" name="fri_to" ng-model = "tradingHoursData.fri_to" placeholder="06:00 am" type="text">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="input-group offer-bussiness">
+                                <div class="form-group checkbox-custom">
+                                    <div class="checkbox">
+                                        <input name="check105" id="check1056" class="css-checkbox" type="checkbox" ng-model = "sat" ng-checked = "tradingHoursData.sat_from != '' && tradingHoursData.sat_to != ''">
+                                        <label for="check1056" class="css-label css-label-checkout"> Saturay</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-9">
+                            <div class="trading-input">
+                                <div class="input-group">
+                                    <input class="form-control" name="sat_from" ng-model = "tradingHoursData.sat_from" placeholder="10:00 am" type="text">
+                                </div>
+                                <p>to</p>
+                                <div class="input-group">
+                                    <input class="form-control" name="sat_to" ng-model = "tradingHoursData.sat_to" placeholder="06:00 am" type="text">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="input-group offer-bussiness">
+                                <div class="form-group checkbox-custom">
+                                    <div class="checkbox">
+                                        <input name="check105" id="check1057" class="css-checkbox" type="checkbox" ng-model = "sun" ng-checked = "tradingHoursData.sun_from != '' && tradingHoursData.sun_to != ''">
+                                        <label for="check1057" class="css-label css-label-checkout"> Sunday</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-9" >
+                            <div class="trading-input">
+                                <div class="input-group">
+                                    <input class="form-control" name="sun_from" ng-model = "tradingHoursData.sun_from" placeholder="10:00 am" type="text">
+                                </div>
+                                <p>to</p>
+                                <div class="input-group">
+                                    <input class="form-control" name="sun_to" ng-model = "tradingHoursData.sun_to" placeholder="06:00 am" type="text">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12">
+                            <ul class="edit-profile-save">
+                                <li>
+                                    <a href="javascript:;"> 
+                                    </a>
+                                    <a href="javascript:;" data-dismiss = "modal" class="line-fill-btn edit-cancel-button">
+                                        Cancel
+                                    </a>
+                                </li>
+                                <li> 
+                                    <a href="javascript:;" ng-click = "doSaveTradingHoursData()" class="bl-btn edit-cancel-button">
+                                        save
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- End Modal -->
+    <!-- Cancellation Policy Modal -->
+    <div id="cancellation-policy-modal" class="modal fade" role="dialog">
+        <div class="modal-dialog modal-md" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">×</button>
+                    <h2>Cancellation Policy</h2>
+                </div>
+                <div class="modal-body offer-request">                   
+                    <div class="row" ng-form name="policyForm">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="comment">Cancellation Policy <small>(Optional)</small></label>
+                                <textarea class="form-control" rows="6" id="comment" name = "booking_policy" ng-model = "bookingPolicyData.booking_policy" placeholder="e.g once you paid the deposit you can cancel the appointment, but there will be no refund." required></textarea>
+                                <div class="help-block with-errors" ng-show = "policyForm.booking_policy.$touched && policyForm.booking_policy.$error.required">
+                                    Cancellation Policy is required       
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-12">
+                            <ul class="edit-profile-save">
+                                <li> 
+                                    <a href="javascript:;" class="bl-btn edit-cancel-button" ng-click = "doSaveBookingPolicyData()">
+                                        save
+                                    </a>
+                                </li>
+                            </ul>                        
+                        </div>
+                    </div>                   
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Modal -->
+    <!-- Add Bank Information Modal -->
+    <div id="bank-information-modal" class="modal fade" role="dialog">
+        <div class="modal-dialog modal-md" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">×</button>
+                    <h2>Add Your Bank Information</h2>
+                </div>
+                <div class="modal-body offer-request">
+                    <div class="row" ng-form name="bankForm">
+                        <div class="col-md-6">
+                            <div class="input-group">
+                                <label>Add Bank Name</label>
+                                <input class="form-control" name="bank_name" ng-model = "bankInformationData.bank_name" placeholder="Bank Name" type="text" required>
+                                <div class="help-block with-errors" ng-show = "bankForm.bank_name.$touched && bankForm.bank_name.$error.required">
+                                    Bank Name is required       
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="input-group">
+                                <label>Add Account Name</label>
+                                <input class="form-control" name="account_name" ng-model = "bankInformationData.name_of_account_holder" placeholder="Name of Account Holder" type="text" required>
+                                <div class="help-block with-errors" ng-show = "bankForm.account_name.$touched && bankForm.account_name.$error.required">
+                                    Account Name is required       
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="input-group">
+                                <label>Add Account Number</label>
+                                <input class="form-control" name="account_number" ng-model = "bankInformationData.bank_account_no" placeholder="Full Account Number" type="text" required>
+                                <div class="help-block with-errors" ng-show = "bankForm.account_number.$touched && bankForm.account_number.$error.required">
+                                    Account Number is required       
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <p class="bank-disclaimer-text">
+                                <strong>Disclaimer:</strong> 
+                                It’s your responsibility to update your account information and
+                                tell your customer about it. We are going to share you account information with only customers
+                                who your your service.
+                            </p>
+                        </div>
+                        <div class="col-xs-12 col-sm-12">
+                            <ul class="edit-profile-save">
+                                <li> 
+                                    <a href="javascript:;" class="bl-btn edit-cancel-button" ng-click = "doSaveBankInformationData()">save</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Modal -->

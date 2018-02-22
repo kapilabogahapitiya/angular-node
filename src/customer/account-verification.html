@@ -1,0 +1,83 @@
+<div class="wrapper">
+    <!-- Header Area Start Here -->
+    <!-- Inner Page Banner Area Start Here -->
+    <div class="inner-page-banner-area">
+        <div class="container">
+            <div class="pagination-area">
+                <h2>
+                    Account Verification
+                </h2>
+                <p>
+                    Login to start interacting with other users.
+                </p>
+            </div>
+        </div>
+    </div>
+    <!-- Inner Page Banner Area End Here -->
+    <!-- Inner Page Pagination Start Here -->
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="pagination-area">
+                    <ul>
+                        <li class="active">
+                            <a ui-sref = "firstNear.index">
+                                Home 
+                            </a>
+                        </li>
+                        <li>
+                            <i class="fa  fa-angle-double-right"></i>
+                        </li>
+                        <li>
+                            <a href="javascript:;">Account Verification</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Inner Page Pagination End Here -->
+    <!-- About Us section Start Here -->
+    <div class="signup-step">
+        <div class="container">
+            <div class="account-varification-box col-md-6 col-md-offset-3">
+                <div class="form-group checkbox-custom">
+                    <h3 class="mainquestion">
+                        Please verify Your Phone Number to complete your registration.
+                    </h3>
+                    <p>
+                        Enter Code Received on [0123456789]:
+                    </p>
+                    <form class="form-inline" name = "verifyForm">
+                        <div class="clearfix"></div>
+                        <div class="omb_login">
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-12">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control w-100" id="exampleInputEmail2" name = "authCode" ng-model = "verifyData.authCode" placeholder="xxxxx" required>
+                                    </div>
+                                    <span class="help-block" style = "color:red;" ng-show = "verifyForm.authCode.$touched && verifyForm.authCode.$error.required">
+                                        AuthCode  is required                             
+                                    </span>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="service-signup">
+                                        <a href="javascript:;" class="bl-btn varify-button" ng-click = "doVerify()">Verify</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    <p class="bottom-text">
+                        You are step away before from receiving order from people are you. Hurry up
+                    </p>
+                    <a class="send-code-again" href="javascript:;" ng-click = "doVerify()">Send the Code Again</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- About Us section End Here -->
+</div>
+<!-- Footer Area end Here -->
+<div class="clearfix"> </div>
+<!-- Footer Area Start Here -->

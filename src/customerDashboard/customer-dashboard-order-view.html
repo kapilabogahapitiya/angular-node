@@ -1,0 +1,125 @@
+<div class="wrapper">
+    <dashboard-header>
+    </dashboard-header>
+    <search-profile>
+    </search-profile>
+    <!-- Dashboard Area Start Here -->	
+    <div class="dashboard-area">                
+        <div class="container">
+			<div class="row">					
+                <!-- Dashboard SideBar End Here -->					
+                <div class="col-md-4">
+                    <dashboard-sidebar>
+                    </dashboard-sidebar>
+                </div>
+                <!-- Dashboard SideBar End Here -->		
+				<div class="col-md-8">
+					<div class="dashboard-right-bar">
+						<div class="order-list-block">							
+							<div class="order-list-heading">
+							    <h4>
+                                    <i class="fa fa-file"></i> 
+                                    My Order
+                                </h4>
+							</div>
+						    <div class="row">
+						        <div class="col-lg-6 col-sm-6 col-xs-12">
+						            <div class="filter-order-date">
+						                <p>Filter By</p>
+						                <div class="order-date-picker">
+                                            <div class="input-group input-nav-cos ">                                            
+                                                <input class="placepicker form-control input-nav-cos brd-ra-0" placeholder="Oct 10, 2017" autocomplete="off" type="text">
+                                                <div class="input-group-addon slide-addon"> 
+                                                    <a href="javascript:;"> 
+                                                        <i class="fa fa-calendar"></i> 
+                                                    </a>
+                                                </div>
+                                            </div>
+										</div>
+						            </div>
+						        </div>							
+                                <div class="col-lg-6 col-sm-6 col-xs-12">
+                                    <div class="pagination-order-box">                                        
+                                        <ul>
+                                            <li>
+                                                <a href="javascript:;" ng-click = "prev()">
+                                                    <i class="fa fa-angle-left"></i>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:;" ng-click = "next()">
+                                                    <i class="fa fa-angle-right"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                        <p>{{ orderDatas[0].num }}-{{ orderDatas[orderDatas.length-1].num }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+							    <div class="col-md-12">
+							        <div class="status-detail-block" ng-repeat = "orderData in orderDatas">							
+							            <div class="col-lg-8 col-sm-6 col-xs-12">
+							                <div class="status-detail-box">
+							                    <div class="thumbnail-img status-detail-img">
+				                                    <img src="img/user-profile.jpg" alt="" class="img-responsive">
+				                                </div>				
+				                                <div class="status-detail-text">
+                                                    <h3>
+                                                        {{ orderData.name }}
+                                                    </h3>
+                                                    <p>
+                                                        {{ orderData.datetime}}
+                                                    </p>
+                                                    <h4>
+                                                        {{ orderData.price }}
+                                                    </h4>
+                                                    <ul class="status-detail-btn">
+                                                        <li>
+                                                            <a ui-sref = "firstNearMember.customer-dashboard-order-track" class="line-fill-btn view-order-btn">
+                                                                view order
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="javascript:;" class="line-fill-btn cancel-order-btn">
+                                                               {{ orderData.buttonCaption}}
+                                                            </a>
+                                                        </li>
+                                                    </ul>                                                    
+                                                    <span>
+                                                        <p>   
+                                                            {{ orderData.lastUpdate}}
+                                                        </p>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-sm-6 col-xs-12">
+							                <div class="status-order">
+							                    <p>Status</p>
+							                    <h5 class="{{orderData.class}}">{{orderData.status}}</h5>
+							                    <a href="javascript:;" class="line-fill-btn send-order-btn" ng-show = "orderData.flag">
+                                                    send message
+                                                </a>
+							                </div>					
+							            </div>
+                                    </div>
+                                   		
+							    </div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+        </div>
+    </div>		
+	<!-- Dashboard Area End Here -->	
+    <div class="clearfix"> </div>
+    <footer>
+    </footer>
+</div>
+
+
+
+
+

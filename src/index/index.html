@@ -1,0 +1,727 @@
+<style>
+	.nivoSlider {
+		height: 727px;
+	}
+</style>
+<div class="slider1-area">
+	<div class="bend niceties preview-1">
+		<div id="ensign-nivoslider-3" class="slides" slideit>
+			<img src="img/slide1.jpg" alt="slider" title="#slider-direction-1" />
+			<img src="img/slide2.jpg" alt="slider" title="#slider-direction-2" />
+			<img src="img/slide3.jpg" alt="slider" title="#slider-direction-3" />
+		</div>
+		<div id="slider-direction-1" class="t-cn slider-direction">
+			<div class="slider-content s-tb slide-cos">
+				<div class="title-container s-tb-c">
+					<h1 class="title1">
+						What are you looking for?
+					</h1>
+					<p>
+						Connect with service providers in your area
+					</p>
+					<div class="clearfix">
+						<div class="search">
+							<div class="container">
+								<div class="row">
+									<div class="col-md-10 col-md-offset-1 col-sm-12">
+										<div class="form-section">
+											<div class="row">
+												<form role="form">
+													<div class="form-white">
+														<div class="row">
+															<div class="col-md-5 col-sm-6 col-xs-12">
+																<div class="row md-m-0">
+																	<div class="form-group md-m-l-10">
+																		<table>
+																			<tr>
+																				<td>
+																					<label class="label-text" for="service_kind">
+																						I need a
+																					</label>
+																				</td>
+																				<td>
+																					<select id="service_kind" name="service_kind" class="form-control form-search-cos slct-slide"  onchange = "angular.element(this).scope().serviceKindChange(this.value)" >
+																						<option value="1">Photography</option>
+																						<option value="2">Food</option>
+																						<option value="3">Makeup Artist</option>
+																					</select>
+																				</td>
+																			</tr>
+																		</table>
+																	</div>
+																</div>
+															</div>
+															<div class="col-md-5 col-sm-6 col-xs-12 center-search">
+																<div class="row md-m-0">
+																	<div class="form-group quotes-placepicker quotes-placepicker-dlvry">
+																		<table>
+																			<tr>
+																				<td>
+																					<label class="search-label-text" for="guest">
+																						Right Now In
+																					</label>
+																				</td>
+																				<td>
+																					<div class="input-group ">
+																						<input type="text" class="placepicker form-control" placeholder="Enter your city" name = "service_location" onchange="angular.element(this).scope().serviceLocationChange(this.value)">
+																						<div class="input-group-addon slide-addon">
+																							<a href=""> 
+																								<i class="fa fa-map-marker">
+																								</i> 
+																							</a>
+																						</div>
+																					</div>
+																				</td>
+																			</tr>
+																		</table>
+																	</div>
+																</div>
+															</div>
+															<div class="col-md-2 col-sm-12 col-xs-12 pading-0-xs md-text-cen">
+																<input type = "button"  value = "Search" onclick="angular.element(this).scope().doSearch()" class="ghost-semi-color-btn text-center col-oran hand-btn p-13-20">
+																	
+															</div>
+														</div>
+													</div>
+												</form>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<p class="or-text">
+						<i class="fa fa-angle-down" aria-hidden="true"></i>
+					</p>
+					<div class="slider-btn-area xs-dis-non">
+						<button type="submit" class="ghost-semi-color-btn text-center col-oran hand-btn p-13-20 med-d-n-8 col-req" onclick="angular.element(this).scope().doRequestQuote()">
+							REQUEST QUOTES 
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- <div id="slider-direction-2" class="t-cn slider-direction">
+		<div class="slider-content s-tb slide-cos">
+			<div class="title-container s-tb-c">
+				<h1 class="title1">What are you looking for?</h1>
+				<p>Connect with service providers in your area</p>
+				<div class="clearfix">
+					<div class="search">
+						<div class="container">
+							<div class="row">
+								<div class="col-md-10 col-md-offset-1 col-sm-12">
+									<div class="form-section">
+										<div class="row">
+											<form role="form">
+												<div class="form-white">
+													<div class="row">
+														<div class="col-md-5 col-sm-6 col-xs-12">
+															<div class="row md-m-0">
+																<div class="form-group md-m-l-10">
+																	<table>
+																		<tr>
+																			<td>
+																				<label class="label-text" for="guest">I need a</label>
+																			</td>
+																			<td>
+																				<select id="guest" name="guest" class="form-control form-search-cos slct-slide">
+																					<option value="1">Photography</option>
+																					<option value="2">Food</option>
+																					<option value="3">Makeup Artist</option>
+																				</select>
+																			</td>
+																		</tr>
+																	</table>
+																</div>
+															</div>
+														</div>
+														<div class="col-md-5 col-sm-6 col-xs-12 center-search">
+															<div class="row md-m-0">
+																<div class="form-group quotes-placepicker quotes-placepicker-dlvry">
+																	<table>
+																		<tr>
+																			<td>
+																				<label class="search-label-text" for="guest">Right Now In</label>
+																			</td>
+																			<td>
+																				<div class="input-group ">
+																					<input type="text" class="placepicker form-control" placeholder="Enter your city">
+																					<div class="input-group-addon slide-addon"> <a href=""> <i class="fa fa-map-marker"></i> </a></div>
+																				</div>
+																			</td>
+																		</tr>
+																	</table>
+																</div>
+															</div>
+														</div>
+														<div class="col-md-2 col-sm-12 col-xs-12 pading-0-xs md-text-cen">
+															<button type="submit" class="ghost-semi-color-btn text-center col-oran hand-btn p-13-20">Search</button>
+														</div>
+													</div>
+												</div>
+											</form>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<p class="or-text"><i class="fa fa-angle-down" aria-hidden="true"></i></p>
+				<div class="slider-btn-area xs-dis-non">
+					<button type="submit" class="ghost-semi-color-btn text-center col-oran hand-btn p-13-20 med-d-n-8 col-req"> REQUEST QUOTES </button>
+				</div>
+			</div>
+		</div>
+	</div> -->
+</div>
+<div class="clearfix"> </div>
+<div class="service-of-the-day2-area reco-section">
+	<div class="container">
+		<div class="reco-box">
+			<div class="row">
+				<div class="col-md-6 col-sm-6 col-xs-6">
+					<h2 class="title-color">{{ 'IndexRecom' | translate }}</h2>
+				</div>
+				<div class="col-md-6 col-sm-6 col-xs-6"> <a ng-click="doSeeMore(0)" class="see-more-link"> See More<i class="fa fa-long-arrow-right"></i> </a></div>
+			</div>
+			<div class="row">
+				<div class="rc-carousel" data-loop="true" data-items="3" data-margin="0" data-autoplay="false" data-autoplay-timeout="7000"
+				 data-smart-speed="500" data-dots="false" data-nav="true" data-nav-speed="false" data-r-x-small="1" data-r-x-small-nav="false"
+				 data-r-x-small-dots="true" data-r-x-medium="2" data-r-x-medium-nav="false" data-r-x-medium-dots="true" data-r-small="2"
+				 data-r-small-nav="true" data-r-small-dots="false" data-r-medium="3" data-r-medium-nav="true" data-r-medium-dots="false">
+					<div class="service-box2">
+						<div class="service-box2-img-holder"> <a href="#"><img src="img/service-box2-1.jpg" alt="" class="img-responsive"></a> </div>
+						<div class="service-box2-bottom-content-holder">
+							<h3><a href="#">Rolling Dough Cookie Company</a></h3>
+							<span class="loc-owl"><i class="fa fa-map-marker" aria-hidden="true"></i> Riyadh, Saudi Arabia </span>
+							<ul class="rating">
+								<li><i class="fa fa-star" aria-hidden="true"></i></li>
+								<li><i class="fa fa-star" aria-hidden="true"></i></li>
+								<li><i class="fa fa-star" aria-hidden="true"></i></li>
+								<li class="rate-change"><i class="fa fa-star" aria-hidden="true"></i></li>
+								<li class="rate-change"><i class="fa fa-star" aria-hidden="true"></i></li>
+								<li class="owl-review">145</li>
+							</ul>
+						</div>
+					</div>
+					<div class="service-box2">
+						<div class="service-box2-img-holder"> <a href="#"><img src="img/service-box2-1.jpg" alt="" class="img-responsive"></a> </div>
+						<div class="service-box2-bottom-content-holder">
+							<h3><a href="#">Rolling Dough Cookie Company</a></h3>
+							<span class="loc-owl"><i class="fa fa-map-marker" aria-hidden="true"></i> Riyadh, Saudi Arabia </span>
+							<ul class="rating">
+								<li><i class="fa fa-star" aria-hidden="true"></i></li>
+								<li><i class="fa fa-star" aria-hidden="true"></i></li>
+								<li><i class="fa fa-star" aria-hidden="true"></i></li>
+								<li class="rate-change"><i class="fa fa-star" aria-hidden="true"></i></li>
+								<li class="rate-change"><i class="fa fa-star" aria-hidden="true"></i></li>
+								<li class="owl-review">145</li>
+							</ul>
+						</div>
+					</div>
+					<div class="service-box2">
+						<div class="service-box2-img-holder"> <a href="#"><img src="img/service-box2-1.jpg" alt="" class="img-responsive"></a> </div>
+						<div class="service-box2-bottom-content-holder">
+							<h3><a href="#">Rolling Dough Cookie Company</a></h3>
+							<span class="loc-owl"><i class="fa fa-map-marker" aria-hidden="true"></i> Riyadh, Saudi Arabia </span>
+							<ul class="rating">
+								<li><i class="fa fa-star" aria-hidden="true"></i></li>
+								<li><i class="fa fa-star" aria-hidden="true"></i></li>
+								<li><i class="fa fa-star" aria-hidden="true"></i></li>
+								<li class="rate-change"><i class="fa fa-star" aria-hidden="true"></i></li>
+								<li class="rate-change"><i class="fa fa-star" aria-hidden="true"></i></li>
+								<li class="owl-review">145</li>
+							</ul>
+						</div>
+					</div>
+					<div class="service-box2">
+						<div class="service-box2-img-holder"> <a href="#"><img src="img/service-box2-1.jpg" alt="" class="img-responsive"></a> </div>
+						<div class="service-box2-bottom-content-holder">
+							<h3><a href="#">Rolling Dough Cookie Company</a></h3>
+							<span class="loc-owl"><i class="fa fa-map-marker" aria-hidden="true"></i> Riyadh, Saudi Arabia </span>
+							<ul class="rating">
+								<li><i class="fa fa-star" aria-hidden="true"></i></li>
+								<li><i class="fa fa-star" aria-hidden="true"></i></li>
+								<li><i class="fa fa-star" aria-hidden="true"></i></li>
+								<li class="rate-change"><i class="fa fa-star" aria-hidden="true"></i></li>
+								<li class="rate-change"><i class="fa fa-star" aria-hidden="true"></i></li>
+								<li class="owl-review">145</li>
+							</ul>
+						</div>
+					</div>
+					<div class="service-box2">
+						<div class="service-box2-img-holder"> <a href="#"><img src="img/service-box2-1.jpg" alt="" class="img-responsive"></a> </div>
+						<div class="service-box2-bottom-content-holder">
+							<h3><a href="#">Rolling Dough Cookie Company</a></h3>
+							<span class="loc-owl"><i class="fa fa-map-marker" aria-hidden="true"></i> Riyadh, Saudi Arabia </span>
+							<ul class="rating">
+								<li><i class="fa fa-star" aria-hidden="true"></i></li>
+								<li><i class="fa fa-star" aria-hidden="true"></i></li>
+								<li><i class="fa fa-star" aria-hidden="true"></i></li>
+								<li class="rate-change"><i class="fa fa-star" aria-hidden="true"></i></li>
+								<li class="rate-change"><i class="fa fa-star" aria-hidden="true"></i></li>
+								<li class="owl-review">145</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Family Service Area Start Here -->
+<div class="service-of-the-day2-area">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6 col-sm-6 col-xs-6">
+				<h2 class="title-color">Restaurant Service</h2>
+			</div>
+			<div class="col-md-6 col-sm-6 col-xs-6"> 
+				<a ng-click="doSeeMore(2)" class="see-more-link">
+				 	See More
+					<i class="fa fa-long-arrow-right">
+					</i> 
+				</a>
+			</div>
+		</div>
+		<div class="row">
+			<div class="rc-carousel" data-loop="true" data-items="3" data-margin="0" data-autoplay="false" data-autoplay-timeout="7000"
+			 data-smart-speed="500" data-dots="false" data-nav="true" data-nav-speed="false" data-r-x-small="1" data-r-x-small-nav="false"
+			 data-r-x-small-dots="true" data-r-x-medium="2" data-r-x-medium-nav="false" data-r-x-medium-dots="true" data-r-small="2"
+			 data-r-small-nav="true" data-r-small-dots="false" data-r-medium="4" data-r-medium-nav="true" data-r-medium-dots="false">
+				<div class="service-box2">
+					<div class="service-box2-img-holder"> 
+						<a href="#">
+							<img src="img/service-box2-1.jpg" alt="" class="img-responsive">
+						</a> 
+					</div>
+					<div class="service-box2-bottom-content-holder">
+						<h3><a href="#">The Dairy Godmother</a></h3>
+						<span class="loc-owl"><i class="fa fa-map-marker" aria-hidden="true"></i> Riyadh, Saudi Arabia </span>
+						<ul class="rating">
+							<li><i class="fa fa-star" aria-hidden="true"></i></li>
+							<li><i class="fa fa-star" aria-hidden="true"></i></li>
+							<li><i class="fa fa-star" aria-hidden="true"></i></li>
+							<li class="rate-change"><i class="fa fa-star" aria-hidden="true"></i></li>
+							<li class="rate-change"><i class="fa fa-star" aria-hidden="true"></i></li>
+							<li class="owl-review">145</li>
+						</ul>
+					</div>
+					</div>
+				<div class="service-box2">
+					<div class="service-box2-img-holder"> <a href="#"><img src="img/service-box2-1.jpg" alt="" class="img-responsive"></a> </div>
+					<div class="service-box2-bottom-content-holder">
+						<h3><a href="#">Rolling Dough Cookie Company</a></h3>
+						<span class="loc-owl"><i class="fa fa-map-marker" aria-hidden="true"></i> Riyadh, Saudi Arabia </span>
+						<ul class="rating">
+							<li><i class="fa fa-star" aria-hidden="true"></i></li>
+							<li><i class="fa fa-star" aria-hidden="true"></i></li>
+							<li><i class="fa fa-star" aria-hidden="true"></i></li>
+							<li class="rate-change"><i class="fa fa-star" aria-hidden="true"></i></li>
+							<li class="rate-change"><i class="fa fa-star" aria-hidden="true"></i></li>
+							<li class="owl-review">145</li>
+						</ul>
+					</div>
+				</div>
+				<div class="service-box2">
+					<div class="service-box2-img-holder"> <a href="#"><img src="img/service-box2-1.jpg" alt="" class="img-responsive"></a> </div>
+					<div class="service-box2-bottom-content-holder">
+						<h3><a href="#">Tequila Mockingbird</a></h3>
+						<span class="loc-owl"><i class="fa fa-map-marker" aria-hidden="true"></i> Riyadh, Saudi Arabia </span>
+						<ul class="rating">
+							<li><i class="fa fa-star" aria-hidden="true"></i></li>
+							<li><i class="fa fa-star" aria-hidden="true"></i></li>
+							<li><i class="fa fa-star" aria-hidden="true"></i></li>
+							<li class="rate-change"><i class="fa fa-star" aria-hidden="true"></i></li>
+							<li class="rate-change"><i class="fa fa-star" aria-hidden="true"></i></li>
+							<li class="owl-review">145</li>
+						</ul>
+					</div>
+				</div>
+				<div class="service-box2">
+					<div class="service-box2-img-holder"> <a href="#"><img src="img/service-box2-1.jpg" alt="" class="img-responsive"></a> </div>
+					<div class="service-box2-bottom-content-holder">
+						<h3><a href="#">Planet of the Crepes</a></h3>
+						<span class="loc-owl"><i class="fa fa-map-marker" aria-hidden="true"></i> Riyadh, Saudi Arabia </span>
+						<ul class="rating">
+							<li><i class="fa fa-star" aria-hidden="true"></i></li>
+							<li><i class="fa fa-star" aria-hidden="true"></i></li>
+							<li><i class="fa fa-star" aria-hidden="true"></i></li>
+							<li class="rate-change"><i class="fa fa-star" aria-hidden="true"></i></li>
+							<li class="rate-change"><i class="fa fa-star" aria-hidden="true"></i></li>
+							<li class="owl-review">145</li>
+						</ul>
+					</div>
+				</div>
+				<div class="service-box2">
+					<div class="service-box2-img-holder"> <a href="#"><img src="img/service-box2-1.jpg" alt="" class="img-responsive"></a> </div>
+					<div class="service-box2-bottom-content-holder">
+						<h3><a href="#">The Dairy Godmother</a></h3>
+						<span class="loc-owl"><i class="fa fa-map-marker" aria-hidden="true"></i> Riyadh, Saudi Arabia </span>
+						<ul class="rating">
+							<li><i class="fa fa-star" aria-hidden="true"></i></li>
+							<li><i class="fa fa-star" aria-hidden="true"></i></li>
+							<li><i class="fa fa-star" aria-hidden="true"></i></li>
+							<li class="rate-change"><i class="fa fa-star" aria-hidden="true"></i></li>
+							<li class="rate-change"><i class="fa fa-star" aria-hidden="true"></i></li>
+							<li class="owl-review">145</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Family Service Area End Here -->
+
+<!-- Photography Service Area Start Here -->
+<div class="service-of-the-day2-area photo-bg-cstm">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6 col-sm-6 col-xs-6">
+				<h2 class="title-color">Photography Service</h2>
+			</div>
+			<div class="col-md-6 col-sm-6 col-xs-6"> <a ng-click="doSeeMore(1)" class="see-more-link"> See More<i class="fa fa-long-arrow-right"></i> </a></div>
+		</div>
+		<div class="row">
+			<div class="rc-carousel" data-loop="true" data-items="3" data-margin="0" data-autoplay="false" data-autoplay-timeout="7000"
+			 data-smart-speed="500" data-dots="false" data-nav="true" data-nav-speed="false" data-r-x-small="1" data-r-x-small-nav="false"
+			 data-r-x-small-dots="true" data-r-x-medium="2" data-r-x-medium-nav="false" data-r-x-medium-dots="true" data-r-small="2"
+			 data-r-small-nav="true" data-r-small-dots="false" data-r-medium="4" data-r-medium-nav="true" data-r-medium-dots="false">
+				<div class="service-box2">
+					<div class="service-box2-img-holder"> 
+						<a href="#">
+							<img src="img/service-box2-1.jpg" alt="" class="img-responsive">
+						</a> 
+					</div>
+					<div class="service-box2-bottom-content-holder">
+						<h3><a href="#">Photo Shoots Studios</a></h3>
+						<span class="loc-owl"><i class="fa fa-map-marker" aria-hidden="true"></i> Riyadh, Saudi Arabia </span>
+						<ul class="rating">
+							<li><i class="fa fa-star" aria-hidden="true"></i></li>
+							<li><i class="fa fa-star" aria-hidden="true"></i></li>
+							<li><i class="fa fa-star" aria-hidden="true"></i></li>
+							<li class="rate-change"><i class="fa fa-star" aria-hidden="true"></i></li>
+							<li class="rate-change"><i class="fa fa-star" aria-hidden="true"></i></li>
+							<li class="owl-review">145</li>
+						</ul>
+					</div>
+				</div>
+				<div class="service-box2">
+					<div class="service-box2-img-holder"> 
+						<a href="#">
+							<img src="img/service-box2-1.jpg" alt="" class="img-responsive">
+						</a> 
+					</div>
+					<div class="service-box2-bottom-content-holder">
+						<h3><a href="#">Strike a Pose Photo Studio</a></h3>
+						<span class="loc-owl"><i class="fa fa-map-marker" aria-hidden="true"></i> Riyadh, Saudi Arabia </span>
+						<ul class="rating">
+							<li><i class="fa fa-star" aria-hidden="true"></i></li>
+							<li><i class="fa fa-star" aria-hidden="true"></i></li>
+							<li><i class="fa fa-star" aria-hidden="true"></i></li>
+							<li class="rate-change"><i class="fa fa-star" aria-hidden="true"></i></li>
+							<li class="rate-change"><i class="fa fa-star" aria-hidden="true"></i></li>
+							<li class="owl-review">145</li>
+						</ul>
+					</div>
+				</div>
+				<div class="service-box2">
+					<div class="service-box2-img-holder"> 
+						<a href="#">
+							<img src="img/service-box2-1.jpg" alt="" class="img-responsive">
+						</a> 
+					</div>
+					<div class="service-box2-bottom-content-holder">
+						<h3><a href="#">Lens-bians Photography</a></h3>
+						<span class="loc-owl"><i class="fa fa-map-marker" aria-hidden="true"></i> Riyadh, Saudi Arabia </span>
+						<ul class="rating">
+							<li><i class="fa fa-star" aria-hidden="true"></i></li>
+							<li><i class="fa fa-star" aria-hidden="true"></i></li>
+							<li><i class="fa fa-star" aria-hidden="true"></i></li>
+							<li class="rate-change"><i class="fa fa-star" aria-hidden="true"></i></li>
+							<li class="rate-change"><i class="fa fa-star" aria-hidden="true"></i></li>
+							<li class="owl-review">145</li>
+						</ul>
+					</div>
+				</div>
+				<div class="service-box2">
+					<div class="service-box2-img-holder"> 
+						<a href="#"><img src="img/service-box2-1.jpg" alt="" class="img-responsive">
+						</a> 
+					</div>
+					<div class="service-box2-bottom-content-holder">
+						<h3><a href="#">Flutter Me Shutters Photography</a></h3>
+						<span class="loc-owl"><i class="fa fa-map-marker" aria-hidden="true"></i> Riyadh, Saudi Arabia </span>
+						<ul class="rating">
+							<li><i class="fa fa-star" aria-hidden="true"></i></li>
+							<li><i class="fa fa-star" aria-hidden="true"></i></li>
+							<li><i class="fa fa-star" aria-hidden="true"></i></li>
+							<li class="rate-change"><i class="fa fa-star" aria-hidden="true"></i></li>
+							<li class="rate-change"><i class="fa fa-star" aria-hidden="true"></i></li>
+							<li class="owl-review">145</li>
+						</ul>
+					</div>
+				</div>
+				<div class="service-box2">
+					<div class="service-box2-img-holder"> 
+						<a href="#"><img src="img/service-box2-1.jpg" alt="" class="img-responsive">
+						</a> 
+					</div>
+					<div class="service-box2-bottom-content-holder">
+						<h3><a href="#">Photo Shoots Studios</a></h3>
+						<span class="loc-owl"><i class="fa fa-map-marker" aria-hidden="true"></i> Riyadh, Saudi Arabia </span>
+						<ul class="rating">
+							<li><i class="fa fa-star" aria-hidden="true"></i></li>
+							<li><i class="fa fa-star" aria-hidden="true"></i></li>
+							<li><i class="fa fa-star" aria-hidden="true"></i></li>
+							<li class="rate-change"><i class="fa fa-star" aria-hidden="true"></i></li>
+							<li class="rate-change"><i class="fa fa-star" aria-hidden="true"></i></li>
+							<li class="owl-review">145</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Photography Service Area End Here -->
+<!-- Makeup Artists Area Start Here -->
+<div class="service-of-the-day2-area">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6 col-sm-6 col-xs-6">
+				<h2 class="title-color">Makeup Artists</h2>
+			</div>
+			<div class="col-md-6 col-sm-6 col-xs-6"> <a ng-click="doSeeMore(3)" class="see-more-link"> See More<i class="fa fa-long-arrow-right"></i> </a></div>
+		</div>
+		<div class="row">
+			<div class="rc-carousel" data-loop="true" data-items="3" data-margin="0" data-autoplay="false" data-autoplay-timeout="7000"
+			 data-smart-speed="2000" data-dots="false" data-nav="true" data-nav-speed="false" data-r-x-small="1" data-r-x-small-nav="false"
+			 data-r-x-small-dots="true" data-r-x-medium="2" data-r-x-medium-nav="false" data-r-x-medium-dots="true" data-r-small="2"
+			 data-r-small-nav="true" data-r-small-dots="false" data-r-medium="4" data-r-medium-nav="true" data-r-medium-dots="false">
+				<div class="service-box2">
+					<div class="service-box2-img-holder"> 
+						<a href="#"><img src="img/service-box2-1.jpg" alt="" class="img-responsive">
+						</a> 
+					</div>
+					<div class="service-box2-bottom-content-holder">
+						<h3><a href="#">Fashion In The Forest</a></h3>
+						<span class="loc-owl"><i class="fa fa-map-marker" aria-hidden="true"></i> Riyadh, Saudi Arabia </span>
+						<ul class="rating">
+							<li><i class="fa fa-star" aria-hidden="true"></i></li>
+							<li><i class="fa fa-star" aria-hidden="true"></i></li>
+							<li><i class="fa fa-star" aria-hidden="true"></i></li>
+							<li class="rate-change"><i class="fa fa-star" aria-hidden="true"></i></li>
+							<li class="rate-change"><i class="fa fa-star" aria-hidden="true"></i></li>
+							<li class="owl-review">145</li>
+						</ul>
+					</div>
+				</div>
+				<div class="service-box2">
+					<div class="service-box2-img-holder"> 
+						<a href="#">
+							<img src="img/service-box2-1.jpg" alt="" class="img-responsive">
+						</a> 
+					</div>
+					<div class="service-box2-bottom-content-holder">
+						<h3><a href="#">Glamorous Without the Guilt</a></h3>
+						<span class="loc-owl"><i class="fa fa-map-marker" aria-hidden="true"></i> Riyadh, Saudi Arabia </span>
+						<ul class="rating">
+							<li><i class="fa fa-star" aria-hidden="true"></i></li>
+							<li><i class="fa fa-star" aria-hidden="true"></i></li>
+							<li><i class="fa fa-star" aria-hidden="true"></i></li>
+							<li class="rate-change"><i class="fa fa-star" aria-hidden="true"></i></li>
+							<li class="rate-change"><i class="fa fa-star" aria-hidden="true"></i></li>
+							<li class="owl-review">145</li>
+						</ul>
+					</div>
+				</div>
+				<div class="service-box2">
+					<div class="service-box2-img-holder"> 
+						<a href="#">
+							<img src="img/service-box2-1.jpg" alt="" class="img-responsive">
+						</a> 
+					</div>
+					<div class="service-box2-bottom-content-holder">
+						<h3><a href="#">Modern Modest Beauty</a></h3>
+						<span class="loc-owl"><i class="fa fa-map-marker" aria-hidden="true"></i> Riyadh, Saudi Arabia </span>
+						<ul class="rating">
+							<li><i class="fa fa-star" aria-hidden="true"></i></li>
+							<li><i class="fa fa-star" aria-hidden="true"></i></li>
+							<li><i class="fa fa-star" aria-hidden="true"></i></li>
+							<li class="rate-change"><i class="fa fa-star" aria-hidden="true"></i></li>
+							<li class="rate-change"><i class="fa fa-star" aria-hidden="true"></i></li>
+							<li class="owl-review">145</li>
+						</ul>
+					</div>
+				</div>
+				<div class="service-box2">
+					<div class="service-box2-img-holder"> 
+						<a href="#">
+							<img src="img/service-box2-1.jpg" alt="" class="img-responsive">
+						</a> 
+					</div>
+					<div class="service-box2-bottom-content-holder">
+						<h3><a href="#">Confessions of a Cosmetologist</a></h3>
+						<span class="loc-owl"><i class="fa fa-map-marker" aria-hidden="true"></i> Riyadh, Saudi Arabia </span>
+						<ul class="rating">
+							<li><i class="fa fa-star" aria-hidden="true"></i></li>
+							<li><i class="fa fa-star" aria-hidden="true"></i></li>
+							<li><i class="fa fa-star" aria-hidden="true"></i></li>
+							<li class="rate-change"><i class="fa fa-star" aria-hidden="true"></i></li>
+							<li class="rate-change"><i class="fa fa-star" aria-hidden="true"></i></li>
+							<li class="owl-review">145</li>
+						</ul>
+					</div>
+				</div>
+				<div class="service-box2">
+					<div class="service-box2-img-holder"> 
+						<a href="#">
+							<img src="img/service-box2-1.jpg" alt="" class="img-responsive">
+						</a> 
+					</div>
+					<div class="service-box2-bottom-content-holder">
+						<h3><a href="#">Fashion In The Forest</a></h3>
+						<span class="loc-owl"><i class="fa fa-map-marker" aria-hidden="true"></i> Riyadh, Saudi Arabia </span>
+						<ul class="rating">
+							<li><i class="fa fa-star" aria-hidden="true"></i></li>
+							<li><i class="fa fa-star" aria-hidden="true"></i></li>
+							<li><i class="fa fa-star" aria-hidden="true"></i></li>
+							<li class="rate-change"><i class="fa fa-star" aria-hidden="true"></i></li>
+							<li class="rate-change"><i class="fa fa-star" aria-hidden="true"></i></li>
+							<li class="owl-review">145</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Makeup Artists Area Start Here -->
+
+<!-- Feedback Section Start Here -->
+<div class="service-of-the-day2-area feedback-section">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="section-title text-center">
+					<h1>What People Say About Us</h1>
+					<p>Lorem Ipsum is simply dummy text of the printing industry</p>
+				</div>
+				<div class="col-md-12" data-wow-delay="0.12s">
+					<div class="carousel slide" data-ride="carousel" id="quote-carousel">
+						<a data-slide="prev" href="#quote-carousel" ng-non-bindable class="left carousel-control">
+							<i class="fa fa-angle-left"></i>
+						</a>
+						<!-- Bottom Carousel Indicators -->
+						<ol class="carousel-indicators">
+							<li data-target="#quote-carousel" data-slide-to="0" class="active"><img class="img-responsive " src="https://s3.amazonaws.com/uifaces/faces/twitter/brad_frost/128.jpg" alt=""> </li>
+							<li data-target="#quote-carousel" data-slide-to="1"><img class="img-responsive" src="https://s3.amazonaws.com/uifaces/faces/twitter/rssems/128.jpg" alt=""> </li>
+							<li data-target="#quote-carousel" data-slide-to="2"><img class="img-responsive" src="https://s3.amazonaws.com/uifaces/faces/twitter/adellecharles/128.jpg" alt=""> </li>
+						</ol>
+						<a data-slide="next" href="#quote-carousel" class="right carousel-control" ng-non-bindable>
+							<i class="fa fa-angle-right"></i>
+						</a>
+						<!-- Carousel Slides / Quotes -->
+						<div class="carousel-inner text-center">
+							<!-- Quote 1 -->
+							<div class="item active">
+								<blockquote>
+									<div class="row">
+										<div class="col-sm-8 col-sm-offset-2">
+											<p>1 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+												magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea !</p>
+											<small>Someone famous</small> 
+										</div>
+									</div>
+								</blockquote>
+							</div>
+							<!-- Quote 2 -->
+							<div class="item">
+								<blockquote>
+									<div class="row">
+										<div class="col-sm-8 col-sm-offset-2">
+											<p>2 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+												magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea !</p>
+											<small>Someone famous</small> 
+										</div>
+									</div>
+								</blockquote>
+							</div>
+							<!-- Quote 3 -->
+							<div class="item">
+								<blockquote>
+									<div class="row">
+										<div class="col-sm-8 col-sm-offset-2">
+											<p>3 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+												magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea !</p>
+											<small>Someone famous</small>
+										</div>
+									</div>
+								</blockquote>
+							</div>
+						</div>
+						<!-- Carousel Buttons Next/Prev -->
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Feedback Section End Here -->
+
+<!-- Find us in all Regions Area Start -->
+<div class="service-of-the-day2-area avialable-cities-section">
+	<div class="container">
+		<h2 class="title-color">Available Cities</h2>
+		<div class="row">
+			<div class="col-md-3 col-sm-6 col-xs-6">
+				<ul class="region-sec">
+					<li><a href="">Riyadh</a> </li>
+					<li><a href="">Jeddah</a> </li>
+					<li><a href="">Jeddah</a> </li>
+					<li><a href="">Medina</a> </li>
+					<li><a href="">Al-Ahsa</a> </li>
+					<li><a href="">Ta'if</a> </li>
+				</ul>
+			</div>
+			<div class="col-md-3 col-sm-6 col-xs-6">
+				<ul class="region-sec">
+					<li><a href="">Dammam</a> </li>
+					<li><a href="">Buraidah</a> </li>
+					<li><a href="">Khobar</a> </li>
+					<li><a href="">Tabuk</a> </li>
+					<li><a href="">Qatif</a> </li>
+					<li><a href="">Khamis Mushait</a> </li>
+				</ul>
+			</div>
+			<div class="col-md-3 col-sm-6 col-xs-6">
+				<ul class="region-sec">
+					<li><a href="">Ha'il</a> </li>
+					<li><a href="">Hafar Al-Batin</a> </li>
+					<li><a href="">Jubail</a> </li>
+					<li><a href="">Kharj</a> </li>
+					<li><a href="">Abha</a> </li>
+					<li><a href="">Najran</a> </li>
+				</ul>
+			</div>
+			<div class="col-md-3 col-sm-6 col-xs-6">
+				<ul class="region-sec">
+					<li><a href="">Yanbu</a> </li>
+					<li><a href="">Al Qunfudhah</a> </li>
+					<li><a href="">Makkah</a> </li>
+					<li><a href="">Ash-Sharqiyyah</a> </li>
+					<li><a href="">Hafar Al-Batin</a> </li>
+					<li><a href="">Khamis Mushait</a> </li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Find us in all Regions Area End Here -->
+<div class="clearfix"> </div>

@@ -1,0 +1,190 @@
+<style>
+    .header-sign {
+        background: #fff;
+        position: relative;
+        z-index: 1; 
+    }
+</style>
+<div class="select-business" style="background-image:url(img/select-service-bg.jpg);">
+    <div class="select-bus-dark">
+
+    </div>
+        <div class="wrapper">
+         <!-- Header Area Start Here -->
+            <div class="header-sign">
+                <div class="header2-area">
+                    <div class="header-top-area"> 
+
+                    </div>
+                    <div class="header-bottom-area">
+                        <div class="container">
+                             <div class="row">
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                    <div class="logo-area"> 
+                                        <a ui-sref="firstNear.index">
+                                            <img class="img-responsive" src="img/gray-logo.png" alt="logo" width="225">
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
+                                    <div class="main-menu-area width-100">
+                                        <nav>
+                                            <ul class="pull-right  width-100">
+				                                <li>
+                                                    <a ui-sref="signup-main.html" class="signup-link">
+                                                        Help
+                                                    </a> 
+                                                </li>
+				                            </ul>
+                                        </nav>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Mobile Menu Area Start -->
+                <div class="mobile-menu-area">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="mobile-menu">
+                                    <nav id="dropdown">
+                                        <ul class="pull-right  width-100">
+                                            <li>
+                                                <a ui-sref="firstNear.index" class="signup-link">
+                                                    Help
+                                                </a> 
+                                            </li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Mobile Menu Area End -->
+            </div>
+            <!-- Header Area End Here -->			  
+            <!-- About Us section Start Here -->
+            <div class="select-business-section">                
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6 col-md-offset-3">					
+					        <div class="step-block">
+                                <h4>
+                                    Step 1 of 3
+                                </h4>                            
+                            </div>					
+					        <h2>
+                                Select Your Business
+                            </h2>
+                            <div class="select-service-box">						
+						        <div class="choose-text-heading">
+						            <p>
+                                        Choose Your Business Type.
+                                    </p>
+                                </div>						
+                                <div class="omb_login select-business-box">
+                                    <div class="row ">
+                                        <div class="col-xs-12 col-sm-12">    
+                                            <form class="omb_loginForm form-cs-check" name = "businessTypeFrm" action="">     
+		                                        <div class="btn-group" data-toggle="buttons">			
+			                                        <label class="btn active" ng-click="vm.setType('individual')" id = "type_individual">
+                                                        <input type="radio" name="type" id="option2" autocomplete="off" ng-model = "vm.businessTypeData.type" value="individual" checked>
+                                                        <span class="glyphicon glyphicon-ok">
+                                                            
+                                                        </span>
+                                                        <p>
+                                                            Individual
+                                                        </p> 
+                                                    </label>
+                                                    <label class="btn" ng-click = "vm.setType('business')" id = "type_business">
+                                                        <input type="radio" name="type" id="option1" value="business" ng-model = "vm.businessTypeData.type" autocomplete="off">
+                                                        <span class="glyphicon glyphicon-ok">
+
+                                                        </span>
+                                                        <p>
+                                                            Business
+                                                        </p>
+                                                    </label>
+
+			                                    </div>
+                                            </form>
+                                        </div>
+                                    </div>             
+                                </div>	
+	                            <div class="omb_login select-business-option">	
+		                            <div class="btn-group" data-toggle="buttons">			
+                                        <label class="btn active" ng-click = "vm.setOfferType('food')" id = "offerType_food">
+                                            <input type="radio" name="offerType"  autocomplete="off"  checked>
+                                            <span class="fa fa-circle">
+
+                                            </span>
+                                            <p>
+                                                I Offer Food Service
+                                            </p>
+                                        </label>
+                                        <label class="btn" ng-click = "vm.setOfferType('makeup')" id = "offerType_makeup">
+                                            <input type="radio" name="offerType"  autocomplete="off">
+                                            <span class="fa fa-circle">
+
+                                            </span>
+                                            <p>
+                                                I Offer Makeup Service
+                                            </p>
+                                        </label>
+                                        <label class="btn" ng-click = "vm.setOfferType('photography')" id = "offerType_photography">
+                                            <input type="radio" name="offerType"  autocomplete="off">
+                                            <span class="fa fa-circle">
+
+                                            </span>
+                                            <p>
+                                                I Offer Photography Service.
+                                            </p>
+                                        </label>	
+		                            </div>
+                                </div>
+                                <div class="row omb_login button-select">                                            
+                                    <div class="col-xs-6 col-sm-6">
+                                        <div class="service-signup">
+                                            <a ui-sref="firstNear.signupMain" class="line-fill-btn login-button">
+                                                Back
+                                            </a>
+                                        </div>
+                                    </div>                                           
+                                    <div class="col-xs-6 col-sm-6">
+                                        <div class="service-signup">
+                                            <a ng-click="vm.doSelectBusinessType()" class="bl-btn login-button">
+                                                next
+                                            </a>
+                                        </div>
+                                    </div>                                           
+                                </div>                               
+                                <!-- <div class="row omb_login">
+                                    <div class="col-xs-12 col-sm-12">
+                                        <div class="error-text-service">
+                                            Notification if not item is selected
+                                        </div>            
+                                    </div>
+                                </div> -->
+                            </div>
+                        </div>                                          
+                    </div>                                      
+                </div>
+            </div>
+        </div>
+        <!-- About Us section End Here -->                                    
+    </div>
+    <!-- Footer Area end Here -->
+</div>	
+                                        
+  <script>
+      function radioClick(){
+          alert();
+      }
+  </script>
+
+                                    
+                                    
+                                  

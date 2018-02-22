@@ -1,0 +1,159 @@
+<style>
+    .header-sign {
+        background: #fff;
+        position: relative;
+        z-index: 1; 
+    }
+    .region-error{
+        color:red;
+    }
+  
+    .map {
+        height: 300px;
+        width: 100%;
+    }
+        
+</style>
+<div class="select-business" style="background-image:url(img/google-map-bg.jpg);">
+    <div class="select-bus-dark">
+
+    </div>
+    <div class="wrapper">
+         <!-- Header Area Start Here -->
+        <div class="header-sign">
+            <div class="header2-area">
+                <div class="header-top-area"> 
+
+                </div>
+                <div class="header-bottom-area">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                <div class="logo-area"> 
+                                    <a ui-sref="firstNear.index">
+                                        <img class="img-responsive" src="img/gray-logo.png" alt="logo" width="225">
+                                    </a> 
+                                </div>
+                            </div>
+                            <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
+                                <div class="main-menu-area width-100">
+                                    <nav>
+                                        <ul class="pull-right  width-100">
+                                            <li>
+                                                <a ui-sref="firstNear.index" class="signup-link">
+                                                    Help
+                                                </a> 
+                                            </li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Mobile Menu Area Start -->
+            <div class="mobile-menu-area">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="mobile-menu">
+                                <nav id="dropdown">
+                                    <ul class="pull-right  width-100">
+                                        <li>
+                                            <a ui-sref="firstNear.index" class="signup-link">
+                                                Help
+                                            </a> 
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Mobile Menu Area End -->
+        </div>
+        <!-- Header Area End Here -->	  
+        <!-- About Us section Start Here -->
+        <div class="select-business-section">            
+            <div class="container">
+                <div class="row">
+                    <form name="vm.businessLocationFrm" >
+                        <div class="col-md-6 col-md-offset-3">                
+                            <div class="step-block">
+                                <h4>
+                                    Step 6 of 6
+                                </h4>
+                            </div>                
+                            <h2>
+                                Where Are You Located?
+                            </h2>
+                            <div class="select-service-box">                        
+                                <div class="omb_login location-text-heading">
+                                    <p>
+                                        Location Finder
+                                    </p>
+                                </div>                    
+                                <div class="omb_login business-map-box">                        
+                                    <div class="row" >
+                                            <google-map
+                                            apikey="AIzaSyBtxKPFwmD-P00feAac4R_hTwIkX-6Rhp0"
+                                            lat="51.507351"
+                                            long="-0.127758"
+                                            zoom="15"
+                                            map-type="'ROADMAP'"
+                                            clickable-icons="true"
+                                            disable-double-click-zoom="false"
+                                            disable-default-ui="vm.dummyFalseTwo"
+                                            draggable="vm.dummyFalseOne"
+                                            fullscreen-control="false"
+                                            map-type-control="true"
+                                            scrollwheel="true"
+                                            street-view-control="true"
+                                            zoom-control="true"
+                                            custom-map-styles="vm.customMapStyles"
+                                            custom-map-name="'My custom map'"
+                                            map-type-control-options-style="'HORIZONTAL_BAR'"
+                                            map-type-control-options-position="'TOP_CENTER'"
+                                            zoom-control-options="'LEFT_CENTER'"
+                                            street-view-control-options="'RIGHT_CENTER'"
+                                            fullscreen-control-options="vm.dummyPosition"
+                                            custom-css="map"                                                                             
+                                        ></google-map>
+                                        <p class="help-block region-error" ng-show="mapError" style="padding-left: 20px;">Address is required</p>                            
+                                    </div>             
+                                </div>
+                                <div class="row omb_login button-select">     
+                                    <div class="col-xs-6 col-sm-6">
+                                        <div class="service-signup">
+                                            <a ui-sref="firstNearMember.addYourService" class="line-fill-btn login-button">
+                                                Back
+                                            </a>
+                                        </div>
+                                    </div>			  
+                                    <div class="col-xs-6 col-sm-6">
+                                        <div class="service-signup">
+                                            <a ng-click = "vm.doBusinessLocation()"  class="bl-btn login-button">
+                                                submit
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>       
+                </div>                    
+            </div>
+        </div>
+    </div>
+    <!-- About Us section End Here -->
+</div>
+			
+			
+		
+		
+		
+		
+     
+   

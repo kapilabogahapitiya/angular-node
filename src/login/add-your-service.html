@@ -1,0 +1,277 @@
+<style>
+    .header-sign {
+        background: #fff;
+        position: relative;
+        z-index: 1; 
+    }
+</style>
+<div class="select-business" style="background-image:url(img/select-business-bg.jpg);">
+    <div class="select-bus-dark">
+
+    </div>
+    <div class="wrapper">
+         <!-- Header Area Start Here -->
+        <div class="header-sign">
+            <div class="header2-area">
+                <div class="header-top-area"> 
+
+                </div>
+                <div class="header-bottom-area">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                <div class="logo-area"> 
+                                    <a ui-sref = "firstNear.index">
+                                        <img class="img-responsive" src="img/gray-logo.png" alt="logo" width="225">
+                                    </a> 
+                                </div>
+                            </div>
+                            <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
+                                <div class="main-menu-area width-100">
+                                    <nav>
+                                        <ul class="pull-right  width-100">
+				                            <li>
+                                                <a ui-sref="firstNear.index" class="signup-link">
+                                                    Help
+                                                </a> 
+                                            </li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Mobile Menu Area Start -->
+            <div class="mobile-menu-area">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="mobile-menu">
+                                <nav id="dropdown">
+                                    <ul class="pull-right width-100">
+                                        <li>
+                                            <a ui-sref = "firstNear.index" class="signup-link">
+                                                Help
+                                            </a> 
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Mobile Menu Area End -->
+        </div>
+        <!-- Header Area End Here -->                                
+        <!-- About Us section Start Here -->
+        <div class="select-business-section">            
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-md-offset-3">
+                        <div class="step-block">
+                            <h4>
+                                Step 5 of 6
+                            </h4>
+                        </div>
+                        <h2>
+                            Add Your Services
+                        </h2>
+                        <div class="select-service-box">
+                            <div class="omb_login">        
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-12">    
+                                        <form class="omb_loginForm form-cs-check" name = "vm.addYourServiceFrm" action="">                                    
+                                            <div class="input-group">
+                                                <a ui-sref = "firstNearMember.businessLocation" class="line-fill-btn skip-service"> 
+                                                    skip
+                                                </a>
+                                            </div>                                    
+                                            <div class="input-group">
+                                                <div class="own-services-box">
+                                                    <div class="own-services-box-heading">
+                                                        <h4>
+                                                            Kid’s Cut
+                                                        </h4>
+                                                        <a href=""> 
+                                                            <i class="fa fa-caret-down">
+                                                                </i> 
+                                                        </a>
+                                                        <a href=""> 
+                                                            <i class="fa fa-close">
+                                                            </i> 
+                                                        </a>
+                                                    </div>                                            
+                                                    <div class="hide-sal-sevice">
+                                                        <div class="col-xs-6 col-sm-6">  
+                                                            <label>
+                                                                Price
+                                                            </label>
+                                                            <input type="text" class="form-control" name="cut_price" ng-model = "vm.serviceData.cut_price" placeholder="100 SAR" required>
+                                                            <p class="help-block region-error" style="text-align:center;"ng-show="vm.addYourServiceFrm.cut_price.$touched && vm.addYourServiceFrm.cut_price.$error.required">Enter Your Price</p>
+                                                        </div>  
+                                                        <div class="col-xs-6 col-sm-6">  
+                                                            <label>
+                                                                Duration
+                                                            </label>
+                                                            <input type="text" class="form-control" name="cut_duration" ng-model = "vm.servicedata.cut_duration" placeholder="i.e 45 mint" requried>
+                                                            <p class="help-block region-error" style="text-align:center;" ng-show="vm.addYourServiceFrm.cut_duration.$touched && vm.addYourServiceFrm.cut_duration.$error.required">Required</p>
+                                                        </div>                                                           
+                                                        <div class="col-xs-12 col-sm-12">  
+                                                            <div class="input-group upload-license">
+                                                                <label class="upload-label">
+                                                                    Upload images of Service.
+                                                                </label>
+                                                                <input name="imageUpload" id="imageUpload" class="hide" type="file"> 
+                                                                <label for="imageUpload" class="btn upload-file">
+                                                                    Select file
+                                                                </label>
+                                                                <div class="input-group-addon slide-addon"> 
+                                                                    <a href=""> 
+                                                                        <i class="fa fa-plus">
+                                                                        </i> 
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                        </div>                                                           
+                                                        <div class="save-food-category"> 
+                                                            <div class="col-xs-6 col-sm-6">                                                            
+                                                            </div>                                                
+                                                            <div class="col-xs-6 col-sm-6">
+                                                                <div class="service-signup">
+                                                                    <a ui-sref="firstNearMember.businessLocation" class="bl-btn login-button">
+                                                                        Save
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>                                      
+                                                <div class="own-services-box">
+                                                    <div class="own-services-box-heading">
+                                                        <h4>
+                                                            Color Corection
+                                                        </h4>
+                                                        <a href=""> 
+                                                            <i class="fa fa-caret-down">
+                                                            </i> 
+                                                        </a>
+                                                        <a href=""> 
+                                                            <i class="fa fa-close">
+                                                            </i> 
+                                                        </a>
+                                                    </div>                                                
+                                                    <div class="hide-sal-sevice">
+                                                        <div class="col-xs-6 col-sm-6">  
+                                                            <label>
+                                                                Price
+                                                            </label>
+                                                            <input type="text" class="form-control" name="col_price" ng-model = "vm.serviceData.col_price" placeholder="100 SAR" required>
+                                                            <p class="help-block region-error" style="text-align:center;" ng-show="vm.addYourServiceFrm.col_price.$touched && vm.addYourServiceFrm.col_price.$error.required">Required</p>
+                                                        </div>  
+                                                        <div class="col-xs-6 col-sm-6">  
+                                                            <label>
+                                                                Duration
+                                                            </label>
+                                                            <input type="text" class="form-control" name="col_duration" ng-model = "vm.serviceData.col_duration" placeholder="i.e 45 mint">
+                                                            <p class="help-block region-error" style="text-align:center;" ng-show="vm.addYourServiceFrm.col_duration.$touched && vm.addYourServiceFrm.col_duration.$error.required">Required</p>
+                                                        </div>                                                      
+                                                    <div class="col-xs-12 col-sm-12">  
+                                                        <div class="input-group upload-license">
+                                                            <label class="upload-label">
+                                                                Upload images of Service.
+                                                            </label>
+                                                            <input name="imageUpload" id="imageUpload" class="hide" type="file"> 
+                                                            <label for="imageUpload" class="btn upload-file">
+                                                                Select file
+                                                            </label>
+                                                            <div class="input-group-addon slide-addon"> 
+                                                                <a href=""> 
+                                                                    <i class="fa fa-plus">
+                                                                    </i> 
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                    </div>                                               
+                                                    <div class="save-food-category"> 
+                                                        <div class="col-xs-6 col-sm-6">                                        
+                                                        </div>                                    
+                                                        <div class="col-xs-6 col-sm-6">
+                                                            <div class="service-signup">
+                                                                <a ui-sref = "firstNearMember.businessLocation" class="bl-btn login-button">
+                                                                    Save
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>                                            
+                                        </div>                                            
+                                        <div class="input-group">
+                                            <div class="add-service-group">                                            
+                                                <a href=""> 
+                                                    <i class="fa fa-plus">
+                                                    </i> 
+                                                </a>
+                                                <label>
+                                                    Add Your Own Services
+                                                </label>
+                                            </div>
+                                        </div>                                            
+                                        <div class="input-group">                                                
+                                            <input type="text" class="form-control" name="own_service" ng-model = "vm.serviceData.own_service" placeholder="Add Service" required>
+                                            <p class="help-block region-error" ng-show="vm.addYourServiceFrm.own_service.$touched && vm.addYourServiceFrm.own_service.$error.required">Thie field is required</p>
+                                        </div>                                   
+                                        <div class="row">
+                                            <div class="col-xs-6 col-sm-6">         
+                                                <div class="input-group">                                                    
+                                                    <input type="text" class="form-control" name="own_price" ng-model = "vm.serviceData.own_price" placeholder="Add Price" required>
+                                                    <p class="help-block region-error" ng-show="vm.addYourServiceFrm.own_price.$touched && vm.addYourServiceFrm.own_price.$error.required">This field is required</p>
+                                                </div>
+                                            </div>                                 
+                                            <div class="col-xs-6 col-sm-6">                  
+                                                <div class="input-group">                                            
+                                                    <input type="text" class="form-control" name="own_duration" ng-model = "vm.serviceData.own_duration" placeholder="Add Duration" required>
+                                                    <p class="help-block region-error" ng-show="vm.addYourServiceFrm.own_duration.$touched && vm.addYourServiceFrm.own_duration.$error.required">This field is required</p>
+                                                </div>
+                                            </div>
+                                        </div>                                  
+                                        <div class="row">
+                                            <div class="col-xs-6 col-sm-6">
+
+                                            </div>
+                                            <div class="col-xs-6 col-sm-6">
+                                                <div class="service-signup">
+                                                    <a ui-sref = "firstNearMember.aboutYourBusiness" class="bl-btn add-sal-button">
+                                                        Add
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>                                          
+                                        <div class="row">                            
+                                            <div class="col-xs-6 col-sm-6">
+                                                <div class="service-signup">
+                                                    <a ui-sref="firstNearMember.aboutYourBusiness" class="line-fill-btn login-button">
+                                                        Back
+                                                    </a>
+                                                </div>
+                                            </div>                                                    
+                                            <div class="col-xs-6 col-sm-6">
+                                                <div class="service-signup">
+                                                    <a ng-click="vm.doAddYourService()" class="bl-btn login-button">Next</a>
+                                                </div>
+                                            </div>                                   
+                                        </div>                                           
+                                    </form>
+                                </div>
+                            </div>                                                    
+                        </div>
+                    </div>
+                </div>                                                 
+            </div>                                                
+        </div>
+    </div>
+</div>
+                                                   

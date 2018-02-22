@@ -1,0 +1,304 @@
+<style>
+    .modal {
+        text-align: center;
+    }
+    
+    @media screen and (min-width: 768px) { 
+        .modal:before {
+        display: inline-block;
+        vertical-align: middle;
+        content: " ";
+        height: 100%;
+        }
+    }
+    
+    .modal-dialog {
+        display: inline-block;
+        text-align: left;
+        vertical-align: middle;
+    }
+</style>
+<div class="wrapper"> 
+        <!-- Header Area Start Here -->
+        <seller-dashboard-header>
+        </seller-dashboard-header>    
+        <!-- Header Area End Here -->
+        <seller-search-profile>
+        </seller-search-profile>
+        <!-- Dashboard Area Start Here -->	
+        <div class="dashboard-area">                
+            <div class="container">
+                <div class="row">					
+                    <!-- Dashboard SideBar End Here -->					
+                    <div class="col-md-4">
+                        <seller-dashboard-sidebar>
+                        </seller-dashboard-sidebar>
+                    </div>
+                    <!-- Dashboard SideBar End Here -->		
+                    <div class="col-md-8">						
+                        <!-- Dashboard Right SideBar Start Here -->
+                        <div class="dashboard-right-bar">							
+                            <div class="top-nav-right">                               
+                                <div class="tab-content">                                    
+                                    <div class="tab-pane active" id="booking">                                
+                                        <div class="booking-disabled">
+                                            <i class="fa fa-exclamation"></i>
+                                            <p>
+                                                You have not made any booking yet
+                                            </p>
+                                        </div>                       
+                                        <div class="booking-avialable">                                
+                                            <div class="booking-heading">
+                                                <img src="img/booking-profile-img.png">
+                                                <p>
+                                                    You have an upcoming booking! We advice you to keep in touch with service provider prior the date of Service
+                                                </p>                     
+                                            </div>                                
+                                            <div class="booking-calendar">
+                                                <a href="javascript:;" class="left-calendar-arrow"> 
+                                                    <i class="fa fa-arrow-left"></i>
+                                                </a>                
+                                                <ul class="calendar-list-view">
+                                                    <li> 
+                                                        <a href="javascript:;"> 
+                                                            <span>OCT</span> 
+                                                            <p>20</p> 
+                                                        </a>
+                                                    </li>
+                                                    <li> 
+                                                        <a href="javascript:;"> 
+                                                            <span>OCT</span> 
+                                                            <p>21</p> 
+                                                        </a>
+                                                    </li>
+                                                    <li> 
+                                                        <a href="javascript:;" class="active"> 
+                                                            <span>OCT</span> 
+                                                            <p>22</p> 
+                                                        </a>
+                                                    </li>
+                                                    <li> 
+                                                        <a href="javascript:;"> 
+                                                            <span>OCT</span> 
+                                                            <p>23</p> 
+                                                        </a>
+                                                    </li>
+                                                    <li> 
+                                                        <a href="javascript:;"> 
+                                                            <span>OCT</span> 
+                                                            <p>24</p> 
+                                                        </a>
+                                                    </li>
+                                                    <li> 
+                                                        <a href="javascript:;"> 
+                                                            <span>OCT</span> 
+                                                            <p>25</p> 
+                                                        </a>
+                                                    </li>
+                                                    <li> 
+                                                        <a href="javascript:;"> 
+                                                            <span>OCT</span> 
+                                                            <p>26</p> 
+                                                        </a>
+                                                    </li>
+                                                    <li> 
+                                                        <a href="javascript:;"> 
+                                                            <span>OCT</span> 
+                                                            <p>27</p> 
+                                                        </a>
+                                                    </li>
+                                                </ul>                                        
+                                                <a href="javascript:;" class="right-calendar-arrow"> 
+                                                    <i class="fa fa-arrow-right"></i>
+                                                </a>			 
+                                                <a href="javascript:;" class="right-calendar-btn-open"> 
+                                                    <i class="fa fa-calendar"></i>
+                                                </a> 
+                                            </div>  
+                                            <div class="booking-list">
+                                                <h4>
+                                                    22 October Booking Lists
+                                                </h4>                                        
+                                                <div class="booking-list-box">                                        
+                                                    <div class="table-responsive">
+                                                        <table class="table">
+                                                            <tbody>
+                                                                <tr ng-repeat = "data in recentBookingData">
+                                                                    <td>
+                                                                        <h3>{{data.title}}</h3>
+                                                                        <p>{{ data.date }}</p>
+                                                                    </td>
+                                                                    <td>
+                                                                        <h5>
+                                                                            Status : 
+                                                                            <strong  class="{{data.class}}">{{data.status}}</strong>
+                                                                        </h5>
+                                                                    </td>
+                                                                    <td>
+                                                                        <a href="javascript:;" class="bl-btn booking-view-btn" data-toggle="modal" data-target="#bookingmyModal">
+                                                                            view
+                                                                        </a>
+                                                                    </td>
+                                                                </tr>                                                      
+                                                                                                           
+                                                            </tbody>                                                    
+                                                        </table>
+                                                    </div>
+                                                    <!--end of .table-responsive-->
+                                                </div>
+                                            </div>			  
+                                        </div>
+                                    </div>
+                                </div>							
+                            </div>
+                            <!-- Dashboard Right SideBar End Here -->
+                        </div>
+                    </div>
+                </div>	   	
+            </div>
+            <!-- Dashboard Area End Here -->
+        </div>	
+        <div class="clearfix"> </div>
+        <!-- Modal -->
+        <div id="offermyModal" class="modal fade" role="dialog">
+            <div class="modal-dialog modal-xs" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>                
+                    </div>
+                    <div class="modal-body offer-request">
+                        <h2>I would like to</h2>                
+                        <img src="img/offer-message-icon.png">
+                        <ul class="accept-offer-ul">
+                            <li> 
+                                <a href="javascript:;" class="bl-btn accept-offer-modal" data-dismiss="modal" aria-label="Close">
+                                    accept offer
+                                </a>
+                            </li>
+                            <li> 
+                                <a href="javascript:;" class="line-fill-btn accept-offer-modal" data-dismiss="modal" aria-label="Close">
+                                    reject offer
+                                </a>
+                            </li>
+                        </ul>
+                    </div>            
+                </div>
+            </div>
+        </div>
+        <!-- End Modal -->
+        <!-- Modal -->
+        <div id="bookingmyModal" class="modal fade" role="dialog">
+        <div class="modal-dialog modal-xs" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h2>Booking Summary</h2>
+                </div>
+                <div class="modal-body offer-request">            
+                    <div class="table-responsive booking-details-modal">            
+                        <table class="table table-striped">
+                            <tbody>
+                                <tr>
+                                    <td class="booking-heading">
+                                        Confirmation
+                                    </td>
+                                    <td class="booking-heading-right">
+                                        109384938
+                                    </td>
+                                </tr>                        
+                                <tr>
+                                    <td class="booking-heading">
+                                        Reservation Type
+                                    </td>
+                                    <td class="booking-heading-right">
+                                        Photography
+                                    </td>
+                                </tr>                            
+                                <tr>
+                                    <td class="booking-heading">
+                                        reservation Date
+                                    </td>
+                                    <td class="booking-heading-right">
+                                        29-05-2017, 5pm
+                                    </td>
+                                </tr>                            
+                                <tr>
+                                    <td class="booking-heading">
+                                        Service
+                                    </td>
+                                    <td class="booking-heading-right">
+                                        30-05-2017, 7pm
+                                    </td>
+                                </tr>                            
+                                <tr>
+                                    <td class="booking-heading">
+                                        Location
+                                    </td>
+                                    <td class="booking-heading-right">
+                                        New York
+                                    </td>
+                                </tr>                            
+                                <tr>
+                                    <td class="booking-heading">
+                                        Delivery Option
+                                    </td>
+                                    <td class="booking-heading-right">
+                                        In Studio
+                                    </td>
+                                </tr>                            
+                                <tr>
+                                    <td class="booking-heading">
+                                        Status
+                                    </td>
+                                    <td class="booking-heading-right">
+                                        confirmed
+                                    </td>
+                                </tr>                            
+                                <tr>
+                                    <td class="booking-heading">
+                                        Price
+                                    </td>
+                                    <td class="booking-heading-right">
+                                        500 SR
+                                    </td>
+                                </tr>                        
+                                <tr>
+                                    <td class="booking-heading">
+                                        Deposite
+                                    </td>
+                                    <td class="booking-heading-right">
+                                        500 SR
+                                    </td>
+                                </tr>                                    
+                            </tbody>
+                        </table>            
+                        <ul class="booking-modal-ul">
+                            <li> 
+                                <a href="javascript:;" data-dismiss = "modal" class="bl-btn accept-booking-modal">
+                                    change
+                                </a>
+                            </li>
+                            <li> 
+                                <a href="javascript:;" data-dismiss = "modal" class="line-fill-btn accept-booking-modal">
+                                    cancel
+                                </a>
+                            </li>                    
+                            <li> 
+                                <a href="javascript:;" data-dismiss = "modal" class="line-fill-btn accept-booking-right">
+                                    contact
+                                </a>
+                            </li>
+                        </ul>       
+                    </div>
+                    <!--end of .table-responsive-->
+                </div>
+            </div>
+        </div>
+        <!-- End Modal -->
+    </div>
+    
+    
+    
+    
+    
+    

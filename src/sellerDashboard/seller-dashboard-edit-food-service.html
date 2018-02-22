@@ -1,0 +1,303 @@
+<style>
+    .add-new-category {
+        font-size: 13px;
+        color: #727272;
+        padding-left: 15px;
+        padding-right: 15px;
+        font-weight: 600;
+    }
+    .modal {
+        text-align: center;
+    }
+    
+    @media screen and (min-width: 768px) { 
+        .modal:before {
+        display: inline-block;
+        vertical-align: middle;
+        content: " ";
+        height: 100%;
+        }
+    }
+    
+    .modal-dialog {
+        display: inline-block;
+        text-align: left;
+        vertical-align: middle;
+    }
+</style>
+
+<div class="wrapper">
+    <!-- Dashboard Area Start Here -->
+    <seller-dashboard-header>
+    </seller-dashboard-header>
+    <seller-search-profile>        
+    </seller-search-profile>
+    <div class="dashboard-area">
+        <div class="container">
+            <div class="row">
+                <!-- Dashboard SideBar Start Here -->
+                <div class="col-md-4">
+                    <seller-dashboard-sidebar>
+                    </seller-dashboard-sidebar>
+                </div>
+                <!-- Dashboard SideBar End Here -->                
+                <div class="col-md-8">
+                    <!-- Dashboard Right SideBar Start Here -->
+                    <div class="dashboard-right-bar">
+                        <div class="seller-add-service">
+                            <form name = "addServiceForm" action = "">
+                                <h3>
+                                    <i class="fa fa-plus-circle"></i> List your menu item
+                                </h3>
+                                <p class="promotion-pera-heading">
+                                    Edit menu item ( e.g, green salad, sandwich..etc)
+                                </p>
+                                <ul>
+                                    <li>
+                                        <a href = "javascript:;" ng-click = "doAddService()" class="bl-btn add-service-btn">
+                                            Save item
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a ui-sref = "firstNearMember.seller-dashboard-manage-service"  class="line-fill-btn add-promotion-btn"> 
+                                            Cancel
+                                        </a>
+                                    </li>
+                                </ul>
+                                <div class="add-service-box">
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            <div class="service-add-img">
+                                                <img src="img/service-info-img.png" alt="">
+                                                <p>
+                                                    Item Info
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-9">
+                                            <div class="add-service-form" >
+                                                <div class="col-md-12">
+                                                    <div class = "row">
+                                                        <div class = "col-md-7">                                                        
+                                                            <div class="form-group delivery-option-select">
+                                                                <label>Select Your Category</label>
+                                                                <select id="guest" name="guest" class="form-control form-search-cos slct-slide"  ng-model = "serviceData.CategoryID">
+                                                                    <option ng-repeat = "data in categoryData" value="{{data._id}}">{{data.name}}</option>                                                                                                                                          
+                                                                </select>                                                   
+                                                                <div class="help-block with-errors"></div>
+                                                            </div>
+                                                        </div>
+                                                        <div class = "col-md-5" style = "padding-top: 40px;" ng-show = "serviceData.CategoryID == '0'">                                                        
+                                                            <a href = "javascript:;" class = "add-new-category" data-toggle = "modal" data-target = "#addNewCategoryModal">Create New Category</a>
+                                                        </div>
+                                                        <div class = "col-md-5" style = "padding-top: 40px;" ng-show = "serviceData.CategoryID != '0'">                                                        
+                                                            <a href = "javascript:;" class = "add-new-category" data-toggle = "modal" ng-click = "setEditCategoryName()" data-target = "#editCategoryModal">Edit</a>
+                                                            <a href = "javascript:;" class = "add-new-category" ng-click = "doDeleteCategory()">Delete</a>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <div class="input-group">
+                                                        <label>Item name</label>
+                                                        <input class="form-control" name="item_name" ng-model = "serviceData.item_name" placeholder="e.g Green Salad" type="text" required>
+                                                        <p class="help-block region-error" ng-show="addServiceForm.item_name.$touched && addServiceForm.item_name.$error.required">Service Name is required</p>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <div class="form-group">
+                                                        <label for="comment">Item Description</label>
+                                                        <textarea class="form-control" rows="4" id="comment" name = "item_description" ng-model = "serviceData.item_description" placeholder="Description" required></textarea>
+                                                        <p class = "help-block region-error" ng-show = "addServiceForm.item_description.$touched && addServiceForm.item_description.$error.required"> Service Description is required</p>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <div class="form-group">
+                                                        <label for="comment">Item Size & price (Select at least one)</label>                                                 
+                                                    </div>
+                                                    <div class="form-group" style = "padding-bottom:30px;">
+                                                        <div class="col-md-4">
+                                                            <label class="checkbox-inline">
+                                                                <input type="checkbox" name="optradio1" ng-model = "chk_small_price" ng-checked = "serviceData.small_price != ''" >
+                                                                Small   
+                                                            </label>
+                                                        </div>
+                                                        <div class="col-md-8">                                                               
+                                                            <input class="form-control" name="small_price" ng-model = "serviceData.small_price" placeholder="i.e 25" type="text">                                                                
+                                                        </div>		                                                 
+                                                    </div>
+                                                    <div class="form-group" style = "padding-bottom:30px;">
+                                                        <div class="col-md-4">
+                                                            <label class="checkbox-inline">
+                                                                <input type="checkbox" name="optradio2" ng-model = "chk_medium_price" ng-checked = "serviceData.medium_price != ''" >
+                                                                Medium   
+                                                            </label>
+                                                        </div>
+                                                        <div class="col-md-8">                                                               
+                                                            <input class="form-control" name="medium_price" ng-model = "serviceData.medium_price" placeholder="i.e 70" type="text">
+                                                            
+                                                        </div>		                                                 
+                                                    </div>
+                                                    <div class="form-group" style = "padding-bottom:30px;">
+                                                        <div class="col-md-4">
+                                                            <label class="checkbox-inline">
+                                                                <input type="checkbox" name="optradio3" ng-model = "chk_large_pirce" ng-checked = "serviceData.large_price != ''" >
+                                                                Large   
+                                                            </label>
+                                                        </div>
+                                                        <div class="col-md-8">                                                               
+                                                            <input class="form-control" name="name" ng-model = "serviceData.large_price" placeholder="i.e 100" type="text">                                                                
+                                                        </div>		                                                 
+                                                    </div>                                                        
+                                                    <div class="form-group" style = "padding-top:50px;">
+                                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                            <div class="family-box food-category-style">
+                                                                <div class="row">                                                                            
+                                                                    <div class="input-group upload-image-service" ng-show = "uploader.queue.length == 0" nv-file-drop="" uploader="uploader">
+                                                                        <input name="imageUpload" id="imageUpload" nv-file-select="" uploader="uploader" class="hide" type="file">
+                                                                        <label for="imageUpload" class="btn upload-file" style="text-align: center;">Add Image</label>
+                                                                        <div class="input-group-addon slide-addon"> 
+                                                                            <a href=""> 
+                                                                                <i class="fa fa-plus"></i> 
+                                                                            </a>
+                                                                        </div>
+                                                                        <span class="family-name">Max Size 12KB</span>
+                                                                    </div>
+                                                                    <div class = "row" ng-if = "uploader.queue.length != 0">                                                                           
+                                                                        <div ng-show="uploader.isHTML5" ng-thumb="{ file: uploader.queue[0]._file, height: 100,width: 200, }">                                                                
+                                                                        </div>                                                                     
+                                                                        <button type="button" class="btn btn-danger btn-xs"  style = "width: 80px;" ng-click="uploader.queue[0].remove()">
+                                                                            <span class="glyphicon glyphicon-trash"></span> Remove
+                                                                        </button>                                                                            
+                                                                    </div>                                                                       
+                                                                    
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                                                            
+                                                    </div>                                                                
+                                                </div>                                                    
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="add-service-box select-profile-location">
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            <div class="service-add-img">
+                                                <img src="img/location-duration-img.png" alt="">
+                                                <p>Delivery Options</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-9">
+                                            <div class="col-xs-12 col-sm-12">
+                                                <div class="select-shop-option">
+                                                    <label class="select-shop">You have to set your location from update profile location.</label>
+                                                    <div class="btn-group" data-toggle="buttons">
+                                                        <label class="btn active" ng-click = "setDeliveryType('pickup')">
+                                                            <input name="options" id="option2" autocomplete="off" chacked="" type="radio">
+                                                            <span class="fa fa-circle"></span>
+                                                            <p>Pickup Only</p>
+                                                        </label>
+                                                        <label class="btn" ng-click = "setDeliveryType('delivery')">
+                                                            <input name="options" id="option1" autocomplete="off" type="radio">
+                                                            <span class="fa fa-circle"></span>
+                                                            <p>Deliver to customer place</p>
+                                                        </label>
+                                                        <label class="btn" ng-click = "setDeliveryType('both')">
+                                                            <input name="options" id="option3" autocomplete="off" type="radio">
+                                                            <span class="fa fa-circle"></span>
+                                                            <p>Both</p>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>                                
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-12">
+                                        <ul class="edit-profile-save">
+                                            <li>
+                                                <a href="javascript:;"> 
+                                                </a>
+                                                <a ui-sref = "firstNearMember.seller-dashboard-manage-service" class="line-fill-btn edit-cancel-button">
+                                                    Cancel
+                                                </a>
+                                            </li>
+                                            <li> 
+                                                <a href="javascript:;" ng-click = "doEditService()" class="bl-btn edit-cancel-button">
+                                                    Save Item
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="clr-service"></div>
+                    </div>
+                    <!-- Dashboard Right SideBar End Here -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Dashboard Area End Here -->
+    <div class="clearfix"> </div>
+    <footer>
+    </footer>
+</div>
+<!-- Modal -->
+<div class="modal fade add-food-modal" id="addNewCategoryModal" tabindex="-1" role="dialog" aria-labelledby="addNewCategoryModalTitle" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">      
+            <div class="modal-body">
+                <h2>Add New Category</h2>          
+                <div class="input-group" style = "width: 100%;">                    
+                    <input type="text"  ng-model = "category_name" name = "category_name" class="form-control" style = "width: 100%;text-align: left;" placeholder = "Category Name">                    
+                </div>				
+                <div class="add-cart-button">	   
+                    <ul>
+                        <li>
+                            <a href="javascript:;" class="bl-btn add-btn-cart" ng-click = "doCreateNewCategory()">Create New Category</a>
+                        </li>
+                        <li>
+                            <a href="javascript:;" class="line-fill-btn close-food-btn" class="close" data-dismiss="modal" aria-label="Close" ng-click = "specialShowFlag = 2">
+                                close
+                            </a>
+                        </li>					
+                    </ul>				
+                </div>   
+            </div>    
+        </div>
+    </div>
+</div>
+<!-- End Modal -->
+
+<!-- Modal -->
+<div class="modal fade add-food-modal" id="editCategoryModal" tabindex="-1" role="dialog" aria-labelledby="editNewCategoryModalTitle" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">      
+            <div class="modal-body">
+                <h2>Edit Current Category</h2>          
+                <div class="input-group" style = "width: 100%;">                    
+                    <input type="text"  ng-model = "edit_category_name" name = "category_name" class="form-control" style = "width: 100%;text-align: left;" placeholder = "Category Name">                    
+                </div>				
+                <div class="add-cart-button">	   
+                    <ul>
+                        <li>
+                            <a href="javascript:;" class="bl-btn add-btn-cart" ng-click = "doEditCategory()">Save Category</a>
+                        </li>
+                        <li>
+                            <a href="javascript:;" class="line-fill-btn close-food-btn" class="close" data-dismiss="modal" aria-label="Close" ng-click = "specialShowFlag = 2">
+                                close
+                            </a>
+                        </li>					
+                    </ul>				
+                </div>   
+            </div>    
+        </div>
+    </div>
+</div>
+<!-- End Modal -->

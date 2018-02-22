@@ -1,0 +1,206 @@
+<style>
+    .header-sign {
+        background: #fff;
+        position: relative;
+        z-index: 1; 
+    }
+</style>
+<div class="select-business" style="background-image:url(img/create-your-Account.jpg);">
+    <div class="select-bus-dark">
+
+    </div>
+    <div class="wrapper">
+    <!-- Header Area Start Here -->
+        <div class="header-sign">
+            <div class="header2-area">
+                <div class="header-top-area"> 
+
+                </div>
+                <div class="header-bottom-area">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                <div class="logo-area"> 
+                                    <a ui-sref="firstNear.index">
+                                        <img class="img-responsive" src="img/gray-logo.png" alt="logo" width="225">
+                                    </a> 
+                                </div>
+                            </div>
+                            <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
+                                <div class="main-menu-area width-100">
+                                    <nav>
+                                        <ul class="pull-right  width-100">
+                                            <li>
+                                                <a ui-sref="firstNear.index" class="signup-link">
+                                                    Help
+                                                </a> 
+                                            </li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>            
+                    </div>
+                </div>
+            </div>
+            <!-- Mobile Menu Area Start -->
+            <div class="mobile-menu-area">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="mobile-menu">
+                                <nav id="dropdown">
+                                    <ul class="pull-right  width-100">
+                                        <li>
+                                            <a ui-sref="firstNear.index" class="signup-link">
+                                                Help
+                                            </a> 
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Mobile Menu Area End -->
+        </div>
+        <!-- Header Area End Here -->		  
+        <!-- About Us section Start Here -->
+        <div class="select-business-section">                
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-md-offset-3">					
+					    <div class="step-block">
+                            <h4>
+                                Step 2 of 3
+                            </h4>
+                        </div>				
+					    <h2>
+                            Create Your Account
+                        </h2>
+                        <div class="select-service-box">
+                            <div class="omb_login">      
+                                <div class="row ">
+                                    <div class="col-xs-12 col-sm-12">    
+                                        <form class="omb_loginForm form-cs-check" action="" name="vm.createYourAccountFrm">
+                                            <div class="input-group">                        
+                                                <input type="text" class="form-control" name="fullName" ng-model = "vm.accountData.full_name" placeholder="Full Name" required>
+                                                <p  class="help-block region-error" ng-show="vm.createYourAccountFrm.fullName.$touched && vm.createYourAccountFrm.fullName.$error.required">Full Name is required</p>
+                                            </div>                    
+                                            <div class="input-group">                                                
+                                                <input type="text" class="form-control" name="username" ng-model = "vm.accountData.username" placeholder="User Name" required>
+                                                <p class="help-block region-error" ng-show="vm.createYourAccountFrm.username.$touched && vm.createYourAccountFrm.username.$error.required">User Name is required</p>
+                                            </div>					
+                                            <div class="input-group">                                                
+                                                <input type="email" class="form-control email" name = "email"  ng-model = "vm.accountData.email_address" placeholder="Email Address" required>
+                                                <p class="help-block region-error" ng-show="vm.createYourAccountFrm.email.$touched && vm.createYourAccountFrm.email.$error.required">Email Address is required</p>
+                                                <p class="help-block region-error" ng-show="vm.createYourAccountFrm.email.$touched && vm.createYourAccountFrm.email.$error.email">Enter Valid Email Address</p>
+                                            </div>                                                                          
+                                            <div class="input-group">
+                                                <input id="phone" class="form-control" type="tel" placeholder="Business Phone " ng-pattern="/^\+[0-9]{9,15}$/" name = "businessPhone" ng-model="vm.accountData.business_phone_number" required>  
+                                                <p class="help-block region-error" ng-show="vm.createYourAccountFrm.businessPhone.$touched && vm.createYourAccountFrm.businessPhone.$error.required">Business Phone  is required</p>
+                                                <p class="help-block region-error" ng-show="vm.createYourAccountFrm.businessPhone.$error.pattern">Enter Valid Phone Number : example +86123456788</p>                                               
+                                            </div>							
+					                        <span class="help-block">
+
+                                            </span>                                       
+                                            <div class="input-group">                                           
+                                                <input  type="password" class="form-control" name="password"  ng-minlength = "8" ng-model = "vm.accountData.password" placeholder="Password" required>
+                                                <p class="help-block region-error" ng-show="vm.createYourAccountFrm.password.$touched && vm.createYourAccountFrm.password.$error.required">Password  is required</p>
+                                                <p class="help-block region-error" ng-show="vm.createYourAccountFrm.password.$error.minlength">Please enter at least 8 characters</p>                                                                            
+                                            </div>
+                                            <div class="input-group">
+                                                <label class="drop-label">
+                                                   Gender
+                                                </label>                                                
+                                                <select id="guest"  ng-model = "vm.accountData.gender" class="form-control form-search-cos slct-slide" style="text-transform:none;">
+                                                    <option value = "male">
+                                                        Male
+                                                    </option>
+                                                    <option value = "female">
+                                                        Female
+                                                    </option>
+                                                </select>                                                                                      
+                                            </div>             					
+                                            <div class="input-group">
+                                                <label class="drop-label">
+                                                    How did you hear about FirstNear?
+                                                </label>                                                
+                                                <select id="guest" data-ng-options="o.name for o in hearOptions" class="form-control form-search-cos slct-slide" data-ng-model="vm.accountData.hearOption" style="text-transform:none;"></select>
+                                                <p class="help-block region-error" ng-show="vm.createYourAccountFrm.hearOption.$error.required">Please select the item you heard</p>                                      
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-xs-12 col-sm-12">
+                                                    <div class="form-group checkbox-custom">                                                        
+                                                        <div class="checkbox">
+                                                            <input type="checkbox" name="check188" id="check188" class="css-checkbox" ng-model = "agree" ng-change="vm.agreeChange()">
+                                                            <label for="check188" class="css-label css-label-checkout">  
+                                                                I agree to the terms and condition.
+                                                            </label>                                                                
+                                                        </div>           
+                                                    </div>
+                                                    <p class="help-block region-error" ng-show="agreeShow">Don't you agree?</p>
+                                                </div>            
+                                                <div class="col-xs-6 col-sm-6">
+                                                    <div class="service-signup">
+                                                        <a ui-sref="firstNearMember.selectBusiness" class="line-fill-btn login-button">
+                                                            Back
+                                                        </a>                                          
+                                                    </div>
+                                                </div>                                                
+                                                <div class="col-xs-6 col-sm-6">
+                                                    <div class="service-signup">
+                                                        <a ng-click = "vm.doCreateAccount()" class="bl-btn login-button">
+                                                            Signup
+                                                        </a>
+                                                    </div>
+                                                </div>                                                        
+                                            </div>             
+                                        </form>
+                                    </div>
+                                </div>             
+                            </div>                       
+                        </div>
+                    </div>          
+                </div>              
+            </div>      
+        </div>
+        <!-- About Us section End Here -->
+    </div>
+	<!-- Footer Area end Here -->
+</div>
+<!-- Modal -->
+<div class="modal fade booking-conditions-modal" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+    <div class="modal-dialog modal-xl" role="document">
+        <div class="modal-content">      
+            <div class="modal-body">
+	            <h2>
+                    Terms of Use
+                </h2>
+                <p>
+                    We like to keep things straight forward, so before we get to the legal stuff our lawyers say we have to have, here’s a plain english breakdown of the key things you need to know when using Sign-Up.to:
+                </p>
+	            <p>
+                    Your data remains yours at all times. We’ll never disclose your data to third parties unless required by law or requested by you.
+                    Unless otherwise arranged, we bill monthly based on the maximum number of active subscribers in your account during the previous month. Payments are collected by credit/debit card on the day of issue. Failure to pay on time will result in suspension of access until your invoice is paid.
+                </p>
+                <p>
+                    We provide free phone and email support during UK working days, from 9am – 5.30pm.
+                    Managed services (such as alterations to or creation of email campaigns or use of the service on your behalf) are subject to additional charges which will be agreed with you before the work is undertaken.
+                </p>
+                <a href="#" class="line-fill-btn close-booking-modal" data-dismiss="modal" aria-label="Close">
+                    close
+                </a>
+	        </div>     
+        </div>
+  </div>
+</div>
+<!-- End Modal -->
+		
+		
+   
+	
+
+
+

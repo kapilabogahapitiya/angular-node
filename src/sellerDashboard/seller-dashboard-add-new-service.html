@@ -1,0 +1,195 @@
+<div class="wrapper">
+    <!-- Dashboard Area Start Here -->
+    <seller-dashboard-header>
+    </seller-dashboard-header>
+    <seller-search-profile>        
+    </seller-search-profile>
+    <div class="dashboard-area">
+        <div class="container">
+            <div class="row">
+                <!-- Dashboard SideBar Start Here -->
+                <div class="col-md-4">
+                    <seller-dashboard-sidebar>
+                    </seller-dashboard-sidebar>
+                </div>
+                <!-- Dashboard SideBar End Here -->                
+                <div class="col-md-8">
+                    <!-- Dashboard Right SideBar Start Here -->
+                    <div class="dashboard-right-bar">
+                        <div class="seller-add-service">
+                            <form name = "addServiceForm" action = "">
+                                <h3>
+                                    <i class="fa fa-plus-circle"></i> Add Your Services
+                                </h3>
+                                <p class="promotion-pera-heading">
+                                    Add a service that can be booked by appontment, e.g, a Photo Shoot, Wedding Shooting..etc
+                                </p>
+                                <ul>
+                                    <li>
+                                        <a href = "javascript:;" ng-click = "doAddService()" class="bl-btn add-service-btn">
+                                            Save service
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a ui-sref = "firstNearMember.seller-dashboard-manage-service"  class="line-fill-btn add-promotion-btn"> 
+                                            Cancel
+                                        </a>
+                                    </li>
+                                </ul>
+                                <div class="add-service-box">
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            <div class="service-add-img">
+                                                <img src="img/service-info-img.png" alt="">
+                                                <p>
+                                                    Service Information
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-9">
+                                            <div class="add-service-form" >
+                                                <div class="col-md-12">
+                                                    <div class="input-group">
+                                                        <label>Name Your Service</label>
+                                                        <input class="form-control" name="name" ng-model = "service_data.name" placeholder="e.g Professional Photo" type="text" required>
+                                                        <p class="help-block region-error" ng-show="addServiceForm.name.$touched && addServiceForm.name.$error.required">Service Name is required</p>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <div class="form-group">
+                                                        <label for="comment">Add A Description</label>
+                                                        <textarea class="form-control" rows="4" id="comment" name = "description" ng-model = "service_data.description" placeholder="Description" required></textarea>
+                                                        <p class = "help-block region-error" ng-show = "addServiceForm.description.$touched && addServiceForm.description.$error.required"> Service Description is required</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="add-service-box">
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            <div class="service-add-img">
+                                                <img src="img/service-duration-img.png" alt="">
+                                                <p>
+                                                    Service Duration
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-9">
+                                            <div class="add-service-form">
+                                                <div class="col-md-6">
+                                                    <div class="input-group">
+                                                        <label>Service Duration</label>
+                                                        <input class="form-control" name="dur_in_hr" ng-model = "service_data.dur_in_hr"  placeholder="1"  type = "text"  required>
+                                                        
+                                                        <p>Hours</p>
+                                                        <p class = "help-block region-error" ng-show = "addServiceForm.dur_in_hr.$touched && addServiceForm.dur_in_hr.$error.required"> Service Duration Hour is required</p>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="input-group">
+                                                        <label></label>
+                                                        <input class="form-control minute-input" name="dur_in_min" ng-model = "service_data.dur_in_min" placeholder="00" type="text" required>
+                                                        <p>Minute</p>
+                                                        <p class = "help-block region-error" ng-show = "addServiceForm.dur_in_min.$touched && addServiceForm.dur_in_min.$error.required">Service Duration Minutes is required</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="add-service-box">
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            <div class="service-add-img">
+                                                <img src="img/price-info-img.png" alt="">
+                                                <p>Price</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-9">
+                                            <div class="add-service-form">
+                                                <div class="col-md-6">
+                                                    <div class="input-group">
+                                                        <label>Price</label>
+                                                        <input class="form-control" name="price" ng-model = "service_data.price" placeholder="e.g SAR 300" type="text" required>
+                                                        <p class = "help-block region-error" ng-show = "addServiceForm.price.$touched && addServiceForm.price.$error.required"> Service Price is required</p>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="input-group">
+                                                        <label>Do you require Deposit</label>
+                                                        <input class="form-control" name="deposite_price" ng-model = "service_data.deposite_price" placeholder="e.g SAR 300" type="text" required>
+                                                        <p class = "help-block region-error" ng-show = "addServiceForm.deposite_price.$touched && addServiceForm.deposite_price.$error.required">Deposit Price is required</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="add-service-box select-profile-location">
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            <div class="service-add-img">
+                                                <img src="img/location-duration-img.png" alt="">
+                                                <p>Location</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-9">
+                                            <div class="col-xs-12 col-sm-12">
+                                                <div class="select-shop-option">
+                                                    <label class="select-shop">You have to set your location from update profile location.</label>
+                                                    <div class="btn-group" data-toggle="buttons">
+                                                        <label class="btn active" ng-click = "setLocationKind('merchant')">
+                                                            <input name="options" id="option2" autocomplete="off" chacked="" type="radio">
+                                                            <span class="fa fa-circle"></span>
+                                                            <p>My Place</p>
+                                                        </label>
+                                                        <label class="btn" ng-click = "setLocationKind('customer')">
+                                                            <input name="options" id="option1" autocomplete="off" type="radio">
+                                                            <span class="fa fa-circle"></span>
+                                                            <p>Customer’s Place</p>
+                                                        </label>
+                                                        <label class="btn" ng-click = "setLocationKind('both')">
+                                                            <input name="options" id="option3" autocomplete="off" type="radio">
+                                                            <span class="fa fa-circle"></span>
+                                                            <p>Both</p>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>                                
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-12">
+                                        <ul class="edit-profile-save">
+                                            <li>
+                                                <a href="javascript:;"> 
+                                                </a>
+                                                <a ui-sref = "firstNearMember.seller-dashboard-manage-service" class="line-fill-btn edit-cancel-button">
+                                                    Cancel
+                                                </a>
+                                            </li>
+                                            <li> 
+                                                <a href="javascript:;" ng-click = "doAddService()" class="bl-btn edit-cancel-button">
+                                                    save service
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="clr-service"></div>
+                    </div>
+                    <!-- Dashboard Right SideBar End Here -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Dashboard Area End Here -->
+    <div class="clearfix"> </div>
+    <footer>
+    </footer>
+</div>

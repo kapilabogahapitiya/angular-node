@@ -1,0 +1,114 @@
+<style>
+    .modal {
+  text-align: center;
+}
+
+@media screen and (min-width: 768px) { 
+  .modal:before {
+    display: inline-block;
+    vertical-align: middle;
+    content: " ";
+    height: 100%;
+  }
+}
+
+.modal-dialog {
+  display: inline-block;
+  text-align: left;
+  vertical-align: middle;
+}
+</style>
+<div class="wrapper">
+    <!-- Header Area Start Here -->
+    <dashboard-header>
+    </dashboard-header>
+        <!-- Header Area End Here -->
+    <search-profile>
+    </search-profile>  
+    <!-- Dashboard Area Start Here -->	
+    <div class="dashboard-area">                
+        <div class="container">
+			<div class="row">				
+                <!-- Dashboard SideBar Start Here -->					
+                <div class="col-md-4">
+                    <dashboard-sidebar>
+                    </dashboard-sidebar>                    
+                </div>
+                <!-- Dashboard SideBar End Here -->				
+				<div class="col-md-8">						
+					<!-- Dashboard Right SideBar Start Here -->
+					<div class="dashboard-right-bar">							
+						<div class="favorite-right-block">
+							<h3>
+                                <i class="fa fa-heart"></i> 
+                                Favorites List - 
+                                <span>{{favorLists.length}}</span>
+                            </h3>
+                            <div ng-repeat = "favorList in favorLists">
+                                <div class="row-border" >                                        
+                                </div>             
+                                <div class="row favorite-list-box">
+                                    <div class="col-md-2 col-sm-2 col-xs-12 text-center">
+                                        <div class="thumbnail-img restaurant-profile-img">
+                                            <a href="javascript:;">
+                                                <img src="img/restaurant-img-1.jpg" alt="" class="img-responsive">
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-10 col-sm-10 col-xs-12 section-box">
+                                        <div class="favorite-icon-box">
+                                            <a href="javascript:;" data-toggle="modal" data-target="#confirmModal" ng-click ="setNum(favorList.num)">
+                                                <i class="fa fa-heart"></i>
+                                            </a>
+                                        </div>
+                                        <h2>{{favorList.title}}</h2>
+                                        <p>{{favorList.content}}</p>                                        
+                                        <div class="service-rating">
+                                            <div id="stars" class="starrr">
+                                                <i class="fa fa-star-o"></i>
+                                                <i class="fa fa-star-o"></i>
+                                                <i class="fa fa-star-o"></i>
+                                                <i class="fa fa-star-o"></i>
+                                                <i class="fa fa-star-o"></i>
+                                            </div>                                        
+                                            <div class="reviews-count">
+                                                ({{favorList.review}} Reviews)
+                                            </div>              
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>                  		
+						</div>
+							
+					</div>
+					<!-- Dashboard Right SideBar End Here -->
+				</div>
+            </div>
+        </div> 
+			
+	</div><!-- Dashboard Area End Here -->
+    <div class="clearfix"> </div>
+    <!-- Footer Area Start Here -->
+    <footer>        
+    </footer>
+    <!-- Footer Area End Here -->
+</div>
+<div class="modal fade" id="confirmModal" role="dialog" >
+    <div class="modal-dialog">        
+        <!-- Modal content-->
+        <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h5 class="modal-title">Confirmation</h5>
+        </div>
+        <div class="modal-body">
+            <h4 align="center">Are you Sure?</h4>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal" ng-click = "delete(del_num)">OK</button>
+            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+        </div>
+        </div>
+        
+    </div>
+</div>       	      

@@ -1,0 +1,388 @@
+<style>
+    .map {
+        height: 300px;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    .with-errors{
+        color: red;
+        text-align: left;
+        padding-left: 10px;
+    }
+</style>
+ <div class = "wrapper">   
+    <!-- Inner Page Banner Area Start Here -->
+    <div class="inner-page-banner-area-color">
+        <div class="container">
+            <div class="pagination-area">
+                <h2>
+                    Request Form
+                </h2>
+                <p>
+                    Get Competitive Offers from service providers in your area and choose what suits you best.
+                </p>
+            </div>
+        </div>
+    </div>
+    <!-- Inner Page Banner Area End Here -->
+    <!-- Inner Page Pagination Start Here -->
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="pagination-area">
+                    <ul>
+                        <li class="active">
+                            <a ui-sref = "firstNear.index">
+                                Home 
+                            </a>
+                        </li>
+                        <li>
+                            <i class="fa  fa-angle-double-right"></i>
+                        </li>
+                        <li>
+                            <a href="javascript:;">
+                                Get Quote
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Inner Page Pagination End Here -->
+    <!-- Inner Page Banner Area Start Here -->
+    <div class="container">
+        <div class="quote-form-heading-area">
+            <h2>
+                Send Your Request to All Service Providers Around You With One Click
+            </h2>
+            <p>
+                Get Competitive offers from seller in your city, compare them and choose what suits you best.
+            </p>
+        </div>
+    </div>
+    <!-- Inner Page Banner Area End Here -->
+    <!-- About Us section Start Here -->
+    <form name = "quoteFrm">
+        <div class="quotes-form">
+            <div class="container">
+                <div class="request-form food">
+                    <div class="main-form">
+                        <!----filed description---->                    
+                        <div class="quotes-form-field">
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <div class="visible-part">
+                                        <p class="feild-heading">
+                                            Fill out the forms and Wait for quotes from serious sellers.
+                                        </p>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <div class="input-group ">
+                                                        <input type="text" placeholder="Service Title*" class="form-control" ng-model = "quoteData.title" name="title" id="form-subject" required>
+                                                        <div class="help-block with-errors" ng-show = "quoteFrm.title.$touched && quoteFrm.title.$error.required">Serivce Title is required</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    <textarea name="limitedtextarea" onKeyDown="limitText(this.form.limitedtextarea,this.form.countdown,500);" onKeyUp="limitText(this.form.limitedtextarea,this.form.countdown,500);"
+                                                        placeholder="Description" name = "description" ng-model = "quoteData.description" class="form-control" rows="7" required></textarea>
+                                                        <div class="help-block with-errors" ng-show = "quoteFrm.description.$touched && quoteFrm.description.$error.required">Serivce Description is required</div>
+                                                        <small class="pull-right m-10-0"> 
+                                                            <i> You have 
+                                                                <input readonly type="text" class="counter-lim" name="countdown" size="3" value="500"> 
+                                                                characters left.
+                                                            </i> 
+                                                        </small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="hiden-part">
+                                        <div class="quotes-info">
+                                            <p class="info-heading">
+                                                <i class="fa fa-list-alt" aria-hidden="true"></i>
+                                                Define in Detail
+                                            </p>
+                                            <p class="info-text">
+                                                Include all Necessary details for your events.
+                                            </p>
+                                            <p class="info-text bordered">
+                                                i.e if you have big event, you can specify what kind of food, number of people etc.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!----filed category---->
+                        <div class="quotes-form-field">
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <div class="visible-part category">
+                                        <p class="feild-heading">
+                                            Select the Category You Want
+                                        </p>
+                                        <div class="row">                                           
+                                            <div class="form-group delivery-option-select">                                              
+                                                <select ng-model="quoteData.service" class = "form-control form-search-cos slct-slide">
+                                                    <option value = "photography">Photography</option>
+                                                    <option value = "food">Food</option>
+                                                    <option value = "makeup">Makeup Artist</option>
+                                                </select>
+                                                <div class="help-block with-errors"></div>
+                                            </div>                                           
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="hiden-part">
+                                        <div class="quotes-info">
+                                            <p class="info-heading">
+                                                <i class="fa fa-th-large" aria-hidden="true"></i>
+                                                Select Category
+                                            </p>
+                                            <p class="info-text">
+                                                Select Category & Subcategory for your Request.
+                                            </p>
+                                            <p class="info-text bordered">
+                                                i.e if you Want to Photography, you can weeding photography as subcategory.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!----filed get order---->
+                        <div class="quotes-form-field">
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <div class="visible-part get-order">
+                                        <p class="feild-heading">
+                                            When Would You Want the Service?
+                                        </p>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="filter-order-date">
+                                                    <div class="promotion-date-picker">
+                                                        <div class="input-group input-nav-cos ">
+                                                            <input class="placepicker date-picker form-control input-nav-cos brd-ra-0" name = "service_date" ng-model = "quoteData.date_needed" placeholder="Oct 10, 2017" autocomplete="off" type="text" required>
+                                                           
+                                                            <div class="input-group-addon slide-addon"> 
+                                                                <a href="javascript:;"> 
+                                                                    <i class="fa fa-calendar"></i> 
+                                                                </a>
+                                                            </div>
+                                                            <div class="help-block with-errors" ng-show = "quoteFrm.service_date.$touched && quoteFrm.service_date.$error.required">Date  is required</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="hiden-part">
+                                        <div class="quotes-info">
+                                            <p class="info-heading">
+                                                <i class="fa fa-clock-o" aria-hidden="true"></i>
+                                                Set a Delivery time
+                                            </p>
+                                            <p class="info-text">
+                                                This is the amount of time the seller has to work on your order. PLease note that
+                                                a request for faster deliverymay impact the price.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!----Add Location---->
+                        <div class="quotes-form-field">
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <div class="visible-part gender">
+                                        <p class="feild-heading">
+                                            Add Busines Location
+                                        </p>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="select-business-location" style="height: 400px;">
+                                                    <div class="form-group quotes-placepicker quotes-placepicker-dlvry input-nav-cos sm-w-215" style="">
+                                                        <div class="input-group input-nav-cos ">
+                                                                <google-map
+                                                                apikey="AIzaSyBtxKPFwmD-P00feAac4R_hTwIkX-6Rhp0"
+                                                                lat="{{latitude}}"
+                                                                long="{{longitutde}}"
+                                                                zoom="15"
+                                                                map-type="'ROADMAP'"
+                                                                clickable-icons="true"
+                                                                disable-double-click-zoom="false"
+                                                                disable-default-ui="vm.dummyFalseTwo"
+                                                                draggable="vm.dummyFalseOne"
+                                                                fullscreen-control="false"
+                                                                map-type-control="true"
+                                                                scrollwheel="true"
+                                                                street-view-control="true"
+                                                                zoom-control="true"
+                                                                custom-map-styles="vm.customMapStyles"
+                                                                custom-map-name="'mapName'"
+                                                                map-type-control-options-style="'HORIZONTAL_BAR'"
+                                                                map-type-control-options-position="'TOP_CENTER'"
+                                                                zoom-control-options="'LEFT_CENTER'"
+                                                                street-view-control-options="'RIGHT_CENTER'"
+                                                                fullscreen-control-options="vm.dummyPosition"
+                                                                custom-css="map"                                                                             
+                                                            ></google-map>
+                                                            <div class="help-block with-errors" ng-show = "location_show_flag" style = "padding-left: 20px;">Location  is required</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="hiden-part">
+                                        <div class="quotes-info">
+                                            <p class="info-heading">
+                                                <i class="fa fa-map-marker"></i>
+                                                Busines Location
+                                            </p>
+                                            <p class="info-text">
+                                                You Have to specify What if you want to send request to female only, male or both.
+                                                Note that by default we send your requests to both genders if you dinn't specify.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!----Add Location---->
+                        <!----filed gender---->
+                        <div class="quotes-form-field">
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <div class="visible-part gender">
+                                        <p class="feild-heading">
+                                            I Would you Like to Send My Order to Only
+                                        </p>
+                                        <div class="select-shop-option">
+                                            <div class="btn-group" data-toggle="buttons">
+                                                <label class="btn active" ng-click = "setGender('male')">
+                                                    <input name="options" id="option2" autocomplete="off" chacked="" type="radio">
+                                                    <span class="fa fa-circle"></span>
+                                                    <p>Male</p>
+                                                </label>
+                                                <label class="btn" ng-click = "setGender('female')">
+                                                    <input name="options" id="option1" autocomplete="off" type="radio">
+                                                    <span class="fa fa-circle"></span>
+                                                    <p>Female</p>
+                                                </label>
+                                                <label class="btn" ng-click = "setGender('both')">
+                                                    <input name="options" id="option3" autocomplete="off" type="radio">
+                                                    <span class="fa fa-circle"></span>
+                                                    <p>Both</p>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="hiden-part">
+                                        <div class="quotes-info">
+                                            <p class="info-heading">
+                                                <i class="fa fa-female" aria-hidden="true"></i>
+                                                Select Gender
+                                            </p>
+                                            <p class="info-text">
+                                                You Have to specify What if you want to send request to female only, male or both.
+                                                Note that by default we send your requests to both genders if you dinn't specify.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!----filed contact me---->
+                        <div class="quotes-form-field">
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <div class="visible-part contact-me">
+                                        <p class="feild-heading">
+                                            What is Your Contact Information?
+                                        </p>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <div class="input-group ">
+                                                        <input type="text" placeholder="966448876433" class="form-control" name="contact_phone" ng-model = "quoteData.customer_phone"  required>
+                                                        <div class="help-block with-errors" ng-show = "quoteFrm.contact_phone.$touched && quoteFrm.contact_phone.$error.required">Phone Number is required</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <div class="input-group ">
+                                                        <input type="text" placeholder="demo@gmail.com" class="form-control" name="contact_email" ng-model = "quoteData.customer_email"  required>
+                                                        <div class="help-block with-errors" ng-show = "quoteFrm.contact_email.$touched && quoteFrm.contact_email.$error.required">Email is required</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="form-group quote-checkbox checkbox-custom">
+                                                <div class="checkbox">
+                                                    <input type="checkbox" name="check" id="check" class="css-checkbox" ng-model = "agreeFlag" ng-click = "setShow()">
+                                                    <label for="check" class="css-label css-label-checkout ">
+                                                        I have read and agree to term and conditions.
+                                                        <span class="">*</span> 
+                                                    </label>
+                                                </div>
+                                                <div class="help-block with-errors" ng-show = "agreeShow" style = "padding-left: 20px;">Please Agree to Term and Condition</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="hiden-part">
+                                        <div class="quotes-info">
+                                            <p class="info-heading">
+                                                <i class="fa fa-phone"></i>
+                                                Contact info
+                                            </p>
+                                            <p class="info-text">
+                                                Enter your phone and email so that bidder can get to you easily. Wel will send you
+                                                notification on your email about the offers.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>                    
+                        <div class="get-quotes quote-button">
+                            <input type = "button" class="bl-btn special-request" ng-click = "doQuote()" value = "Get quotes">  
+                        </div>         
+                    </div>    
+                </div>
+            </div>
+        </div>
+    </form>
+    <!-- About Us section End Here -->
+    <!-- Footer Area Start Here -->
+    <div class="clearfix"> </div>
+    
+</div>
+<script language="javascript" type="text/javascript">
+    function limitText(limitField, limitCount, limitNum) {
+        if (limitField.value.length > limitNum) {
+            limitField.value = limitField.value.substring(0, limitNum);
+        } else {
+            limitCount.value = limitNum - limitField.value.length;
+        }
+    }
+</script>

@@ -1,0 +1,263 @@
+<div class="wrapper">
+    <!-- Inner Page Banner Area Start Here -->
+    <div class="inner-page-banner-area">
+        <div class="container">
+            <div class="pagination-area">
+                <h2>
+                    Checkout
+                </h2>
+                <p>
+                    Lorem Ipsum is simply dummy text of the printing industry.
+                </p>
+            </div>
+        </div>
+    </div>
+    <!-- Inner Page Banner Area End Here -->
+    <!-- Inner Page Pagination Start Here -->
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="pagination-area">
+                    <ul>
+                        <li class="active">
+                            <a ui-sref = "firstNear.index">Home </a>
+                        </li>
+                        <li>
+                            <i class="fa  fa-angle-double-right"></i>
+                        </li>
+                        <li>
+                            <a href="javascript:;">Browse Photographer</a>
+                        </li>
+                        <li>
+                            <i class="fa  fa-angle-double-right"></i>
+                        </li>
+                        <li> 
+                            <a href="javascript:;">Booking</a>
+                        </li>
+                        <li>
+                            <i class="fa  fa-angle-double-right"></i>
+                        </li>
+                        <li> 
+                            <a href="javascript:;">Checkout</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Inner Page Pagination End Here -->
+    <!-- About Us section Start Here -->
+    <div class="checkout-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="sign-up to-recieve-order login-checkout">
+                        <h3 class="signup-heading head-sign-up">
+                            Log in
+                        </h3>
+                        <h4 class="check-top-head">
+                            Login to start booking now
+                        </h4>
+                        <div class="omb_login">
+                            <div class="row ">
+                                <div class="col-xs-12 col-sm-12">
+                                    <form class="omb_loginForm form-cs-check" action="">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" name="username" placeholder="Username/Email Address">
+                                        </div>
+                                        <span class="help-block">                                            
+                                        </span>
+                                        <div class="input-group">
+                                            <input type="password" class="form-control" name="password" placeholder="Password">
+                                        </div>
+                                        <div class="row m-t-10">
+                                            <div class="col-xs-12 col-sm-6">
+                                                <div class="form-group checkbox-custom">
+                                                    <div class="checkbox">
+                                                        <input type="checkbox" name="check15" id="check15" class="css-checkbox">
+                                                        <label for="check15" class="css-label css-label-checkout"> Remember me</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-xs-12 col-sm-6">
+                                                <p class="omb_forgotPwd text-right text-left-xs">
+                                                    <a href="javascript:;">
+                                                        Forgot password?
+                                                    </a>
+                                                </p>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="service-signup">
+                                                    <a href="javascript:;" class="bl-btn login-button">
+                                                        login
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="login-option1">
+                                                    <span>Don't have account?
+                                                        <a href="javascript:;">Click Here for Sign up</a>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row omb_row-sm-offset-3 omb_loginOr">
+                                            <div class="col-xs-12 col-sm-6">
+                                                <hr class="omb_hrOr">
+                                                <span class="omb_spanOr">or</span>
+                                            </div>
+                                        </div>
+                                        <div class=" omb_socialButtons login-social">
+                                            <div class="row">
+                                                <div class="col-xs-12 col-sm-12">
+                                                    <a href="javascript:;" class="btn btn-lg omb_btn-facebook login-social-buttons">
+                                                        <i class="fa fa-facebook"></i>
+                                                        <span class="hidden-xs font-16-c">Facebook</span>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="sign-up to-recieve-order med-m-20 checkout-signup">
+                        <h3 class="signup-heading">
+                            Sign up
+                        </h3>
+                        <h4 class="check-top-head">
+                            Register to start booking now
+                        </h4>
+                        <div class="omb_login">
+                            <div class="row ">
+                                <div class="col-xs-12 col-sm-12">
+                                    <form class="omb_loginForm form-cs-check" action="" name = "registerForm">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" name="full_name" ng-model = "registerData.full_name" placeholder="Full Name" required>
+                                        </div>
+                                        <span class="help-block" ng-show = "registerForm.full_name.$touched && registerForm.full_name.$error.required">
+                                            Full Name is required                             
+                                        </span>
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" name="username" ng-model = "registerData.username" placeholder="User Name" required>
+                                        </div>
+                                        <span class="help-block" ng-show= "registerForm.username.$touched && registerForm.username.$error.required" >
+                                             User name is required                               
+                                        </span>
+                                        <div class="input-group">
+                                            <input type="email" class="form-control" name="email_address" ng-model = "registerData.email_address" placeholder="Email" required>
+                                        </div>
+                                        <span class="help-block" ng-show = "registerForm.email_address.$touched && registerForm.email_address.$error.required">
+                                            Email Address is required
+                                        </span>
+                                        <span class="help-block" ng-show = "registerForm.email_address.$touched && registerForm.email_address.$error.email">
+                                            Please Enter valid Email Address                                            
+                                        </span>
+                                        <div class="">
+                                            <input id="phone" class="form-control" type="tel" name = "business_phone_number" ng-model = "registerData.business_phone_number" ng-change ="phoneNumberChange()" placeholder="Telephone" required>
+                                        </div>
+                                        <span class="help-block" ng-show = "registerForm.business_phone_number.$touched && registerForm.business_phone_number.$error.required">
+                                            Phone Number is required                                            
+                                        </span>                                        
+                                        <div class="input-group">
+                                            <input type="password" class="form-control" name="password" placeholder="Password" ng-model = "registerData.password" required>
+                                        </div>
+                                        <span class="help-block" ng-show = "registerForm.password.$touched && registerForm.password.$error.required">
+                                             Password is required                                           
+                                        </span>
+                                        <div class="input-group">
+                                            <input type="password" class="form-control" name="password_re" ng-model = "password_re" placeholder="Confirm Password">
+                                        </div>
+                                        <span class="help-block" ng-show = "( password_re != '') && (registerData.password != password_re)" ng-init = "password_re = ''">
+                                            Confirm Password is required                                            
+                                        </span>
+                                        <span class="help-block" ng-show = "( password_re != '') && (registerData.password != password_re)" ng-init = "password_re = ''">
+                                            Password don't match                                            
+                                        </span>                                       
+                                    </form>
+                                </div>
+                                <div class="col-xs-12 col-sm-12">
+                                    <div class="form-group checkbox-custom">
+                                        <div class="checkbox">
+                                            <input type="checkbox" name="check188" id="check188" class="css-checkbox" ng-model = "agree" ng-click = "setAgree()">
+                                            <label for="check188" class="css-label css-label-checkout">  
+                                                I agree to the 
+                                                <a ui-sref = "firstNear.termsConditions">terms</a> 
+                                                and 
+                                                <a ui-sref = "firstNear.termsConditions">condition.</a>
+                                            </label>
+                                        </div>
+                                        <span class="help-block" style = "color:red;"ng-show = "agreeShow">
+                                                Don't you agree?                                           
+                                        </span>  
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-sm-12">
+                                    <div class="row m-t-10">
+                                        <div class="service-signup">
+                                            <a href="javascript:;" class="bl-btn login-button" ng-click = "doRegister()">
+                                                Signup
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="row omb_row-sm-offset-3 omb_loginOr">
+                                        <div class="col-xs-12 col-sm-6">
+                                            <hr class="omb_hrOr">
+                                            <span class="omb_spanOr">or</span>
+                                        </div>
+                                    </div>
+                                    <div class=" omb_socialButtons login-social">
+                                        <div class="row">
+                                            <div class="col-xs-12 col-sm-12">
+                                                <a href="javascript:;" class="btn btn-lg omb_btn-facebook login-social-buttons">
+                                                    <i class="fa fa-facebook"></i>
+                                                    <span class="hidden-xs"> Sign in</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>                                  
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- About Us section End Here -->
+    <div class="clearfix"> </div>    <!-- Modal -->
+    <div class="modal fade booking-conditions-modal" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
+        aria-hidden="true">
+        <div class="modal-dialog modal-xl" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <h2>
+                        Terms of Use
+                    </h2>
+                    <p>
+                        We like to keep things straight forward, so before we get to the legal stuff our lawyers say we have to have,
+                        here’s a plain english breakdown of the key things you need to know when using Sign-Up.to:
+                    </p>
+                    <p>
+                        Your data remains yours at all times. We’ll never disclose your data to third parties unless required by
+                        law or requested by you. Unless otherwise arranged, we bill monthly based on the maximum number of active
+                        subscribers in your account during the previous month. Payments are collected by credit/debit card on
+                        the day of issue. Failure to pay on time will result in suspension of access until your invoice is paid.
+                    </p>
+                    <p>
+                        We provide free phone and email support during UK working days, from 9am – 5.30pm. Managed services (such
+                        as alterations to or creation of email campaigns or use of the service on your behalf) are subject to
+                        additional charges which will be agreed with you before the work is undertaken.
+                    </p>
+                    <a href="javascript:;" class="line-fill-btn close-booking-modal" data-dismiss="modal" aria-label="Close">
+                        close
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Modal -->
+</div>

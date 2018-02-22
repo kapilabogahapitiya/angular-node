@@ -1,0 +1,161 @@
+<div class="wrapper"> 
+    <!-- Header Area Start Here -->
+    <seller-dashboard-header>
+    </seller-dashboard-header>
+    <seller-search-profile>
+    </seller-search-profile>     
+    <!-- Header Area End Here -->
+    <!-- Dashboard Area Start Here -->	
+    <div class="dashboard-area">                
+        <div class="container">
+			<div class="row">					
+                <!-- Dashboard SideBar End Here -->					
+                <div class="col-md-4">
+                    <seller-dashboard-sidebar>                        
+                    </seller-dashboard-sidebar>
+                </div>
+                <!-- Dashboard SideBar End Here -->			
+				<div class="col-md-8">						
+					<!-- Dashboard Right SideBar Start Here -->
+					<div class="dashboard-right-bar">							
+						<div class="chat-right-bar">							
+					        <div class="chat-user-profile">
+					            <div class="col-md-7">
+					                <div class="thumbnail-img chat-user-img">
+				                        <img src="img/chat-user-img.jpg" alt="" class="img-responsive">
+				                    </div>
+                                    <h4>
+                                        Graphics Photo Studio 
+                                        <i class="fa fa-circle"></i>
+                                    </h4>
+                                    <p>
+                                        <i class="fa fa-phone"></i>
+                                        5214-542-457
+                                    </p>
+                                </div>                       
+                                <div class="profile-user-rating">
+                                    <div class="col-md-5">
+                                        <p><i class="fa fa-map-marker"></i>10 KM Away</p>
+                                        <div class="service-rating">
+                                            <div id="stars" class="starrr">
+                                                <i class="fa fa-star-o"></i>
+                                                <i class="fa fa-star-o"></i>
+                                                <i class="fa fa-star-o"></i>
+                                                <i class="fa fa-star-o"></i>
+                                                <i class="fa fa-star-o"></i>
+                                            </div>                                        
+                                            <div class="reviews-count">
+                                                (10 Reviews)
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>                                    
+                            </div>
+	                        <div class="top_menu">
+                                <div class="title">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <a ui-sref = "firstNearMember.seller-dashboard-inbox" class="line-fill-btn back-inbox-btn"> 
+                                                <i class="fa fa-arrow-left" aria-hidden="true"></i> 
+                                                inbox
+                                            </a>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <a href="javascript:;" class="block-user"><i class="fa fa-ban" aria-hidden="true"></i> 
+                                                Block User
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>							
+							<div class="chat_window" >   
+                                <ul class="messages scrollbar" id="style-4" data-upwards-scoll="loadMore()">
+                                    
+                                    <div ng-repeat = "chatData in chatDatas">
+                                        <li class="message left appeared">
+                                            <div class="avatar">
+
+                                            </div>
+                                            <div class="text_wrapper">
+                                                <div class="text">
+                                                    {{ chatData.ask.message}}
+                                                </div> 
+                                                <span class="time-chat">
+                                                    {{ chatData.ask.time}}
+                                                </span>
+                                            </div>
+                                        </li>
+                                        <li class="message right appeared">
+                                            <div class="avatar">  
+
+                                            </div>
+                                            <div class="text_wrapper">
+                                                <div class="text">
+                                                    {{ chatData.answer.message }}
+                                                </div> 
+                                                <span class="time-chat"> 
+                                                    {{ chatData.answer.time}} 
+                                                </span>
+                                            </div>
+                                        </li>                                       
+                                    </div>
+                                </ul>
+                                <div class="bottom_wrapper clearfix">
+	                                <form class="form-inline m-r-15 loc-chat">
+										<div class="form-group">
+											<div class="input-group">
+												<a href="javascript:;" class="location-box">
+                                                    <i class="fa fa-map-marker"></i>
+                                                </a>                                                  
+                                            </div>
+										</div>
+									</form>
+									<div class="form-inline m-r-15 loc-chat" >												 
+										<label for="exampleInputFile" style = "cursor:pointer!important;">
+											<i class="fa fa-paperclip attach-file-chat" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="" data-original-title="Attach Document">
+
+                                            </i>													 
+										</label>
+										<input id="exampleInputFile" style="display:none;" type="file">
+									</div>
+                                    <div class="message_input_wrapper">
+                                        <input class="message_input" placeholder="Type your message here...">
+                                    </div>
+                                    <div class="send_message">
+                                        <a href="javascript:;" class="location-box">
+                                            <i class="fa fa-send"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>							
+					    </div>		
+					</div>
+					<!-- Dashboard Right SideBar End Here -->
+				</div>
+            </div>
+        </div>			
+    </div>
+    <!-- Dashboard Area End Here -->
+    
+    <div class="clearfix"> </div>
+    <!-- Footer Area Start Here -->
+    <footer>
+    </footer>
+    <!-- Footer Area End Here -->
+</div>
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+

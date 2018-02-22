@@ -1,0 +1,237 @@
+<style>
+    .map {
+        height: 300px;
+        width: 100%;
+    }
+    .with-errors{
+        color:red;
+    }
+</style>
+<div class="wrapper"> 
+    <!-- Header Area Start Here -->
+    <seller-dashboard-header>
+    </seller-dashboard-header>
+     <!-- Header Area End Here -->
+    <seller-search-profile>
+    </seller-search-profile>  
+    <!-- Dashboard Area Start Here -->	
+    <div class="dashboard-area">                
+        <div class="container">
+			<div class="row">					
+                <!-- Dashboard SideBar End Here -->					
+                <div class="col-md-4">                    
+                    <seller-dashboard-sidebar>
+                    </seller-dashboard-sidebar>                    
+                </div>
+                <!-- Dashboard SideBar End Here -->					
+				<div class="col-md-8">						
+					<!-- Dashboard Right SideBar Start Here -->
+					<div class="dashboard-right-bar">							
+						<div class="top-nav-right">
+				            <ul class="tab-nav-top">
+			                    <li class="active tab-active">
+                                    <a data-target="#edit-profile" data-toggle="tab">
+                                        Update Profile
+                                    </a>
+                                </li>
+			                    <li>
+                                    <a data-target="#change-password" data-toggle="tab">
+                                        Change Password
+                                    </a>
+                                </li>	 
+			                </ul>			
+			                <div class="tab-content">			
+                                <div class="tab-pane active" id="edit-profile">
+                                    <div class="edit-profile-box">
+                                        <h2>
+                                            Let’s update your profile...
+                                        </h2>
+                                        <p>
+                                            Please keep your information updated before placing order.
+                                        </p>                                
+                                        <div class="thumbnail-img update-profile-img">
+                                            <img  alt="User" ng-show = "uploader.queue.length == 0" class="img-responsive" id="img_avatar">
+                                            <img  alt="" ng-show = "uploader.queue.length != 0" ng-src="{{step}}" class="img-responsive" >
+                                        </div>                                    
+                                        <div class="edit-profile-img-btn">
+                                            <ul>
+                                                <li ng-show = "uploader.queue.length == 0">
+                                                    <a href="javascript:;">                                                        
+                                                        <input name="imageUpload" id="imageUpload" nv-file-select="" uploader="uploader" class="hide" type="file" onchange="angular.element(this).scope().imageUpload(event)">
+                                                        <label for="imageUpload" style="cursor:pointer;">
+                                                            <i class="fa fa-edit"></i>
+                                                        </label>                                                        
+                                                    </a>
+                                                </li>
+                                                <li ng-show = "uploader.queue.length != 0" ng-click = "uploader.queue[0].remove()">
+                                                    <a href="javascript:;"><i class="fa fa-trash"></i>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="omb_edit-profile">      
+                                            <div class="row ">                                            
+                                                <form class="omb_loginForm form-cs-check" action="" name = "myForm">
+                                                    <div class="col-md-6">                                            
+                                                        <div class="input-group">
+                                                            <label>Full Name*</label>
+                                                            <input type="text" class="form-control" name="full_name" placeholder="Walter Sobchak" ng-model = "profileData.full_name" required>
+                                                            <div class="help-block with-errors" ng-show = "myForm.full_name.$touched && myForm.full_name.$error.required">
+                                                                Name is required        
+                                                            </div>
+                                                        </div>                                                        
+                                                        <div class="input-group">
+                                                            <label>Phone Number*</label>
+                                                            <input id="phone" class="form-control" type="tel" placeholder="Telephone" name = "phone_number" ng-model = "profileData.business_phone_number" required>
+                                                            <div class="help-block with-errors" ng-show = "myForm.phone_number.$touched && myForm.phone_number.$error.required">
+                                                                Phone Number is required        
+                                                            </div>
+                                                        </div>                                           
+                                                    </div>		
+                                                    <div class="col-md-6">    
+                                                        <div class="input-group">
+                                                            <label>Email*</label>
+                                                            <input type="email" class="form-control" name="emails" placeholder="demofirstnear@gmail.com" ng-model = "profileData.email_address" required>
+                                                            <div class="help-block with-errors" ng-show = "myForm.emails.$touched && myForm.emails.$error.required">
+                                                                Email Address is required        
+                                                            </div>
+                                                            <div class="help-block with-errors" ng-show = "myForm.emails.$touched && myForm.emails.$error.email">
+                                                                Email Address is invalid        
+                                                            </div>
+                                                        </div>                                                            
+                                                        <div class="form-group delivery-option-select">
+                                                            <label>Language Preference</label>
+                                                            <select id="guest" name="guest" class="form-control form-search-cos slct-slide" ng-model = "profileData.LanguageID">
+                                                                <option value="{{data._id}}" ng-repeat = "data in languageData">{{ data.language_name }}</option>
+                                                                                                                                
+                                                            </select>                                                            
+                                                            <div class="help-block with-errors">
+                                                            </div>
+                                                        </div>
+                                                    </div>                                     
+                                                    
+                                                    <div class="col-md-12" style="padding-left:0px;padding-right:0px;"> 
+                                                        <div class="google-map">
+                                                            <!-- <img src="img/google-map.jpg" alt="" class="img-responsive"> -->
+                                                            <google-map
+                                                            apikey="AIzaSyBtxKPFwmD-P00feAac4R_hTwIkX-6Rhp0"
+                                                            lat="{{latitude}}"
+                                                            long="{{longitude}}"
+                                                            zoom="15"
+                                                            map-type="'ROADMAP'"
+                                                            clickable-icons="true"
+                                                            disable-double-click-zoom="false"
+                                                            disable-default-ui="vm.dummyFalseTwo"
+                                                            draggable="vm.dummyFalseOne"
+                                                            fullscreen-control="false"
+                                                            map-type-control="true"
+                                                            scrollwheel="true"
+                                                            street-view-control="true"
+                                                            zoom-control="true"
+                                                            custom-map-styles="vm.customMapStyles"
+                                                            custom-map-name="'mapName'"
+                                                            map-type-control-options-style="'HORIZONTAL_BAR'"
+                                                            map-type-control-options-position="'TOP_CENTER'"
+                                                            zoom-control-options="'LEFT_CENTER'"
+                                                            street-view-control-options="'RIGHT_CENTER'"
+                                                            fullscreen-control-options="vm.dummyPosition"
+                                                            custom-css="map"
+                                                                                                                                         
+                                                            ></google-map>                                                        
+                                                        </div>                                                            
+                                                    </div>   
+			                                        <div class="col-xs-12 col-sm-12">  
+                                                        <ul class="edit-profile-save">
+                                                            <li>
+                                                                <a href="javascript:;"> 
+                                                                    <a href="add-your-services.html" class="line-fill-btn edit-cancel-button">
+                                                                        Cancel
+                                                                    </a>
+                                                                </a>
+                                                            </li>
+                                                            <li> 
+                                                                <a href="javascript:;" class="bl-btn edit-cancel-button" ng-click = "doSaveProfileData()">
+                                                                    save changes
+                                                                </a>
+                                                            </li>
+                                                        </ul>             
+                                                    </div>          
+                                                </form>             
+                                            </div>	
+                                        </div>	   
+			                        </div>
+			                    </div>			 
+			                    <div class="tab-pane" id="change-password"> 
+                                    <div class="change-password-box">
+			                            <h3>
+                                            <i class="fa fa-user"></i> 
+                                            Change Password
+                                        </h3>			  
+			                            <div class="row">
+			                                <div class="col-md-12">
+                                                <form name = "pwdForm">		
+                                                    <div class="input-group">
+                                                        <label>Current Password</label>
+                                                        <input class="form-control" name="cur_password" placeholder="Current Password" type="password" ng-model = "passwordData.old_password" required>
+                                                        <div class="help-block with-errors" ng-show = "pwdForm.cur_password.$touched && pwdForm.cur_password.$error.required">
+                                                           Current Password is required        
+                                                        </div>
+                                                        
+                                                    </div>                                                                
+                                                    <div class="input-group">
+                                                        <label>New Password</label>
+                                                        <input class="form-control" name="new_password" placeholder="New Password" type="password" ng-model = "passwordData.new_password" required>
+                                                        <div class="help-block with-errors" ng-show = "pwdForm.new_password.$touched && pwdForm.new_password.$error.required">
+                                                            New Password is required        
+                                                        </div>
+                                                        <div class="help-block with-errors" ng-show = "pwdForm.new_password.$touched && (passwordData.old_password == passwordData.new_password )" >
+                                                            New Password can't equal with old password        
+                                                        </div>
+                                                    </div>                                                        
+                                                    <div class="input-group">
+                                                        <label>Confirm New Password</label>
+                                                        <input class="form-control" name="new_password_re" placeholder="Confirm New Password" type="password" ng-model = "password_re" required>
+                                                        <div class="help-block with-errors" ng-show = "pwdForm.new_password_re.$touched && (passwordData.new_password != password_re )" >
+                                                                Password don't match         
+                                                        </div>
+                                                    </div>
+                                                </form>                                                    
+                                            </div>			  
+                                            <div class="col-md-12">
+                                                <ul class="edit-profile-save">
+                                                    <li>
+                                                        <a href="javascript:;"> 
+                                                            <a href="add-your-services.html" class="line-fill-btn edit-cancel-button">
+                                                                Cancel
+                                                            </a>
+                                                        </li>
+                                                    <li> 
+                                                        <a href="javascript:;" class="bl-btn edit-cancel-button" ng-click = "doChangePassword()">
+                                                            Change Password
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>			  
+			                            </div> 
+			                        </div>		  
+                                </div>
+                            </div>
+			            </div>							
+					</div>
+					<!-- Dashboard Right SideBar End Here -->
+				</div>
+            </div>
+        </div>			
+    </div>
+    <!-- Dashboard Area End Here -->
+    <div class="clearfix"> </div>
+    <!-- Footer Area Start Here -->
+    <footer>
+
+    </footer>
+    <!-- Footer Area End Here -->
+    
+</div>
+
+
+
